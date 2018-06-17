@@ -1,15 +1,15 @@
 //
-//  RuinTests.swift
-//  RuinTests
+//  RuinCoreTests.swift
+//  RuinCoreTests
 //
 //  Created by Simon Haycock on 17/06/2018.
 //  Copyright © 2018 Hyper Barn LTD. All rights reserved.
 //
 
 import XCTest
-@testable import Ruin
+@testable import RuinCore
 
-class RuinTests: XCTestCase {
+class RuinCoreTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
