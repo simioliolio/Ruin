@@ -23,6 +23,9 @@
 		916A5F8B20D6A2D800B30E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A5F8A20D6A2D800B30E8B /* Assets.xcassets */; };
 		916A5F8E20D6A2D800B30E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916A5F8C20D6A2D800B30E8B /* LaunchScreen.storyboard */; };
 		916A5F9920D6A2D800B30E8B /* RuinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A5F9820D6A2D800B30E8B /* RuinTests.swift */; };
+		916A5FA720D6A41C00B30E8B /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A5FA620D6A41C00B30E8B /* AudioManager.swift */; };
+		916A5FA820D6A49800B30E8B /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
+		9180611C20D6A4D800882EB9 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9180611B20D6A4D800882EB9 /* AudioKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,8 @@
 		916A5F9820D6A2D800B30E8B /* RuinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuinTests.swift; sourceTree = "<group>"; };
 		916A5F9A20D6A2D800B30E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		916A5FA220D6A31200B30E8B /* AudioKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AudioKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		916A5FA620D6A41C00B30E8B /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		9180611B20D6A4D800882EB9 /* AudioKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AudioKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9180611C20D6A4D800882EB9 /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916A5FA820D6A49800B30E8B /* RuinCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +178,7 @@
 		916A5F3620D6A29400B30E8B /* RuinCore */ = {
 			isa = PBXGroup;
 			children = (
+				916A5FA420D6A3F500B30E8B /* Model */,
 				916A5F3720D6A29400B30E8B /* RuinCore.h */,
 				916A5F3820D6A29400B30E8B /* Info.plist */,
 			);
@@ -226,9 +234,26 @@
 		916A5FA120D6A31200B30E8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9180611B20D6A4D800882EB9 /* AudioKit.framework */,
 				916A5FA220D6A31200B30E8B /* AudioKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		916A5FA420D6A3F500B30E8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				916A5FA520D6A3FE00B30E8B /* Audio */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		916A5FA520D6A3FE00B30E8B /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				916A5FA620D6A41C00B30E8B /* AudioManager.swift */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +370,7 @@
 				TargetAttributes = {
 					916A5F3420D6A29400B30E8B = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
 					916A5F3C20D6A29400B30E8B = {
@@ -438,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916A5FA720D6A41C00B30E8B /* AudioManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +681,7 @@
 		916A5F4C20D6A29500B30E8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
@@ -673,6 +701,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.RuinCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -683,6 +712,7 @@
 		916A5F4D20D6A29500B30E8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;

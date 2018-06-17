@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import RuinCore
 
 class ViewController: UIViewController {
+    
+    var audioManager: AudioManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        audioManager = AudioManager()
+        
     }
 
     override func didReceiveMemoryWarning() {
