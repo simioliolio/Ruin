@@ -4,7 +4,4 @@
    <FileRef
       location = "container:Ruin.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:ThirdParty/AudioKit/AudioKit/iOS/AudioKit For iOS.xcodeproj">
-   </FileRef>
 </Workspace>

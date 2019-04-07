@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91470960225A78AE006B4632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147095F225A78AE006B4632 /* AppDelegate.swift */; };
+		91470962225A78AE006B4632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91470961225A78AE006B4632 /* ViewController.swift */; };
+		91470965225A78AE006B4632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91470963225A78AE006B4632 /* Main.storyboard */; };
+		91470968225A78AE006B4632 /* Ruin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91470966225A78AE006B4632 /* Ruin.xcdatamodeld */; };
+		9147096A225A78AF006B4632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91470969225A78AF006B4632 /* Assets.xcassets */; };
+		9147096D225A78AF006B4632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9147096B225A78AF006B4632 /* LaunchScreen.storyboard */; };
+		91470978225A78AF006B4632 /* RuinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91470977225A78AF006B4632 /* RuinTests.swift */; };
 		916A5F3E20D6A29400B30E8B /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
 		916A5F4520D6A29400B30E8B /* RuinCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A5F4420D6A29400B30E8B /* RuinCoreTests.swift */; };
 		916A5F4720D6A29500B30E8B /* RuinCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 916A5F3720D6A29400B30E8B /* RuinCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,19 +23,17 @@
 		916A5F6220D6A2B300B30E8B /* RuinPlayground.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 916A5F6020D6A2B300B30E8B /* RuinPlayground.xcdatamodeld */; };
 		916A5F6420D6A2B300B30E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A5F6320D6A2B300B30E8B /* Assets.xcassets */; };
 		916A5F6720D6A2B300B30E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916A5F6520D6A2B300B30E8B /* LaunchScreen.storyboard */; };
-		916A5F8120D6A2D700B30E8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A5F8020D6A2D700B30E8B /* AppDelegate.swift */; };
-		916A5F8320D6A2D700B30E8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A5F8220D6A2D700B30E8B /* ViewController.swift */; };
-		916A5F8620D6A2D700B30E8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916A5F8420D6A2D700B30E8B /* Main.storyboard */; };
-		916A5F8920D6A2D700B30E8B /* Ruin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 916A5F8720D6A2D700B30E8B /* Ruin.xcdatamodeld */; };
-		916A5F8B20D6A2D800B30E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A5F8A20D6A2D800B30E8B /* Assets.xcassets */; };
-		916A5F8E20D6A2D800B30E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916A5F8C20D6A2D800B30E8B /* LaunchScreen.storyboard */; };
-		916A5F9920D6A2D800B30E8B /* RuinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A5F9820D6A2D800B30E8B /* RuinTests.swift */; };
-		916A5FA720D6A41C00B30E8B /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A5FA620D6A41C00B30E8B /* AudioManager.swift */; };
 		916A5FA820D6A49800B30E8B /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
-		9180611C20D6A4D800882EB9 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9180611B20D6A4D800882EB9 /* AudioKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		91470974225A78AF006B4632 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 916832A320D58E25006E775F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9147095C225A78AE006B4632;
+			remoteInfo = Ruin;
+		};
 		916A5F3F20D6A29400B30E8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 916832A320D58E25006E775F /* Project object */;
@@ -36,24 +41,20 @@
 			remoteGlobalIDString = 916A5F3420D6A29400B30E8B;
 			remoteInfo = RuinCore;
 		};
-		916A5F9520D6A2D800B30E8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 916832A320D58E25006E775F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 916A5F7D20D6A2D700B30E8B;
-			remoteInfo = Ruin;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		916832AE20D58E25006E775F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		916832B020D58E25006E775F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		916832B320D58E25006E775F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		916832B520D58E25006E775F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		916832B820D58E25006E775F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		916832BA20D58E25006E775F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		916832C320D58E25006E775F /* RuinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuinTests.swift; sourceTree = "<group>"; };
-		916832C520D58E26006E775F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9147095D225A78AE006B4632 /* Ruin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9147095F225A78AE006B4632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		91470961225A78AE006B4632 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		91470964225A78AE006B4632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		91470967225A78AE006B4632 /* Ruin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ruin.xcdatamodel; sourceTree = "<group>"; };
+		91470969225A78AF006B4632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9147096C225A78AF006B4632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9147096E225A78AF006B4632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91470973225A78AF006B4632 /* RuinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		91470977225A78AF006B4632 /* RuinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuinTests.swift; sourceTree = "<group>"; };
+		91470979225A78AF006B4632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		916A5F3520D6A29400B30E8B /* RuinCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RuinCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		916A5F3720D6A29400B30E8B /* RuinCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuinCore.h; sourceTree = "<group>"; };
 		916A5F3820D6A29400B30E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,28 +69,27 @@
 		916A5F6320D6A2B300B30E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		916A5F6620D6A2B300B30E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		916A5F6820D6A2B300B30E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		916A5F7E20D6A2D700B30E8B /* Ruin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruin.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		916A5F8020D6A2D700B30E8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		916A5F8220D6A2D700B30E8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		916A5F8520D6A2D700B30E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		916A5F8820D6A2D700B30E8B /* Ruin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ruin.xcdatamodel; sourceTree = "<group>"; };
-		916A5F8A20D6A2D800B30E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		916A5F8D20D6A2D800B30E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		916A5F8F20D6A2D800B30E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		916A5F9420D6A2D800B30E8B /* RuinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		916A5F9820D6A2D800B30E8B /* RuinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuinTests.swift; sourceTree = "<group>"; };
-		916A5F9A20D6A2D800B30E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		916A5FA220D6A31200B30E8B /* AudioKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AudioKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		916A5FA620D6A41C00B30E8B /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
-		9180611B20D6A4D800882EB9 /* AudioKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AudioKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9147095A225A78AE006B4632 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91470970225A78AF006B4632 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		916A5F3120D6A29400B30E8B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9180611C20D6A4D800882EB9 /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,33 +109,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		916A5F7B20D6A2D700B30E8B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		916A5F9120D6A2D800B30E8B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9147095E225A78AE006B4632 /* Ruin */ = {
+			isa = PBXGroup;
+			children = (
+				9147095F225A78AE006B4632 /* AppDelegate.swift */,
+				91470961225A78AE006B4632 /* ViewController.swift */,
+				91470963225A78AE006B4632 /* Main.storyboard */,
+				91470969225A78AF006B4632 /* Assets.xcassets */,
+				9147096B225A78AF006B4632 /* LaunchScreen.storyboard */,
+				9147096E225A78AF006B4632 /* Info.plist */,
+				91470966225A78AE006B4632 /* Ruin.xcdatamodeld */,
+			);
+			path = Ruin;
+			sourceTree = "<group>";
+		};
+		91470976225A78AF006B4632 /* RuinTests */ = {
+			isa = PBXGroup;
+			children = (
+				91470977225A78AF006B4632 /* RuinTests.swift */,
+				91470979225A78AF006B4632 /* Info.plist */,
+			);
+			path = RuinTests;
+			sourceTree = "<group>";
+		};
 		916832A220D58E25006E775F = {
 			isa = PBXGroup;
 			children = (
-				916832AD20D58E25006E775F /* Ruin */,
-				916832C220D58E25006E775F /* RuinTests */,
 				916A5F3620D6A29400B30E8B /* RuinCore */,
 				916A5F4320D6A29400B30E8B /* RuinCoreTests */,
 				916A5F5820D6A2B300B30E8B /* RuinPlayground */,
-				916A5F7F20D6A2D700B30E8B /* Ruin */,
-				916A5F9720D6A2D800B30E8B /* RuinTests */,
+				9147095E225A78AE006B4632 /* Ruin */,
+				91470976225A78AF006B4632 /* RuinTests */,
 				916832AC20D58E25006E775F /* Products */,
 				916A5FA120D6A31200B30E8B /* Frameworks */,
 			);
@@ -147,38 +154,15 @@
 				916A5F3520D6A29400B30E8B /* RuinCore.framework */,
 				916A5F3D20D6A29400B30E8B /* RuinCoreTests.xctest */,
 				916A5F5720D6A2B300B30E8B /* RuinPlayground.app */,
-				916A5F7E20D6A2D700B30E8B /* Ruin.app */,
-				916A5F9420D6A2D800B30E8B /* RuinTests.xctest */,
+				9147095D225A78AE006B4632 /* Ruin.app */,
+				91470973225A78AF006B4632 /* RuinTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		916832AD20D58E25006E775F /* Ruin */ = {
-			isa = PBXGroup;
-			children = (
-				916832AE20D58E25006E775F /* AppDelegate.swift */,
-				916832B020D58E25006E775F /* ViewController.swift */,
-				916832B220D58E25006E775F /* Main.storyboard */,
-				916832B520D58E25006E775F /* Assets.xcassets */,
-				916832B720D58E25006E775F /* LaunchScreen.storyboard */,
-				916832BA20D58E25006E775F /* Info.plist */,
-			);
-			path = Ruin;
-			sourceTree = "<group>";
-		};
-		916832C220D58E25006E775F /* RuinTests */ = {
-			isa = PBXGroup;
-			children = (
-				916832C320D58E25006E775F /* RuinTests.swift */,
-				916832C520D58E26006E775F /* Info.plist */,
-			);
-			path = RuinTests;
 			sourceTree = "<group>";
 		};
 		916A5F3620D6A29400B30E8B /* RuinCore */ = {
 			isa = PBXGroup;
 			children = (
-				916A5FA420D6A3F500B30E8B /* Model */,
 				916A5F3720D6A29400B30E8B /* RuinCore.h */,
 				916A5F3820D6A29400B30E8B /* Info.plist */,
 			);
@@ -208,52 +192,11 @@
 			path = RuinPlayground;
 			sourceTree = "<group>";
 		};
-		916A5F7F20D6A2D700B30E8B /* Ruin */ = {
-			isa = PBXGroup;
-			children = (
-				916A5F8020D6A2D700B30E8B /* AppDelegate.swift */,
-				916A5F8220D6A2D700B30E8B /* ViewController.swift */,
-				916A5F8420D6A2D700B30E8B /* Main.storyboard */,
-				916A5F8A20D6A2D800B30E8B /* Assets.xcassets */,
-				916A5F8C20D6A2D800B30E8B /* LaunchScreen.storyboard */,
-				916A5F8F20D6A2D800B30E8B /* Info.plist */,
-				916A5F8720D6A2D700B30E8B /* Ruin.xcdatamodeld */,
-			);
-			path = Ruin;
-			sourceTree = "<group>";
-		};
-		916A5F9720D6A2D800B30E8B /* RuinTests */ = {
-			isa = PBXGroup;
-			children = (
-				916A5F9820D6A2D800B30E8B /* RuinTests.swift */,
-				916A5F9A20D6A2D800B30E8B /* Info.plist */,
-			);
-			path = RuinTests;
-			sourceTree = "<group>";
-		};
 		916A5FA120D6A31200B30E8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9180611B20D6A4D800882EB9 /* AudioKit.framework */,
-				916A5FA220D6A31200B30E8B /* AudioKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		916A5FA420D6A3F500B30E8B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				916A5FA520D6A3FE00B30E8B /* Audio */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		916A5FA520D6A3FE00B30E8B /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				916A5FA620D6A41C00B30E8B /* AudioManager.swift */,
-			);
-			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +213,41 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		9147095C225A78AE006B4632 /* Ruin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9147097A225A78AF006B4632 /* Build configuration list for PBXNativeTarget "Ruin" */;
+			buildPhases = (
+				91470959225A78AE006B4632 /* Sources */,
+				9147095A225A78AE006B4632 /* Frameworks */,
+				9147095B225A78AE006B4632 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ruin;
+			productName = Ruin;
+			productReference = 9147095D225A78AE006B4632 /* Ruin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		91470972225A78AF006B4632 /* RuinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9147097D225A78AF006B4632 /* Build configuration list for PBXNativeTarget "RuinTests" */;
+			buildPhases = (
+				9147096F225A78AF006B4632 /* Sources */,
+				91470970225A78AF006B4632 /* Frameworks */,
+				91470971225A78AF006B4632 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91470975225A78AF006B4632 /* PBXTargetDependency */,
+			);
+			name = RuinTests;
+			productName = RuinTests;
+			productReference = 91470973225A78AF006B4632 /* RuinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		916A5F3420D6A29400B30E8B /* RuinCore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 916A5F5020D6A29500B30E8B /* Build configuration list for PBXNativeTarget "RuinCore" */;
@@ -323,51 +301,25 @@
 			productReference = 916A5F5720D6A2B300B30E8B /* RuinPlayground.app */;
 			productType = "com.apple.product-type.application";
 		};
-		916A5F7D20D6A2D700B30E8B /* Ruin */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 916A5F9B20D6A2D800B30E8B /* Build configuration list for PBXNativeTarget "Ruin" */;
-			buildPhases = (
-				916A5F7A20D6A2D700B30E8B /* Sources */,
-				916A5F7B20D6A2D700B30E8B /* Frameworks */,
-				916A5F7C20D6A2D700B30E8B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Ruin;
-			productName = Ruin;
-			productReference = 916A5F7E20D6A2D700B30E8B /* Ruin.app */;
-			productType = "com.apple.product-type.application";
-		};
-		916A5F9320D6A2D800B30E8B /* RuinTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 916A5F9E20D6A2D800B30E8B /* Build configuration list for PBXNativeTarget "RuinTests" */;
-			buildPhases = (
-				916A5F9020D6A2D800B30E8B /* Sources */,
-				916A5F9120D6A2D800B30E8B /* Frameworks */,
-				916A5F9220D6A2D800B30E8B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				916A5F9620D6A2D800B30E8B /* PBXTargetDependency */,
-			);
-			name = RuinTests;
-			productName = RuinTests;
-			productReference = 916A5F9420D6A2D800B30E8B /* RuinTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		916832A320D58E25006E775F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Hyper Barn LTD";
 				TargetAttributes = {
+					9147095C225A78AE006B4632 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
+					91470972225A78AF006B4632 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9147095C225A78AE006B4632;
+					};
 					916A5F3420D6A29400B30E8B = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
@@ -381,15 +333,6 @@
 					916A5F5620D6A2B300B30E8B = {
 						CreatedOnToolsVersion = 9.4.1;
 						ProvisioningStyle = Automatic;
-					};
-					916A5F7D20D6A2D700B30E8B = {
-						CreatedOnToolsVersion = 9.4.1;
-						ProvisioningStyle = Automatic;
-					};
-					916A5F9320D6A2D800B30E8B = {
-						CreatedOnToolsVersion = 9.4.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 916A5F7D20D6A2D700B30E8B;
 					};
 				};
 			};
@@ -406,16 +349,33 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				916A5F7D20D6A2D700B30E8B /* Ruin */,
-				916A5F9320D6A2D800B30E8B /* RuinTests */,
 				916A5F3420D6A29400B30E8B /* RuinCore */,
 				916A5F3C20D6A29400B30E8B /* RuinCoreTests */,
 				916A5F5620D6A2B300B30E8B /* RuinPlayground */,
+				9147095C225A78AE006B4632 /* Ruin */,
+				91470972225A78AF006B4632 /* RuinTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9147095B225A78AE006B4632 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9147096D225A78AF006B4632 /* LaunchScreen.storyboard in Resources */,
+				9147096A225A78AF006B4632 /* Assets.xcassets in Resources */,
+				91470965225A78AE006B4632 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91470971225A78AF006B4632 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		916A5F3320D6A29400B30E8B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,31 +400,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		916A5F7C20D6A2D700B30E8B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				916A5F8E20D6A2D800B30E8B /* LaunchScreen.storyboard in Resources */,
-				916A5F8B20D6A2D800B30E8B /* Assets.xcassets in Resources */,
-				916A5F8620D6A2D700B30E8B /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		916A5F9220D6A2D800B30E8B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		91470959225A78AE006B4632 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91470968225A78AE006B4632 /* Ruin.xcdatamodeld in Sources */,
+				91470962225A78AE006B4632 /* ViewController.swift in Sources */,
+				91470960225A78AE006B4632 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9147096F225A78AF006B4632 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91470978225A78AF006B4632 /* RuinTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		916A5F3020D6A29400B30E8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				916A5FA720D6A41C00B30E8B /* AudioManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,52 +446,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		916A5F7A20D6A2D700B30E8B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				916A5F8920D6A2D700B30E8B /* Ruin.xcdatamodeld in Sources */,
-				916A5F8320D6A2D700B30E8B /* ViewController.swift in Sources */,
-				916A5F8120D6A2D700B30E8B /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		916A5F9020D6A2D800B30E8B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				916A5F9920D6A2D800B30E8B /* RuinTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		91470975225A78AF006B4632 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9147095C225A78AE006B4632 /* Ruin */;
+			targetProxy = 91470974225A78AF006B4632 /* PBXContainerItemProxy */;
+		};
 		916A5F4020D6A29400B30E8B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 916A5F3420D6A29400B30E8B /* RuinCore */;
 			targetProxy = 916A5F3F20D6A29400B30E8B /* PBXContainerItemProxy */;
 		};
-		916A5F9620D6A2D800B30E8B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 916A5F7D20D6A2D700B30E8B /* Ruin */;
-			targetProxy = 916A5F9520D6A2D800B30E8B /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		916832B220D58E25006E775F /* Main.storyboard */ = {
+		91470963225A78AE006B4632 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				916832B320D58E25006E775F /* Base */,
+				91470964225A78AE006B4632 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		916832B720D58E25006E775F /* LaunchScreen.storyboard */ = {
+		9147096B225A78AF006B4632 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				916832B820D58E25006E775F /* Base */,
+				9147096C225A78AF006B4632 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -552,25 +494,95 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		916A5F8420D6A2D700B30E8B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				916A5F8520D6A2D700B30E8B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		916A5F8C20D6A2D800B30E8B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				916A5F8D20D6A2D800B30E8B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9147097B225A78AF006B4632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = APB6HJW5WB;
+				INFOPLIST_FILE = Ruin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.Ruin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9147097C225A78AF006B4632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = APB6HJW5WB;
+				INFOPLIST_FILE = Ruin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.Ruin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9147097E225A78AF006B4632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = APB6HJW5WB;
+				INFOPLIST_FILE = RuinTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.RuinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ruin.app/Ruin";
+			};
+			name = Debug;
+		};
+		9147097F225A78AF006B4632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = APB6HJW5WB;
+				INFOPLIST_FILE = RuinTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.RuinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ruin.app/Ruin";
+			};
+			name = Release;
+		};
 		916832C620D58E26006E775F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -742,7 +754,6 @@
 		916A5F4E20D6A29500B30E8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
@@ -762,7 +773,6 @@
 		916A5F4F20D6A29500B30E8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
@@ -817,89 +827,27 @@
 			};
 			name = Release;
 		};
-		916A5F9C20D6A2D800B30E8B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APB6HJW5WB;
-				INFOPLIST_FILE = Ruin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.Ruin;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		916A5F9D20D6A2D800B30E8B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APB6HJW5WB;
-				INFOPLIST_FILE = Ruin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.Ruin;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		916A5F9F20D6A2D800B30E8B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APB6HJW5WB;
-				INFOPLIST_FILE = RuinTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.RuinTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ruin.app/Ruin";
-			};
-			name = Debug;
-		};
-		916A5FA020D6A2D800B30E8B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APB6HJW5WB;
-				INFOPLIST_FILE = RuinTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.RuinTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ruin.app/Ruin";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9147097A225A78AF006B4632 /* Build configuration list for PBXNativeTarget "Ruin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9147097B225A78AF006B4632 /* Debug */,
+				9147097C225A78AF006B4632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9147097D225A78AF006B4632 /* Build configuration list for PBXNativeTarget "RuinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9147097E225A78AF006B4632 /* Debug */,
+				9147097F225A78AF006B4632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		916832A620D58E25006E775F /* Build configuration list for PBXProject "Ruin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -936,27 +884,19 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		916A5F9B20D6A2D800B30E8B /* Build configuration list for PBXNativeTarget "Ruin" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				916A5F9C20D6A2D800B30E8B /* Debug */,
-				916A5F9D20D6A2D800B30E8B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		916A5F9E20D6A2D800B30E8B /* Build configuration list for PBXNativeTarget "RuinTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				916A5F9F20D6A2D800B30E8B /* Debug */,
-				916A5FA020D6A2D800B30E8B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		91470966225A78AE006B4632 /* Ruin.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				91470967225A78AE006B4632 /* Ruin.xcdatamodel */,
+			);
+			currentVersion = 91470967225A78AE006B4632 /* Ruin.xcdatamodel */;
+			path = Ruin.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		916A5F6020D6A2B300B30E8B /* RuinPlayground.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
@@ -964,16 +904,6 @@
 			);
 			currentVersion = 916A5F6120D6A2B300B30E8B /* RuinPlayground.xcdatamodel */;
 			path = RuinPlayground.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		916A5F8720D6A2D700B30E8B /* Ruin.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				916A5F8820D6A2D700B30E8B /* Ruin.xcdatamodel */,
-			);
-			currentVersion = 916A5F8820D6A2D700B30E8B /* Ruin.xcdatamodel */;
-			path = Ruin.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

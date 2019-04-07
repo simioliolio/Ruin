@@ -10,13 +10,9 @@ import UIKit
 import RuinCore
 
 class ViewController: UIViewController {
-    
-    var audioManager: AudioManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        audioManager = AudioManager()
         
     }
 

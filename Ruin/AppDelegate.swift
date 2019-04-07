@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Ruin
 //
-//  Created by Simon Haycock on 17/06/2018.
-//  Copyright © 2018 Hyper Barn LTD. All rights reserved.
+//  Created by Simon Haycock on 07/04/2019.
+//  Copyright © 2019 Hyper Barn LTD. All rights reserved.
 //
 
 import UIKit
@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }

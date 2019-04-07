@@ -1,3 +1,0 @@
-[submodule "ThirdParty/AudioKit"]
-	path = ThirdParty/AudioKit
-	url = https://github.com/AudioKit/AudioKit.git
