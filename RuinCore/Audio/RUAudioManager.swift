@@ -9,11 +9,32 @@
 import Foundation
 import AVFoundation
 
-class RUAudioManager {
+public final class RUAudioManager {
     
-    let audioEnginer = AVAudioEngine()
+    let engine = AVAudioEngine()
+    let player = AVAudioPlayerNode()
     
-    func setup() {
+    public init() { }
+    
+    public func play(audioFile url: URL) throws {
         
+        let audioFile = try AVAudioFile(forReading: url)
+        if player.engine != nil {
+            player.stop()
+            engine.disconnectNodeOutput(player)
+        } else {
+            engine.attach(player)
+        }
+        
+        engine.connect(player, to: engine.mainMixerNode, format: audioFile.processingFormat)
+        
+        if !engine.isRunning {
+            try engine.start()
+        }
+        
+        player.play(at: nil)
+        player.scheduleFile(audioFile, at: nil) {
+            print("complete!")
+        }
     }
 }

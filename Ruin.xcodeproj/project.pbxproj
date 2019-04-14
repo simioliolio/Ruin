@@ -10,6 +10,7 @@
 		124345392263AFD000B64561 /* RUAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124345382263AFD000B64561 /* RUAudioManager.swift */; };
 		1243453A2263B8FC00B64561 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE25FD225E87AC00A4D390 /* Redux.swift */; };
 		1243453B2263B90000B64561 /* RURedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121D5C8D2261FCE20038B2FD /* RURedux.swift */; };
+		124345402263CE4600B64561 /* Air - New Star In The Sky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1243453F2263CE4600B64561 /* Air - New Star In The Sky.mp3 */; };
 		1279DCAC2263AD7100723BFB /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
 		1279DCAD2263AD7100723BFB /* RuinCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1279DCB12263ADF600723BFB /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
@@ -91,6 +92,7 @@
 /* Begin PBXFileReference section */
 		121D5C8D2261FCE20038B2FD /* RURedux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RURedux.swift; sourceTree = "<group>"; };
 		124345382263AFD000B64561 /* RUAudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUAudioManager.swift; sourceTree = "<group>"; };
+		1243453F2263CE4600B64561 /* Air - New Star In The Sky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Air - New Star In The Sky.mp3"; sourceTree = "<group>"; };
 		12DE25FD225E87AC00A4D390 /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		9147095D225A78AE006B4632 /* Ruin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9147095F225A78AE006B4632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +169,14 @@
 				124345382263AFD000B64561 /* RUAudioManager.swift */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		1243453C2263BE1000B64561 /* Test material */ = {
+			isa = PBXGroup;
+			children = (
+				1243453F2263CE4600B64561 /* Air - New Star In The Sky.mp3 */,
+			);
+			path = "Test material";
 			sourceTree = "<group>";
 		};
 		12DE25F9225E864100A4D390 /* Modules */ = {
@@ -273,6 +283,7 @@
 		916A5F5820D6A2B300B30E8B /* RuinPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				1243453C2263BE1000B64561 /* Test material */,
 				916A5F5920D6A2B300B30E8B /* AppDelegate.swift */,
 				916A5F5B20D6A2B300B30E8B /* ViewController.swift */,
 				916A5F5D20D6A2B300B30E8B /* Main.storyboard */,
@@ -496,6 +507,7 @@
 				916A5F6720D6A2B300B30E8B /* LaunchScreen.storyboard in Resources */,
 				916A5F6420D6A2B300B30E8B /* Assets.xcassets in Resources */,
 				916A5F5F20D6A2B300B30E8B /* Main.storyboard in Resources */,
+				124345402263CE4600B64561 /* Air - New Star In The Sky.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
