@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12DE25FE225E87AC00A4D390 /* SimpleRedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE25FD225E87AC00A4D390 /* SimpleRedux.swift */; };
+		121D5C8E2261FCE20038B2FD /* RURedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121D5C8D2261FCE20038B2FD /* RURedux.swift */; };
+		12DE25FE225E87AC00A4D390 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE25FD225E87AC00A4D390 /* Redux.swift */; };
 		91470960225A78AE006B4632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147095F225A78AE006B4632 /* AppDelegate.swift */; };
 		91470962225A78AE006B4632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91470961225A78AE006B4632 /* ViewController.swift */; };
 		91470965225A78AE006B4632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91470963225A78AE006B4632 /* Main.storyboard */; };
@@ -45,7 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12DE25FD225E87AC00A4D390 /* SimpleRedux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleRedux.swift; sourceTree = "<group>"; };
+		121D5C8D2261FCE20038B2FD /* RURedux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RURedux.swift; sourceTree = "<group>"; };
+		12DE25FD225E87AC00A4D390 /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		9147095D225A78AE006B4632 /* Ruin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9147095F225A78AE006B4632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91470961225A78AE006B4632 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		12DE25FA225E865400A4D390 /* Ruin */ = {
 			isa = PBXGroup;
 			children = (
+				91470961225A78AE006B4632 /* ViewController.swift */,
 			);
 			path = Ruin;
 			sourceTree = "<group>";
@@ -140,7 +143,8 @@
 		12DE25FC225E86BB00A4D390 /* Redux */ = {
 			isa = PBXGroup;
 			children = (
-				12DE25FD225E87AC00A4D390 /* SimpleRedux.swift */,
+				12DE25FD225E87AC00A4D390 /* Redux.swift */,
+				121D5C8D2261FCE20038B2FD /* RURedux.swift */,
 			);
 			path = Redux;
 			sourceTree = "<group>";
@@ -151,7 +155,6 @@
 				12DE25FC225E86BB00A4D390 /* Redux */,
 				12DE25F9225E864100A4D390 /* Modules */,
 				9147095F225A78AE006B4632 /* AppDelegate.swift */,
-				91470961225A78AE006B4632 /* ViewController.swift */,
 				91470963225A78AE006B4632 /* Main.storyboard */,
 				91470969225A78AF006B4632 /* Assets.xcassets */,
 				9147096B225A78AF006B4632 /* LaunchScreen.storyboard */,
@@ -444,7 +447,8 @@
 			files = (
 				91470968225A78AE006B4632 /* Ruin.xcdatamodeld in Sources */,
 				91470962225A78AE006B4632 /* ViewController.swift in Sources */,
-				12DE25FE225E87AC00A4D390 /* SimpleRedux.swift in Sources */,
+				12DE25FE225E87AC00A4D390 /* Redux.swift in Sources */,
+				121D5C8E2261FCE20038B2FD /* RURedux.swift in Sources */,
 				91470960225A78AE006B4632 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
