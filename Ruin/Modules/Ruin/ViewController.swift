@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import RuinCore
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var play: UIButton!
+    private var store = RUStore.shared.store
     
     override func viewDidLoad() {
         super.viewDidLoad()

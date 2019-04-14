@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol Action {}
+public protocol Action {}
 
-protocol State {}
+public protocol State {}
 
 typealias Reducer<AppState: State> = (_ action: Action, _ state: AppState?) -> AppState
 
-protocol StoreSubscriber {
+public protocol StoreSubscriber {
     associatedtype SubscribedState: State
     func newState(_ state: SubscribedState)
 }
@@ -33,11 +33,7 @@ struct AnyStoreSubscriber<AppState: State>: StoreSubscriber {
     }
 }
 
-enum StoreSubscriberWrapper<T: StoreSubscriber> {
-    case subscriber(T)
-}
-
-class Store<AppState: State> {
+public class Store<AppState: State> {
     
     typealias SubscribedState = AppState
     
@@ -50,13 +46,13 @@ class Store<AppState: State> {
         self.state = state
     }
     
-    func dispatchAction(_ action: Action) {
+    public func dispatchAction(_ action: Action) {
         state = reducer(action, state)
         guard state != nil else { fatalError("State nil after action!") }
         subscribers.forEach { $0.newState(state!) }
     }
     
-    func subscribe<Subscriber: StoreSubscriber>(_ newSubscriber: Subscriber) where Subscriber.SubscribedState == AppState {
+    public func subscribe<Subscriber: StoreSubscriber>(_ newSubscriber: Subscriber) where Subscriber.SubscribedState == AppState {
         subscribers.append(AnyStoreSubscriber(newSubscriber))
     }
 }
