@@ -31,6 +31,10 @@
 		916A5F6420D6A2B300B30E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A5F6320D6A2B300B30E8B /* Assets.xcassets */; };
 		916A5F6720D6A2B300B30E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916A5F6520D6A2B300B30E8B /* LaunchScreen.storyboard */; };
 		91FF565022749DE1007C0A82 /* RUAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */; };
+		91FF56592274A1D8007C0A82 /* RuinStutterAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FF56582274A1D8007C0A82 /* RuinStutterAudioUnit.m */; };
+		91FF565B2274A1D8007C0A82 /* AudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF565A2274A1D8007C0A82 /* AudioUnitViewController.swift */; };
+		91FF565E2274A1D8007C0A82 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FF565C2274A1D8007C0A82 /* MainInterface.storyboard */; };
+		91FF56632274A1D8007C0A82 /* RuinStutter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 91FF56552274A1D8007C0A82 /* RuinStutter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,13 @@
 			remoteGlobalIDString = 916A5F3420D6A29400B30E8B;
 			remoteInfo = RuinCore;
 		};
+		91FF56612274A1D8007C0A82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 916832A320D58E25006E775F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91FF56542274A1D8007C0A82;
+			remoteInfo = RuinStutter;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -85,6 +96,17 @@
 				1279DCB22263ADF600723BFB /* RuinCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91FF56672274A1D8007C0A82 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				91FF56632274A1D8007C0A82 /* RuinStutter.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -119,6 +141,13 @@
 		916A5F6620D6A2B300B30E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		916A5F6820D6A2B300B30E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUAudioEngine.swift; sourceTree = "<group>"; };
+		91FF56552274A1D8007C0A82 /* RuinStutter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RuinStutter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		91FF56572274A1D8007C0A82 /* RuinStutterAudioUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuinStutterAudioUnit.h; sourceTree = "<group>"; };
+		91FF56582274A1D8007C0A82 /* RuinStutterAudioUnit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuinStutterAudioUnit.m; sourceTree = "<group>"; };
+		91FF565A2274A1D8007C0A82 /* AudioUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewController.swift; sourceTree = "<group>"; };
+		91FF565D2274A1D8007C0A82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		91FF565F2274A1D8007C0A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91FF56602274A1D8007C0A82 /* RuinStutter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RuinStutter-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +186,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1279DCB12263ADF600723BFB /* RuinCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91FF56522274A1D8007C0A82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +279,7 @@
 				916A5F5820D6A2B300B30E8B /* RuinPlayground */,
 				9147095E225A78AE006B4632 /* Ruin */,
 				91470976225A78AF006B4632 /* RuinTests */,
+				91FF56562274A1D8007C0A82 /* RuinStutter */,
 				916832AC20D58E25006E775F /* Products */,
 				916A5FA120D6A31200B30E8B /* Frameworks */,
 			);
@@ -256,6 +293,7 @@
 				916A5F5720D6A2B300B30E8B /* RuinPlayground.app */,
 				9147095D225A78AE006B4632 /* Ruin.app */,
 				91470973225A78AF006B4632 /* RuinTests.xctest */,
+				91FF56552274A1D8007C0A82 /* RuinStutter.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -300,6 +338,19 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91FF56562274A1D8007C0A82 /* RuinStutter */ = {
+			isa = PBXGroup;
+			children = (
+				91FF56572274A1D8007C0A82 /* RuinStutterAudioUnit.h */,
+				91FF56582274A1D8007C0A82 /* RuinStutterAudioUnit.m */,
+				91FF565A2274A1D8007C0A82 /* AudioUnitViewController.swift */,
+				91FF565C2274A1D8007C0A82 /* MainInterface.storyboard */,
+				91FF565F2274A1D8007C0A82 /* Info.plist */,
+				91FF56602274A1D8007C0A82 /* RuinStutter-Bridging-Header.h */,
+			);
+			path = RuinStutter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,16 +448,35 @@
 				916A5F5420D6A2B300B30E8B /* Frameworks */,
 				916A5F5520D6A2B300B30E8B /* Resources */,
 				1279DCB52263ADF600723BFB /* Embed Frameworks */,
+				91FF56672274A1D8007C0A82 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				1279DCB42263ADF600723BFB /* PBXTargetDependency */,
+				91FF56622274A1D8007C0A82 /* PBXTargetDependency */,
 			);
 			name = RuinPlayground;
 			productName = RuinPlayground;
 			productReference = 916A5F5720D6A2B300B30E8B /* RuinPlayground.app */;
 			productType = "com.apple.product-type.application";
+		};
+		91FF56542274A1D8007C0A82 /* RuinStutter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91FF56642274A1D8007C0A82 /* Build configuration list for PBXNativeTarget "RuinStutter" */;
+			buildPhases = (
+				91FF56512274A1D8007C0A82 /* Sources */,
+				91FF56522274A1D8007C0A82 /* Frameworks */,
+				91FF56532274A1D8007C0A82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RuinStutter;
+			productName = RuinStutter;
+			productReference = 91FF56552274A1D8007C0A82 /* RuinStutter.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -414,7 +484,7 @@
 		916832A320D58E25006E775F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Hyper Barn LTD";
 				TargetAttributes = {
@@ -444,6 +514,10 @@
 						CreatedOnToolsVersion = 9.4.1;
 						ProvisioningStyle = Automatic;
 					};
+					91FF56542274A1D8007C0A82 = {
+						CreatedOnToolsVersion = 10.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 916832A620D58E25006E775F /* Build configuration list for PBXProject "Ruin" */;
@@ -464,6 +538,7 @@
 				916A5F5620D6A2B300B30E8B /* RuinPlayground */,
 				9147095C225A78AE006B4632 /* Ruin */,
 				91470972225A78AF006B4632 /* RuinTests */,
+				91FF56542274A1D8007C0A82 /* RuinStutter */,
 			);
 		};
 /* End PBXProject section */
@@ -508,6 +583,14 @@
 				916A5F6420D6A2B300B30E8B /* Assets.xcassets in Resources */,
 				916A5F5F20D6A2B300B30E8B /* Main.storyboard in Resources */,
 				124345402263CE4600B64561 /* Air - New Star In The Sky.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91FF56532274A1D8007C0A82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91FF565E2274A1D8007C0A82 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +643,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		91FF56512274A1D8007C0A82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91FF56592274A1D8007C0A82 /* RuinStutterAudioUnit.m in Sources */,
+				91FF565B2274A1D8007C0A82 /* AudioUnitViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -582,6 +674,11 @@
 			isa = PBXTargetDependency;
 			target = 916A5F3420D6A29400B30E8B /* RuinCore */;
 			targetProxy = 916A5F3F20D6A29400B30E8B /* PBXContainerItemProxy */;
+		};
+		91FF56622274A1D8007C0A82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91FF56542274A1D8007C0A82 /* RuinStutter */;
+			targetProxy = 91FF56612274A1D8007C0A82 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -616,6 +713,14 @@
 				916A5F6620D6A2B300B30E8B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		91FF565C2274A1D8007C0A82 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91FF565D2274A1D8007C0A82 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -961,6 +1066,45 @@
 			};
 			name = Release;
 		};
+		91FF56652274A1D8007C0A82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = APB6HJW5WB;
+				INFOPLIST_FILE = RuinStutter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.RuinPlayground.RuinStutter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RuinStutter/RuinStutter-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91FF56662274A1D8007C0A82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = APB6HJW5WB;
+				INFOPLIST_FILE = RuinStutter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.RuinPlayground.RuinStutter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RuinStutter/RuinStutter-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1014,6 +1158,15 @@
 			buildConfigurations = (
 				916A5F7520D6A2B400B30E8B /* Debug */,
 				916A5F7620D6A2B400B30E8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91FF56642274A1D8007C0A82 /* Build configuration list for PBXNativeTarget "RuinStutter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91FF56652274A1D8007C0A82 /* Debug */,
+				91FF56662274A1D8007C0A82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
