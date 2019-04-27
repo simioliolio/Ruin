@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		124345392263AFD000B64561 /* RUAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124345382263AFD000B64561 /* RUAudioManager.swift */; };
 		1243453A2263B8FC00B64561 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE25FD225E87AC00A4D390 /* Redux.swift */; };
 		1243453B2263B90000B64561 /* RURedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121D5C8D2261FCE20038B2FD /* RURedux.swift */; };
 		124345402263CE4600B64561 /* Air - New Star In The Sky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1243453F2263CE4600B64561 /* Air - New Star In The Sky.mp3 */; };
@@ -31,6 +30,7 @@
 		916A5F6220D6A2B300B30E8B /* RuinPlayground.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 916A5F6020D6A2B300B30E8B /* RuinPlayground.xcdatamodeld */; };
 		916A5F6420D6A2B300B30E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A5F6320D6A2B300B30E8B /* Assets.xcassets */; };
 		916A5F6720D6A2B300B30E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916A5F6520D6A2B300B30E8B /* LaunchScreen.storyboard */; };
+		91FF565022749DE1007C0A82 /* RUAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +91,6 @@
 
 /* Begin PBXFileReference section */
 		121D5C8D2261FCE20038B2FD /* RURedux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RURedux.swift; sourceTree = "<group>"; };
-		124345382263AFD000B64561 /* RUAudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUAudioManager.swift; sourceTree = "<group>"; };
 		1243453F2263CE4600B64561 /* Air - New Star In The Sky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Air - New Star In The Sky.mp3"; sourceTree = "<group>"; };
 		12DE25FD225E87AC00A4D390 /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		9147095D225A78AE006B4632 /* Ruin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +118,7 @@
 		916A5F6320D6A2B300B30E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		916A5F6620D6A2B300B30E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		916A5F6820D6A2B300B30E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUAudioEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +166,7 @@
 		124345372263AE6D00B64561 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				124345382263AFD000B64561 /* RUAudioManager.swift */,
+				91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -537,7 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1243453A2263B8FC00B64561 /* Redux.swift in Sources */,
-				124345392263AFD000B64561 /* RUAudioManager.swift in Sources */,
+				91FF565022749DE1007C0A82 /* RUAudioEngine.swift in Sources */,
 				1243453B2263B90000B64561 /* RURedux.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

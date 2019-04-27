@@ -11,14 +11,15 @@ import RuinCore
 
 class ViewController: UIViewController {
     
-    let audioManger = RUAudioManager()
+    let audioEngine = RUAudioEngine()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let url = Bundle.main.url(forResource: "Air - New Star In The Sky", withExtension: "mp3")!
         do {
-            try audioManger.play(audioFile: url)
+            try audioEngine.load(audioFile: url)
+            audioEngine.play()
         } catch {
             fatalError("error playing audio file with url \(url). error: \(error)")
         }
