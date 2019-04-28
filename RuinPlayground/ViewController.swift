@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreAudioKit
 @testable import RuinCore
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var audioUnitContainer: UIView!
     
     let audioEngine = RUAudioEngine()
 
@@ -28,8 +30,11 @@ class ViewController: UIViewController {
             } catch {
                 fatalError("error playing audio file with url \(url). error: \(error)")
             }
+            
+            // show view of first effect
+            guard let effectOne = self.audioEngine.effectOne else { fatalError("no first effect after setup") }
+            self.showAUView(effectOne.auAudioUnit)
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +42,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    private func showAUView(_ audioUnit: AUAudioUnit) {
+        audioUnit.requestViewController { requestedVC in
+            guard let auViewController = requestedVC else { fatalError("Could not get view from first effect") }
+            DispatchQueue.main.async {
+                auViewController.view.frame = self.audioUnitContainer.bounds
+                self.audioUnitContainer.addSubview(auViewController.view)
+                self.addChildViewController(auViewController)
+                auViewController.didMove(toParentViewController: self)
+            }
+        }
+    }
 
 }
 
