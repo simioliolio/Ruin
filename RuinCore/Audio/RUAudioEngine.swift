@@ -9,6 +9,7 @@
 import Foundation
 import AVFoundation
 
+// Ruin's audio engine has an audio player and three effect slots.
 final public class RUAudioEngine {
     
     private let engine = AVAudioEngine()
@@ -42,4 +43,11 @@ final public class RUAudioEngine {
         
         player.play(at: nil)
     }
+    
+    public lazy var availableAudioUnits: [AVAudioUnitComponent] = {
+        
+        let hyperBarnAUDescription = AudioComponentDescription(componentType: kAudioUnitType_Effect, componentSubType: 0, componentManufacturer: 0x68797062, componentFlags: 0, componentFlagsMask: 0)
+        return AVAudioUnitComponentManager.shared().components(matching: hyperBarnAUDescription) // slow
+    }()
+    
 }

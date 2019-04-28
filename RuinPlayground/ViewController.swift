@@ -11,6 +11,8 @@ import RuinCore
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     let audioEngine = RUAudioEngine()
 
     override func viewDidLoad() {
@@ -34,3 +36,22 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return audioEngine.availableAudioUnits.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell")!
+        cell.textLabel?.text = audioEngine.availableAudioUnits[indexPath.row].name
+        
+        return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    
+}
