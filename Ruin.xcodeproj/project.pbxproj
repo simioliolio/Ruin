@@ -31,10 +31,12 @@
 		916A5F6420D6A2B300B30E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A5F6320D6A2B300B30E8B /* Assets.xcassets */; };
 		916A5F6720D6A2B300B30E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916A5F6520D6A2B300B30E8B /* LaunchScreen.storyboard */; };
 		91FF565022749DE1007C0A82 /* RUAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */; };
-		91FF56592274A1D8007C0A82 /* RuinStutterAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FF56582274A1D8007C0A82 /* RuinStutterAudioUnit.m */; };
+		91FF56592274A1D8007C0A82 /* RuinStutterAudioUnit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 91FF56582274A1D8007C0A82 /* RuinStutterAudioUnit.mm */; };
 		91FF565B2274A1D8007C0A82 /* AudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF565A2274A1D8007C0A82 /* AudioUnitViewController.swift */; };
 		91FF565E2274A1D8007C0A82 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FF565C2274A1D8007C0A82 /* MainInterface.storyboard */; };
 		91FF56632274A1D8007C0A82 /* RuinStutter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 91FF56552274A1D8007C0A82 /* RuinStutter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		91FF566C2275BEB5007C0A82 /* RUAudioUnitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF566B2275BEB5007C0A82 /* RUAudioUnitFactory.swift */; };
+		91FF56712275E7C0007C0A82 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FF566E2275E750007C0A82 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,11 +145,14 @@
 		91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUAudioEngine.swift; sourceTree = "<group>"; };
 		91FF56552274A1D8007C0A82 /* RuinStutter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RuinStutter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FF56572274A1D8007C0A82 /* RuinStutterAudioUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuinStutterAudioUnit.h; sourceTree = "<group>"; };
-		91FF56582274A1D8007C0A82 /* RuinStutterAudioUnit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuinStutterAudioUnit.m; sourceTree = "<group>"; };
+		91FF56582274A1D8007C0A82 /* RuinStutterAudioUnit.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RuinStutterAudioUnit.mm; sourceTree = "<group>"; };
 		91FF565A2274A1D8007C0A82 /* AudioUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewController.swift; sourceTree = "<group>"; };
 		91FF565D2274A1D8007C0A82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		91FF565F2274A1D8007C0A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91FF56602274A1D8007C0A82 /* RuinStutter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RuinStutter-Bridging-Header.h"; sourceTree = "<group>"; };
+		91FF566B2275BEB5007C0A82 /* RUAudioUnitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUAudioUnitFactory.swift; sourceTree = "<group>"; };
+		91FF566D2275E245007C0A82 /* BufferedAudioBus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BufferedAudioBus.hpp; sourceTree = "<group>"; };
+		91FF566E2275E750007C0A82 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91FF56712275E7C0007C0A82 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */,
+				91FF566B2275BEB5007C0A82 /* RUAudioUnitFactory.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -336,6 +343,7 @@
 		916A5FA120D6A31200B30E8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91FF566E2275E750007C0A82 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -343,8 +351,9 @@
 		91FF56562274A1D8007C0A82 /* RuinStutter */ = {
 			isa = PBXGroup;
 			children = (
+				91FF566D2275E245007C0A82 /* BufferedAudioBus.hpp */,
 				91FF56572274A1D8007C0A82 /* RuinStutterAudioUnit.h */,
-				91FF56582274A1D8007C0A82 /* RuinStutterAudioUnit.m */,
+				91FF56582274A1D8007C0A82 /* RuinStutterAudioUnit.mm */,
 				91FF565A2274A1D8007C0A82 /* AudioUnitViewController.swift */,
 				91FF565C2274A1D8007C0A82 /* MainInterface.storyboard */,
 				91FF565F2274A1D8007C0A82 /* Info.plist */,
@@ -619,6 +628,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91FF566C2275BEB5007C0A82 /* RUAudioUnitFactory.swift in Sources */,
 				1243453A2263B8FC00B64561 /* Redux.swift in Sources */,
 				91FF565022749DE1007C0A82 /* RUAudioEngine.swift in Sources */,
 				1243453B2263B90000B64561 /* RURedux.swift in Sources */,
@@ -647,7 +657,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91FF56592274A1D8007C0A82 /* RuinStutterAudioUnit.m in Sources */,
+				91FF56592274A1D8007C0A82 /* RuinStutterAudioUnit.mm in Sources */,
 				91FF565B2274A1D8007C0A82 /* AudioUnitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

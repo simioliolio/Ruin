@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RuinCore
+@testable import RuinCore
 
 class ViewController: UIViewController {
     
@@ -18,12 +18,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = Bundle.main.url(forResource: "Air - New Star In The Sky", withExtension: "mp3")!
-        do {
-            try audioEngine.load(audioFile: url)
-            audioEngine.play()
-        } catch {
-            fatalError("error playing audio file with url \(url). error: \(error)")
+        audioEngine.setupEffects {
+            
+            // play a test track
+            let url = Bundle.main.url(forResource: "Air - New Star In The Sky", withExtension: "mp3")!
+            do {
+                try self.audioEngine.load(audioFile: url)
+                self.audioEngine.play()
+            } catch {
+                fatalError("error playing audio file with url \(url). error: \(error)")
+            }
         }
         
     }
@@ -40,13 +44,13 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return audioEngine.availableAudioUnits.count
+        return audioEngine.availableAudioUnitComponents.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell")!
-        cell.textLabel?.text = audioEngine.availableAudioUnits[indexPath.row].name
+        cell.textLabel?.text = audioEngine.availableAudioUnitComponents[indexPath.row].name
         
         return cell
     }
@@ -54,4 +58,7 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //
+    }
 }

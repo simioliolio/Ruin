@@ -14,37 +14,60 @@ final public class RUAudioEngine {
     
     private let engine = AVAudioEngine()
     private let player = AVAudioPlayerNode()
+    var effectOne: AVAudioNode?
     
-    public init() {
+    init() { }
+    
+    func setupEffects(completion: @escaping ()->()) {
         
-        // attach nodes
-        engine.attach(player)
-        
-        // connect nodes
-        engine.connect(player, to: engine.mainMixerNode, format: nil)
+        // instantiate initial effects
+        DispatchQueue.global(qos: .default).async {
+            
+            RUAudioUnitFactory.audioUnits(from: self.availableAudioUnitComponents) { result in
+                
+                switch result {
+                case .failure(let error):
+                    fatalError("Could not get audio units from audio unit components. Error: \(error)")
+                case .success(let audioUnits):
+                    self.effectOne = audioUnits.first(where: { $0.name == "RuinStutter" })!
+                    completion()
+                }
+            }
+        }
     }
     
-    public func load(audioFile url: URL) throws {
+    func load(audioFile url: URL) throws {
         
         let audioFile = try AVAudioFile(forReading: url)
-        
         if player.isPlaying { player.stop() }
-        engine.disconnectNodeOutput(player)
-        engine.connect(player, to: engine.mainMixerNode, format: audioFile.processingFormat)
-        
+        connectAudioGraph(format: audioFile.processingFormat)
         if !engine.isRunning { try engine.start() }
-        
         player.scheduleFile(audioFile, at: nil) {
             print("complete!")
         }
     }
     
-    public func play() {
+    private func connectAudioGraph(format: AVAudioFormat) {
+        
+        #warning("Not dettaching nodes from engine!")
+        
+        guard let effectOne = self.effectOne else { fatalError("effects not setup! call setupEffects first and wait for completion") }
+        
+        // attach nodes
+        engine.attach(self.player)
+        engine.attach(effectOne)
+        
+        // connect nodes
+        engine.connect(player, to: effectOne, format: format)
+        engine.connect(effectOne, to: engine.mainMixerNode, format: format)
+    }
+    
+    func play() {
         
         player.play(at: nil)
     }
     
-    public lazy var availableAudioUnits: [AVAudioUnitComponent] = {
+    lazy var availableAudioUnitComponents: [AVAudioUnitComponent] = {
         
         let hyperBarnAUDescription = AudioComponentDescription(componentType: kAudioUnitType_Effect, componentSubType: 0, componentManufacturer: 0x68797062, componentFlags: 0, componentFlagsMask: 0)
         return AVAudioUnitComponentManager.shared().components(matching: hyperBarnAUDescription) // slow
