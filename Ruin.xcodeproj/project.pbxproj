@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1210CBA222AC3437007420AB /* RuinAUUtilites.h in Headers */ = {isa = PBXBuildFile; fileRef = 1210CBA022AC3437007420AB /* RuinAUUtilites.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1210CBA722AC3461007420AB /* BufferedAudioBus.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1210CBA622AC3461007420AB /* BufferedAudioBus.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		1210CBAA22AC35BD007420AB /* DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1210CBA822AC35BD007420AB /* DSPKernel.mm */; };
+		1210CBAB22AC35BD007420AB /* DSPKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1210CBA922AC35BD007420AB /* DSPKernel.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		1210CBB022AC3B15007420AB /* ParameterRamper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1210CBAF22AC3B15007420AB /* ParameterRamper.hpp */; };
 		1243453A2263B8FC00B64561 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE25FD225E87AC00A4D390 /* Redux.swift */; };
 		1243453B2263B90000B64561 /* RURedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121D5C8D2261FCE20038B2FD /* RURedux.swift */; };
 		124345402263CE4600B64561 /* Air - New Star In The Sky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1243453F2263CE4600B64561 /* Air - New Star In The Sky.mp3 */; };
@@ -114,6 +119,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1210CB9E22AC3436007420AB /* RuinAUUtilites.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RuinAUUtilites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1210CBA022AC3437007420AB /* RuinAUUtilites.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuinAUUtilites.h; sourceTree = "<group>"; };
+		1210CBA122AC3437007420AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1210CBA622AC3461007420AB /* BufferedAudioBus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BufferedAudioBus.hpp; sourceTree = "<group>"; };
+		1210CBA822AC35BD007420AB /* DSPKernel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DSPKernel.mm; sourceTree = "<group>"; };
+		1210CBA922AC35BD007420AB /* DSPKernel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DSPKernel.hpp; sourceTree = "<group>"; };
+		1210CBAC22AC3680007420AB /* RuinStutterKernel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RuinStutterKernel.hpp; sourceTree = "<group>"; };
+		1210CBAF22AC3B15007420AB /* ParameterRamper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ParameterRamper.hpp; sourceTree = "<group>"; };
 		121D5C8D2261FCE20038B2FD /* RURedux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RURedux.swift; sourceTree = "<group>"; };
 		1243453F2263CE4600B64561 /* Air - New Star In The Sky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Air - New Star In The Sky.mp3"; sourceTree = "<group>"; };
 		12DE25FD225E87AC00A4D390 /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
@@ -151,11 +164,17 @@
 		91FF565F2274A1D8007C0A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91FF56602274A1D8007C0A82 /* RuinStutter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RuinStutter-Bridging-Header.h"; sourceTree = "<group>"; };
 		91FF566B2275BEB5007C0A82 /* RUAudioUnitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUAudioUnitFactory.swift; sourceTree = "<group>"; };
-		91FF566D2275E245007C0A82 /* BufferedAudioBus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BufferedAudioBus.hpp; sourceTree = "<group>"; };
 		91FF566E2275E750007C0A82 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1210CB9B22AC3436007420AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9147095A225A78AE006B4632 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -205,6 +224,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1210CB9F22AC3437007420AB /* RuinAUUtilites */ = {
+			isa = PBXGroup;
+			children = (
+				1210CBA622AC3461007420AB /* BufferedAudioBus.hpp */,
+				1210CBA922AC35BD007420AB /* DSPKernel.hpp */,
+				1210CBA822AC35BD007420AB /* DSPKernel.mm */,
+				1210CBAF22AC3B15007420AB /* ParameterRamper.hpp */,
+				1210CBA022AC3437007420AB /* RuinAUUtilites.h */,
+				1210CBA122AC3437007420AB /* Info.plist */,
+			);
+			path = RuinAUUtilites;
+			sourceTree = "<group>";
+		};
 		124345372263AE6D00B64561 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +319,7 @@
 				9147095E225A78AE006B4632 /* Ruin */,
 				91470976225A78AF006B4632 /* RuinTests */,
 				91FF56562274A1D8007C0A82 /* RuinStutter */,
+				1210CB9F22AC3437007420AB /* RuinAUUtilites */,
 				916832AC20D58E25006E775F /* Products */,
 				916A5FA120D6A31200B30E8B /* Frameworks */,
 			);
@@ -301,6 +334,7 @@
 				9147095D225A78AE006B4632 /* Ruin.app */,
 				91470973225A78AF006B4632 /* RuinTests.xctest */,
 				91FF56552274A1D8007C0A82 /* RuinStutter.appex */,
+				1210CB9E22AC3436007420AB /* RuinAUUtilites.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -351,9 +385,9 @@
 		91FF56562274A1D8007C0A82 /* RuinStutter */ = {
 			isa = PBXGroup;
 			children = (
-				91FF566D2275E245007C0A82 /* BufferedAudioBus.hpp */,
 				91FF56572274A1D8007C0A82 /* RuinStutterAudioUnit.h */,
 				91FF56582274A1D8007C0A82 /* RuinStutterAudioUnit.mm */,
+				1210CBAC22AC3680007420AB /* RuinStutterKernel.hpp */,
 				91FF565A2274A1D8007C0A82 /* AudioUnitViewController.swift */,
 				91FF565C2274A1D8007C0A82 /* MainInterface.storyboard */,
 				91FF565F2274A1D8007C0A82 /* Info.plist */,
@@ -365,6 +399,17 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		1210CB9922AC3436007420AB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1210CBAB22AC35BD007420AB /* DSPKernel.hpp in Headers */,
+				1210CBB022AC3B15007420AB /* ParameterRamper.hpp in Headers */,
+				1210CBA222AC3437007420AB /* RuinAUUtilites.h in Headers */,
+				1210CBA722AC3461007420AB /* BufferedAudioBus.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		916A5F3220D6A29400B30E8B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -376,6 +421,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1210CB9D22AC3436007420AB /* RuinAUUtilites */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1210CBA522AC3437007420AB /* Build configuration list for PBXNativeTarget "RuinAUUtilites" */;
+			buildPhases = (
+				1210CB9922AC3436007420AB /* Headers */,
+				1210CB9A22AC3436007420AB /* Sources */,
+				1210CB9B22AC3436007420AB /* Frameworks */,
+				1210CB9C22AC3436007420AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RuinAUUtilites;
+			productName = RuinAUUtilites;
+			productReference = 1210CB9E22AC3436007420AB /* RuinAUUtilites.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		9147095C225A78AE006B4632 /* Ruin */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9147097A225A78AF006B4632 /* Build configuration list for PBXNativeTarget "Ruin" */;
@@ -497,6 +560,10 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Hyper Barn LTD";
 				TargetAttributes = {
+					1210CB9D22AC3436007420AB = {
+						CreatedOnToolsVersion = 10.2;
+						ProvisioningStyle = Automatic;
+					};
 					9147095C225A78AE006B4632 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
@@ -548,11 +615,19 @@
 				9147095C225A78AE006B4632 /* Ruin */,
 				91470972225A78AF006B4632 /* RuinTests */,
 				91FF56542274A1D8007C0A82 /* RuinStutter */,
+				1210CB9D22AC3436007420AB /* RuinAUUtilites */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1210CB9C22AC3436007420AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9147095B225A78AE006B4632 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -606,6 +681,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1210CB9A22AC3436007420AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1210CBAA22AC35BD007420AB /* DSPKernel.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		91470959225A78AE006B4632 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -736,6 +819,59 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1210CBA322AC3437007420AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = APB6HJW5WB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RuinAUUtilites/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.RuinAUUtilites;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1210CBA422AC3437007420AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = APB6HJW5WB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RuinAUUtilites/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.RuinAUUtilites;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		9147097B225A78AF006B4632 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1118,6 +1254,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1210CBA522AC3437007420AB /* Build configuration list for PBXNativeTarget "RuinAUUtilites" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1210CBA322AC3437007420AB /* Debug */,
+				1210CBA422AC3437007420AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9147097A225A78AF006B4632 /* Build configuration list for PBXNativeTarget "Ruin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

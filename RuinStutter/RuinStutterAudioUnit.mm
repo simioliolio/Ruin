@@ -9,7 +9,8 @@
 #import "RuinStutterAudioUnit.h"
 
 #import <AVFoundation/AVFoundation.h>
-#import "BufferedAudioBus.hpp"
+#import "RuinAUUtilites/RuinAUUtilites.h"
+#import "RuinStutterKernel.hpp"
 
 // Define parameter addresses.
 const AudioUnitParameterID myParam1 = 0;
@@ -25,6 +26,7 @@ const AudioUnitParameterID myParam1 = 0;
 
 
 @implementation RuinStutterAudioUnit {
+    RuinStutterKernel _kernel;
     BufferedInputBus _inputBus;
 }
 
@@ -39,6 +41,9 @@ const AudioUnitParameterID myParam1 = 0;
     
     // Initialize a default format for the busses.
     AVAudioFormat *defaultFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100.0 channels:2];
+    
+    // Initialize DSP kernel
+    _kernel.init();
     
     // Create the input and output busses.
     _inputBus.init(defaultFormat, 8);
