@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        audioEngine.setupEffects {
+        audioEngine.setup {
             
             // play a test track
             let url = Bundle.main.url(forResource: "Air - New Star In The Sky", withExtension: "mp3")!

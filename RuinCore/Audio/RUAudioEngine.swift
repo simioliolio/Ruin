@@ -13,12 +13,12 @@ import AVFoundation
 final public class RUAudioEngine {
     
     private let engine = AVAudioEngine()
-    private let player = AVAudioPlayerNode()
+    private var currentPlayer: AVAudioPlayerNode?
     var effectOne: AVAudioNode?
     
     init() { }
     
-    func setupEffects(completion: @escaping ()->()) {
+    func setup(completion: @escaping ()->()) {
         
         // instantiate initial effects
         DispatchQueue.global(qos: .default).async {
@@ -29,7 +29,12 @@ final public class RUAudioEngine {
                 case .failure(let error):
                     fatalError("Could not get audio units from audio unit components. Error: \(error)")
                 case .success(let audioUnits):
-                    self.effectOne = audioUnits.first(where: { $0.name == "RuinStutter" })!
+                    guard let effectOne = audioUnits.first(where: { $0.name == "RuinStutter" }) else {
+                        fatalError("Stutter audio unit not found")
+                    }
+                    self.engine.attach(effectOne)
+                    self.engine.connect(effectOne, to: self.engine.mainMixerNode, format: nil)
+                    self.effectOne = effectOne // keep reference
                     completion()
                 }
             }
@@ -38,33 +43,28 @@ final public class RUAudioEngine {
     
     func load(audioFile url: URL) throws {
         
+        guard let effectOne = effectOne else { fatalError("setup not called before trying to loading audio file") } // TODO: Throw
+        
         let audioFile = try AVAudioFile(forReading: url)
-        if player.isPlaying { player.stop() }
-        connectAudioGraph(format: audioFile.processingFormat)
+        if let currentPlayer = currentPlayer {
+            currentPlayer.stop()
+            engine.disconnectNodeOutput(currentPlayer)
+            engine.detach(currentPlayer)
+            self.currentPlayer = nil
+        }
+        let newPlayer = AVAudioPlayerNode()
+        engine.attach(newPlayer)
+        engine.connect(newPlayer, to: effectOne, format: audioFile.processingFormat)
         if !engine.isRunning { try engine.start() }
-        player.scheduleFile(audioFile, at: nil) {
+        newPlayer.scheduleFile(audioFile, at: nil) {
             print("complete!")
         }
-    }
-    
-    private func connectAudioGraph(format: AVAudioFormat) {
-        
-        #warning("Not dettaching nodes from engine!")
-        
-        guard let effectOne = self.effectOne else { fatalError("effects not setup! call setupEffects first and wait for completion") }
-        
-        // attach nodes
-        engine.attach(self.player)
-        engine.attach(effectOne)
-        
-        // connect nodes
-        engine.connect(player, to: effectOne, format: format)
-        engine.connect(effectOne, to: engine.mainMixerNode, format: format)
+        self.currentPlayer = newPlayer
     }
     
     func play() {
         
-        player.play(at: nil)
+        currentPlayer?.play(at: nil)
     }
     
     lazy var availableAudioUnitComponents: [AVAudioUnitComponent] = {
