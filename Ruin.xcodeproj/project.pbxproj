@@ -12,6 +12,7 @@
 		1210CBAA22AC35BD007420AB /* DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1210CBA822AC35BD007420AB /* DSPKernel.mm */; };
 		1210CBAB22AC35BD007420AB /* DSPKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1210CBA922AC35BD007420AB /* DSPKernel.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1210CBB022AC3B15007420AB /* ParameterRamper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1210CBAF22AC3B15007420AB /* ParameterRamper.hpp */; };
+		123CC6FF22B5486600C76CAD /* RuinAUUtilites.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1210CB9E22AC3436007420AB /* RuinAUUtilites.framework */; };
 		1243453A2263B8FC00B64561 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE25FD225E87AC00A4D390 /* Redux.swift */; };
 		1243453B2263B90000B64561 /* RURedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121D5C8D2261FCE20038B2FD /* RURedux.swift */; };
 		124345402263CE4600B64561 /* Air - New Star In The Sky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1243453F2263CE4600B64561 /* Air - New Star In The Sky.mp3 */; };
@@ -217,6 +218,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				123CC6FF22B5486600C76CAD /* RuinAUUtilites.framework in Frameworks */,
 				91FF56712275E7C0007C0A82 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

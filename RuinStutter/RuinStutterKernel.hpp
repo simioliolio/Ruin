@@ -12,18 +12,30 @@
 #import "RuinAUUtilites/RuinAUUtilites.h"
 
 // TODO: Declare superclass as public?
-class RuinStutterKernel : DSPKernel {
+class RuinStutterKernel : public DSPKernel {
     
 public:
     
     RuinStutterKernel() {}
     
-    void init() {
-        
+    void init(int channelCount) {
+        _channelCount = channelCount;
+    }
+    
+    // TODO: move to superclass?
+    void setBuffers(AudioBufferList* inBufferList, AudioBufferList* outBufferList) {
+        inBufferListPtr = inBufferList;
+        outBufferListPtr = outBufferList;
     }
     
     void process(AUAudioFrameCount frameCount, AUAudioFrameCount bufferOffset) {
-#warning Unimplemented!
+        
+        for (int frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
+            
+            for (int channel = 0; channel < _channelCount; ++channel) {
+                outBufferListPtr->mBuffers[channel].mData = inBufferListPtr->mBuffers[channel].mData;
+            }
+        }
     }
     
     void startRamp(AUParameterAddress address, AUValue value, AUAudioFrameCount duration) {
@@ -34,15 +46,11 @@ public:
 #warning Unimplemented!
     }
     
-    void processWithEvents(AudioTimeStamp const* timestamp, AUAudioFrameCount frameCount, AURenderEvent const* events) {
-        
-    }
-    
-    
     
 private:
-    
-    
+    int _channelCount;
+    AudioBufferList* inBufferListPtr = nullptr;
+    AudioBufferList* outBufferListPtr = nullptr;
 };
 
 #endif /* RuinStutterKernel_h */

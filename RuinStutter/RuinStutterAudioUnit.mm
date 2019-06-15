@@ -43,7 +43,7 @@ const AudioUnitParameterID myParam1 = 0;
     AVAudioFormat *defaultFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100.0 channels:2];
     
     // Initialize DSP kernel
-    _kernel.init();
+    _kernel.init(defaultFormat.channelCount);
     
     // Create the input and output busses.
     _inputBus.init(defaultFormat, 8);
@@ -138,7 +138,7 @@ const AudioUnitParameterID myParam1 = 0;
     // Capture in locals to avoid Obj-C member lookups. If "self" is captured in render, we're doing it wrong. See sample code.
     
     // Specify captured objects are mutable.
-//    __block FilterDSPKernel *state = &_kernel;
+    __block RuinStutterKernel *state = &_kernel;
     __block BufferedInputBus *input = &_inputBus;
     
     return ^AUAudioUnitStatus(
@@ -160,9 +160,6 @@ const AudioUnitParameterID myParam1 = 0;
         
         // If passed null output buffer pointers, process in-place in the input buffer.
         AudioBufferList *outAudioBufferList = outputData;
-        
-        #warning("bypassing!")
-        outAudioBufferList->mBuffers[0].mData = nullptr;
 
         if (outAudioBufferList->mBuffers[0].mData == nullptr) {
             for (UInt32 i = 0; i < outAudioBufferList->mNumberBuffers; ++i) {
@@ -170,8 +167,8 @@ const AudioUnitParameterID myParam1 = 0;
             }
         }
         
-//        state->setBuffers(inAudioBufferList, outAudioBufferList);
-//        state->processWithEvents(timestamp, frameCount, realtimeEventListHead);
+        state->setBuffers(inAudioBufferList, outAudioBufferList);
+        state->processWithEvents(timestamp, frameCount, realtimeEventListHead);
         
         return noErr;
     };
