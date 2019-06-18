@@ -12,8 +12,30 @@
 #import "RuinAUUtilites/RuinAUUtilites.h"
 #import "RuinStutterKernel.hpp"
 
-// Define parameter addresses.
-const AudioUnitParameterID myParam1 = 0;
+static const UInt8 kNumberOfPresets = 1;
+static const NSInteger kDefaultFactoryPreset = 0;
+
+typedef struct FactoryPresetParameters {
+    AUValue enable; // TODO: Does not need to be part of preset
+    AUValue length;
+} FactoryPresetParameters;
+
+static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
+{
+    {
+        0.0f,    // StutterParameterEnable
+        200.0f,  // StutterParameterLength
+    }
+};
+
+// TODO: Abstract / refactor?
+static AUAudioUnitPreset* NewAUPreset(NSInteger number, NSString *name)
+{
+    AUAudioUnitPreset *aPreset = [AUAudioUnitPreset new];
+    aPreset.number = number;
+    aPreset.name = name;
+    return aPreset;
+}
 
 @interface RuinStutterAudioUnit ()
 
@@ -28,6 +50,9 @@ const AudioUnitParameterID myParam1 = 0;
 @implementation RuinStutterAudioUnit {
     RuinStutterKernel _kernel;
     BufferedInputBus _inputBus;
+    
+    NSInteger _currentFactoryPresetIndex; // needed?
+    NSArray<AUAudioUnitPreset *> *_presets;
 }
 
 @synthesize parameterTree = _parameterTree;
@@ -53,31 +78,76 @@ const AudioUnitParameterID myParam1 = 0;
     _inputBusArray  = [[AUAudioUnitBusArray alloc] initWithAudioUnit:self busType:AUAudioUnitBusTypeInput busses: @[_inputBus.bus]];
     _outputBusArray = [[AUAudioUnitBusArray alloc] initWithAudioUnit:self busType:AUAudioUnitBusTypeOutput busses: @[_outputBus]];
     
-    // Create parameter objects.
-    AUParameter *param1 = [AUParameterTree createParameterWithIdentifier:@"param1" name:@"Parameter 1" address:myParam1 min:0 max:100 unit:kAudioUnitParameterUnit_Percent unitName:nil flags:0 valueStrings:nil dependentParameters:nil];
+    // Create parameters
+    AUParameter *enableParameter = [AUParameterTree createParameterWithIdentifier:@"enable"
+                                                                             name:@"Enable"
+                                                                          address:StutterParameterEnable
+                                                                              min:0
+                                                                              max:1
+                                                                             unit:kAudioUnitParameterUnit_Boolean
+                                                                         unitName:nil
+                                                                            flags:kAudioUnitParameterFlag_IsReadable | kAudioUnitParameterFlag_IsWritable | kAudioUnitParameterFlag_CanRamp
+                                                                     valueStrings:nil
+                                                              dependentParameters:nil];
     
-    // Initialize the parameter values.
-    param1.value = 0.5;
+    AUParameter *lengthParameter = [AUParameterTree createParameterWithIdentifier:@"length"
+                                                                             name:@"Length"
+                                                                          address:StutterParameterLength
+                                                                              min:1
+                                                                              max:2000
+                                                                             unit:kAudioUnitParameterUnit_Milliseconds
+                                                                         unitName:nil
+                                                                            flags:kAudioUnitParameterFlag_IsReadable | kAudioUnitParameterFlag_IsWritable | kAudioUnitParameterFlag_CanRamp
+                                                                     valueStrings:nil
+                                                              dependentParameters:nil];
     
-    // Create the parameter tree.
-    _parameterTree = [AUParameterTree createTreeWithChildren:@[ param1 ]];
+    // Set default for parameters
+    enableParameter.value = 0;
+    lengthParameter.value = 200;
     
-    // A function to provide string representations of parameter values.
+    _kernel.setParameter(StutterParameterEnable, enableParameter.value);
+    _kernel.setParameter(StutterParameterLength, lengthParameter.value);
+    
+    // Create parameter tree
+    _parameterTree = [AUParameterTree createTreeWithChildren:@[enableParameter, lengthParameter]];
+    
+    // A function to provide string representations of parameter values
     _parameterTree.implementorStringFromValueCallback = ^(AUParameter *param, const AUValue *__nullable valuePtr) {
         AUValue value = valuePtr == nil ? param.value : *valuePtr;
         
         switch (param.address) {
-            case myParam1:
+            case StutterParameterEnable:
+                return value == 0 ? @"Enabled" : @"Disabled";
+            case StutterParameterLength:
                 return [NSString stringWithFormat:@"%.f", value];
             default:
                 return @"?";
         }
     };
     
+    // Plumbing for AU parameter observing / providing
+    __block RuinStutterKernel *blockKernel = &_kernel;
+    // implementorValueObserver is called when a parameter changes value
+    _parameterTree.implementorValueObserver = ^(AUParameter * _Nonnull param, AUValue value) {
+        blockKernel->setParameter(param.address, value);
+    };
+    // implementorValueProvider is called when the value needs to be refreshed
+    _parameterTree.implementorValueProvider = ^AUValue(AUParameter * _Nonnull param) {
+        return blockKernel->getParameter(param.address);
+    };
+    
+    // Create factory preset array.
+    _currentFactoryPresetIndex = kDefaultFactoryPreset;
+    _presets = @[NewAUPreset(0, @"Default")];
+    
     self.maximumFramesToRender = 512;
+    
+    self.currentPreset = _presets.firstObject;
     
     return self;
 }
+
+// TODO: Handle presets
 
 #pragma mark - AUAudioUnit Overrides
 
@@ -124,12 +194,15 @@ const AudioUnitParameterID myParam1 = 0;
 - (void)deallocateRenderResources {
     
     _inputBus.deallocateRenderResources();
+    
+    // TODO: Deallocate memory for stutter kernel
+    
     [super deallocateRenderResources];
 }
 
-//- (BOOL)canProcessInPlace {
-//    return YES;
-//}
+- (BOOL)canProcessInPlace {
+    return YES;
+}
 
 #pragma mark - AUAudioUnit (AUAudioUnitImplementation)
 
