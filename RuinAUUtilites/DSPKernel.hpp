@@ -12,6 +12,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <algorithm>
 
+// TODO: Declared in algorithm, can be removed
 template <typename T>
 T clamp(T input, T low, T high) {
 	return std::min(std::max(input, low), high);
