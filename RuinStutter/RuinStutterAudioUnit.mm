@@ -28,15 +28,6 @@ static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
     }
 };
 
-// TODO: Abstract / refactor?
-static AUAudioUnitPreset* NewAUPreset(NSInteger number, NSString *name)
-{
-    AUAudioUnitPreset *aPreset = [AUAudioUnitPreset new];
-    aPreset.number = number;
-    aPreset.name = name;
-    return aPreset;
-}
-
 @interface RuinStutterAudioUnit ()
 
 @property (nonatomic, readwrite) AUParameterTree *parameterTree;
@@ -51,7 +42,8 @@ static AUAudioUnitPreset* NewAUPreset(NSInteger number, NSString *name)
     RuinStutterKernel _kernel;
     BufferedInputBus _inputBus;
     
-    NSInteger _currentFactoryPresetIndex; // needed?
+    NSInteger _currentFactoryPresetIndex;
+    AUAudioUnitPreset *_currentPreset;
     NSArray<AUAudioUnitPreset *> *_presets;
 }
 
@@ -138,13 +130,19 @@ static AUAudioUnitPreset* NewAUPreset(NSInteger number, NSString *name)
     
     // Create factory preset array.
     _currentFactoryPresetIndex = kDefaultFactoryPreset;
-    _presets = @[NewAUPreset(0, @"Default")];
+    _presets = @[[self newPresetWithNumber:0 name:@"Default"]];
+    _currentPreset = _presets.firstObject;
     
     self.maximumFramesToRender = 512;
     
-    self.currentPreset = _presets.firstObject;
-    
     return self;
+}
+
+- (AUAudioUnitPreset*)newPresetWithNumber:(NSInteger)number name:(NSString *)name {
+    AUAudioUnitPreset *aPreset = [AUAudioUnitPreset new];
+    aPreset.number = number;
+    aPreset.name = name;
+    return aPreset;
 }
 
 // TODO: Handle presets
@@ -202,6 +200,51 @@ static AUAudioUnitPreset* NewAUPreset(NSInteger number, NSString *name)
 
 - (BOOL)canProcessInPlace {
     return YES;
+}
+
+- (AUAudioUnitPreset *)currentPreset
+{
+    if (_currentPreset.number >= 0) {
+        NSLog(@"Returning Current Factory Preset: %ld\n", (long)_currentFactoryPresetIndex);
+        return [_presets objectAtIndex:_currentFactoryPresetIndex];
+    } else {
+        NSLog(@"Returning Current Custom Preset: %ld, %@\n", (long)_currentPreset.number, _currentPreset.name);
+        return _currentPreset;
+    }
+}
+
+- (void)setCurrentPreset:(AUAudioUnitPreset *)currentPreset {
+    
+    NSAssert(currentPreset != nil, @"Setting nil as current preset");
+    
+    if (currentPreset.number >= 0) {
+        for (AUAudioUnitPreset *factoryPreset in _presets) {
+            if (currentPreset.number == factoryPreset.number) {
+                
+                AUParameter *enableParameter = [self.parameterTree valueForKey: @"enable"];
+                AUParameter *lengthParameter = [self.parameterTree valueForKey: @"length"];
+                
+                enableParameter.value = presetParameters[factoryPreset.number].enable;
+                lengthParameter.value = presetParameters[factoryPreset.number].length;
+                
+                // set factory preset as current
+                _currentPreset = currentPreset;
+                _currentFactoryPresetIndex = factoryPreset.number;
+                NSLog(@"currentPreset Factory: %ld, %@\n", (long)_currentFactoryPresetIndex, factoryPreset.name);
+                break;
+            }
+        }
+    } else if (nil != currentPreset.name) {
+        // set custom preset as current
+        _currentPreset = currentPreset;
+        NSLog(@"currentPreset Custom: %ld, %@\n", (long)_currentPreset.number, _currentPreset.name);
+    } else {
+        NSLog(@"setCurrentPreset not set! - invalid AUAudioUnitPreset\n");
+    }
+}
+
+- (NSArray<AUAudioUnitPreset*>*)factoryPresets {
+    return _presets;
 }
 
 #pragma mark - AUAudioUnit (AUAudioUnitImplementation)
