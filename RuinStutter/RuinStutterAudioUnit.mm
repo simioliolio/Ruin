@@ -60,7 +60,7 @@ static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
     AVAudioFormat *defaultFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100.0 channels:2];
     
     // Initialize DSP kernel
-    _kernel.init(defaultFormat.channelCount);
+    _kernel.init(defaultFormat.channelCount, defaultFormat.sampleRate);
     
     // Create the input and output busses.
     _inputBus.init(defaultFormat, 8);

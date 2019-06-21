@@ -24,10 +24,11 @@ public:
     
     RuinStutterKernel() {}
     
-    void init(int inChannelCount) {
+    void init(int inChannelCount, double inSampleRate) {
         channelCount = inChannelCount;
         enableRamper.init();
         lengthRamper.init();
+        dezipperRampDuration = (AUAudioFrameCount)floor(0.02 * inSampleRate);
     }
     
     void reset() {
@@ -79,9 +80,20 @@ public:
     
     void process(AUAudioFrameCount frameCount, AUAudioFrameCount bufferOffset) {
         
+        enableRamper.dezipperCheck(dezipperRampDuration);
+        lengthRamper.dezipperCheck(dezipperRampDuration);
+        
         for (int frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
             
             for (int channel = 0; channel < channelCount; ++channel) {
+                
+                double enable = double(enableRamper.getAndStep());
+                double length = double(lengthRamper.getAndStep());
+                if (enable) {
+                    printf("len: %f", length);
+//                    std::cout << "Wooooop" << std::endl;
+                    
+                }
                 outBufferListPtr->mBuffers[channel].mData = inBufferListPtr->mBuffers[channel].mData;
             }
         }
@@ -96,8 +108,9 @@ private:
     int channelCount;
     AudioBufferList* inBufferListPtr = nullptr;
     AudioBufferList* outBufferListPtr = nullptr;
-    ParameterRamper enableRamper = 0; // off or on
-    ParameterRamper lengthRamper = 1; // length in s
+    ParameterRamper enableRamper = {0}; // off or on
+    ParameterRamper lengthRamper = {1}; // length in s
+    AUAudioFrameCount dezipperRampDuration;
 };
 
 #endif /* RuinStutterKernel_h */

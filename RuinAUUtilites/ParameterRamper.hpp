@@ -20,7 +20,7 @@ class ParameterRamper {
     float _goal;
     float inverseSlope;
     AUAudioFrameCount samplesRemaining;
-	volatile int32_t changeCounter = 0;
+    std::atomic<int32_t> changeCounter = {0}; // TODO: Why this type?
 	int32_t updateCounter = 0;
 
     void setImmediate(float value) {
@@ -49,7 +49,7 @@ public:
 
     void setUIValue(float value) {
         _uiValue = value;
-		OSAtomicIncrement32Barrier(&changeCounter);
+        std::atomic_fetch_add(&changeCounter, 1); // TODO: Why this method of incrementing?
     }
 	
 	float getUIValue() const { return _uiValue; }

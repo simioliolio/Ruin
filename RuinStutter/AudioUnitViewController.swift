@@ -9,34 +9,56 @@
 import CoreAudioKit
 
 public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
-    @IBOutlet weak var enable: UIButton!
-    @IBOutlet weak var length: UISlider!
-    var audioUnit: AUAudioUnit?
     
+    // MARK: IB properties / actions
+    @IBOutlet weak var enable: UIButton!
+    @IBAction func enableToggle(_ sender: Any) {
+        enableParameter.value = enableParameter.value > 0 ? 0 : 1
+    }
+    @IBOutlet weak var length: UISlider!
+    @IBAction func lengthChange(_ sender: Any) {
+        let slider = sender as! UISlider
+        lengthParameter.value = slider.value
+    }
+    
+    // MARK: AU and AU parameters
+    var audioUnit: AUAudioUnit!
+    var enableParameter: AUParameter!
+    var lengthParameter: AUParameter!
+    
+    // MARK: Lifecycle
     public override func viewDidLoad() {
         super.viewDidLoad()
         
         guard let au = audioUnit else { return }
-        
-        guard let enableParameter = au.parameterTree?.allParameters.first(where:{$0.identifier == "enable"})
-            else { fatalError("Cannot get enable parameter") }
-        
-        guard let lengthParameter = au.parameterTree?.allParameters.first(where:{$0.identifier == "length"})
-            else { fatalError("Cannot get length parameter") }
+        connectUI(to: au)
+    }
+    
+    private func connectUI(to au: AUAudioUnit) {
+        guard let enableParameterFromTree = au.parameterTree?.allParameters.first(where:{$0.identifier == "enable"})
+            else { fatalError("Cannot get enable parameter from AU") }
+        enableParameter = enableParameterFromTree
+        guard let lengthParameterFromTree = au.parameterTree?.allParameters.first(where:{$0.identifier == "length"})
+            else { fatalError("Cannot get length parameter from AU") }
+        lengthParameter = lengthParameterFromTree
         
         au.parameterTree?.token(byAddingParameterObserver: { [weak self] address, value in
             guard let self = self else { return }
-            if address == enableParameter.address {
-                value == 0 ? self.enable.setTitle("Enable", for: .normal) : self.enable.setTitle("Enabled", for: .normal)
-            } else if address == lengthParameter.address {
-                self.length.setValue(value, animated: false)
+            DispatchQueue.main.async {
+                if address == enableParameterFromTree.address {
+                    value == 0 ? self.enable.setTitle("Enable", for: .normal) : self.enable.setTitle("Enabled", for: .normal)
+                } else if address == lengthParameterFromTree.address {
+                    self.length.setValue(value, animated: false)
+                }
             }
         })
     }
     
     public func createAudioUnit(with componentDescription: AudioComponentDescription) throws -> AUAudioUnit {
         audioUnit = try RuinStutterAudioUnit(componentDescription: componentDescription, options: [])
-        
+        if isViewLoaded {
+            connectUI(to: audioUnit!)
+        }
         return audioUnit!
     }
     
