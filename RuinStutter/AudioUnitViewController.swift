@@ -9,16 +9,29 @@
 import CoreAudioKit
 
 public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
+    @IBOutlet weak var enable: UIButton!
+    @IBOutlet weak var length: UISlider!
     var audioUnit: AUAudioUnit?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        if audioUnit == nil {
-            return
-        }
+        guard let au = audioUnit else { return }
         
-        // Get the parameter tree and add observers for any parameters that the UI needs to keep in sync with the AudioUnit
+        guard let enableParameter = au.parameterTree?.allParameters.first(where:{$0.identifier == "enable"})
+            else { fatalError("Cannot get enable parameter") }
+        
+        guard let lengthParameter = au.parameterTree?.allParameters.first(where:{$0.identifier == "length"})
+            else { fatalError("Cannot get length parameter") }
+        
+        au.parameterTree?.token(byAddingParameterObserver: { [weak self] address, value in
+            guard let self = self else { return }
+            if address == enableParameter.address {
+                value == 0 ? self.enable.setTitle("Enable", for: .normal) : self.enable.setTitle("Enabled", for: .normal)
+            } else if address == lengthParameter.address {
+                self.length.setValue(value, animated: false)
+            }
+        })
     }
     
     public func createAudioUnit(with componentDescription: AudioComponentDescription) throws -> AUAudioUnit {
