@@ -18,3 +18,4 @@ FOUNDATION_EXPORT const unsigned char RuinAUUtilitesVersionString[];
 #import "BufferedAudioBus.hpp"
 #import "DSPKernel.hpp"
 #import "ParameterRamper.hpp"
+#import "CircularBuffer.hpp"

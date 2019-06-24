@@ -29,6 +29,7 @@ public:
         enableRamper.init();
         lengthRamper.init();
         dezipperRampDuration = (AUAudioFrameCount)floor(0.02 * inSampleRate);
+//        buffer = CircularBuffer(
     }
     
     void reset() {
@@ -111,6 +112,7 @@ private:
     ParameterRamper enableRamper = {0}; // off or on
     ParameterRamper lengthRamper = {1}; // length in s
     AUAudioFrameCount dezipperRampDuration;
+    CircularBuffer buffer = CircularBuffer(88200);
 };
 
 #endif /* RuinStutterKernel_h */
