@@ -85,8 +85,8 @@ static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
     AUParameter *lengthParameter = [AUParameterTree createParameterWithIdentifier:@"length"
                                                                              name:@"Length"
                                                                           address:StutterParameterLength
-                                                                              min:1
-                                                                              max:2000
+                                                                              min:StutterMinLengthInMS
+                                                                              max:StutterMaxLengthInMS
                                                                              unit:kAudioUnitParameterUnit_Milliseconds
                                                                          unitName:nil
                                                                             flags:kAudioUnitParameterFlag_IsReadable | kAudioUnitParameterFlag_IsWritable | kAudioUnitParameterFlag_CanRamp

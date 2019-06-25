@@ -18,6 +18,9 @@ enum {
     StutterParameterLength = 1
 };
 
+static const int StutterMaxLengthInMS = 2000;
+static const int StutterMinLengthInMS = 1;
+
 class RuinStutterKernel : public DSPKernel {
     
 public:
@@ -29,7 +32,7 @@ public:
         enableRamper.init();
         lengthRamper.init();
         dezipperRampDuration = (AUAudioFrameCount)floor(0.02 * inSampleRate);
-//        buffer = CircularBuffer(
+        buffer = VarispeedCircularBuffer(inSampleRate * secondsFromMS(StutterMaxLengthInMS) * inChannelCount);
     }
     
     void reset() {
@@ -43,7 +46,7 @@ public:
                 enableRamper.setUIValue(clamp(value, 0.0f, 1.0f));
                 break;
             case StutterParameterLength:
-                lengthRamper.setUIValue(clamp(value / 1000.0f, 0.001f, 2.0f));
+                lengthRamper.setUIValue(clamp(secondsFromMS(value), 0.001f, 2.0f));
                 break;
         }
     }
@@ -52,10 +55,8 @@ public:
         switch (address) {
             case StutterParameterEnable:
                 return enableRamper.getUIValue();
-                break;
             case StutterParameterLength:
-                return lengthRamper.getUIValue() * 1000.0f;
-                break;
+                return msFromSeconds(lengthRamper.getUIValue());
             default:
                 std::cout << "Setting unknown parameter" << std::endl;
                 abort();
@@ -68,7 +69,7 @@ public:
                 enableRamper.startRamp(value, duration);
                 break;
             case StutterParameterLength:
-                lengthRamper.startRamp(clamp(value / 1000.0f, 0.001f, 2.0f), duration);
+                lengthRamper.startRamp(clamp(secondsFromMS(value), 0.001f, 2.0f), duration);
                 break;
         }
     }
@@ -92,8 +93,6 @@ public:
                 double length = double(lengthRamper.getAndStep());
                 if (enable) {
                     printf("len: %f", length);
-//                    std::cout << "Wooooop" << std::endl;
-                    
                 }
                 outBufferListPtr->mBuffers[channel].mData = inBufferListPtr->mBuffers[channel].mData;
             }
@@ -112,7 +111,15 @@ private:
     ParameterRamper enableRamper = {0}; // off or on
     ParameterRamper lengthRamper = {1}; // length in s
     AUAudioFrameCount dezipperRampDuration;
-    CircularBuffer buffer = CircularBuffer(88200);
+    VarispeedCircularBuffer buffer = VarispeedCircularBuffer(88200);
+    
+    float secondsFromMS(float ms) {
+        return ms / 1000.0;
+    }
+    
+    float msFromSeconds(float s) {
+        return s * 1000.0;
+    }
 };
 
 #endif /* RuinStutterKernel_h */
