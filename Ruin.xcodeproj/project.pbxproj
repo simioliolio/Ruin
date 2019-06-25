@@ -131,6 +131,7 @@
 		1210CBAF22AC3B15007420AB /* ParameterRamper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ParameterRamper.hpp; sourceTree = "<group>"; };
 		121D5C8D2261FCE20038B2FD /* RURedux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RURedux.swift; sourceTree = "<group>"; };
 		1243453F2263CE4600B64561 /* Air - New Star In The Sky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Air - New Star In The Sky.mp3"; sourceTree = "<group>"; };
+		125BE17722C2D302006E5B6F /* BoolStateChangeTracker.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BoolStateChangeTracker.hpp; sourceTree = "<group>"; };
 		12BC303722C009BF00297389 /* VarispeedCircularBuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VarispeedCircularBuffer.hpp; sourceTree = "<group>"; };
 		12DE25FD225E87AC00A4D390 /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		9147095D225A78AE006B4632 /* Ruin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -393,6 +394,7 @@
 				91FF56572274A1D8007C0A82 /* RuinStutterAudioUnit.h */,
 				91FF56582274A1D8007C0A82 /* RuinStutterAudioUnit.mm */,
 				1210CBAC22AC3680007420AB /* RuinStutterKernel.hpp */,
+				125BE17722C2D302006E5B6F /* BoolStateChangeTracker.hpp */,
 				91FF565A2274A1D8007C0A82 /* AudioUnitViewController.swift */,
 				91FF565C2274A1D8007C0A82 /* MainInterface.storyboard */,
 				91FF565F2274A1D8007C0A82 /* Info.plist */,

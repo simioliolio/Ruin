@@ -10,6 +10,7 @@
 #define RuinStutterKernel_h
 
 #import "RuinAUUtilites/RuinAUUtilites.h"
+#import "BoolStateChangeTracker.hpp"
 #import <iostream>
 #import <algorithm>
 
@@ -89,11 +90,21 @@ public:
             
             for (int channel = 0; channel < channelCount; ++channel) {
                 
-                double enable = double(enableRamper.getAndStep());
-                double length = double(lengthRamper.getAndStep());
-                if (enable) {
-                    printf("len: %f", length);
+                bool enableParameter = double(enableRamper.getAndStep()) > 0.0;
+                double lengthParameter = double(lengthRamper.getAndStep());
+                
+                switch (enableStateTracker.hasStateChanged(enableParameter)) {
+                    case BoolStateChangeResultUnchanged:
+                        // Tumbleweed
+                        break;
+                    case BoolStateChangeResultEnabled:
+                        // Stutter has just been enabled. Reset buffers to 0 and set mode to record
+                        break;
+                    case BoolStateChangeResultDisabled:
+                        // Stutter has just been disabled. Set mode back to passthrough
+                        break;
                 }
+                
                 outBufferListPtr->mBuffers[channel].mData = inBufferListPtr->mBuffers[channel].mData;
             }
         }
@@ -112,6 +123,7 @@ private:
     ParameterRamper lengthRamper = {1}; // length in s
     AUAudioFrameCount dezipperRampDuration;
     VarispeedCircularBuffer buffer = VarispeedCircularBuffer(88200);
+    BoolStateChangeTracker enableStateTracker = false;
     
     float secondsFromMS(float ms) {
         return ms / 1000.0;
@@ -120,6 +132,14 @@ private:
     float msFromSeconds(float s) {
         return s * 1000.0;
     }
+    
+    enum StutterState {
+        StutterStatePassthrough = 0,
+        StutterStateRecord = 1,
+        StutterStatePlayback = 2
+    };
+    
+    StutterState stutterState = StutterStatePassthrough;
 };
 
 #endif /* RuinStutterKernel_h */
