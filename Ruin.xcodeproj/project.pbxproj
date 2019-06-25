@@ -20,7 +20,7 @@
 		1279DCAD2263AD7100723BFB /* RuinCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1279DCB12263ADF600723BFB /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
 		1279DCB22263ADF600723BFB /* RuinCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		12BC303922C009BF00297389 /* CircularBuffer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12BC303722C009BF00297389 /* CircularBuffer.hpp */; };
+		12BC303922C009BF00297389 /* VarispeedCircularBuffer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12BC303722C009BF00297389 /* VarispeedCircularBuffer.hpp */; };
 		91470960225A78AE006B4632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147095F225A78AE006B4632 /* AppDelegate.swift */; };
 		91470962225A78AE006B4632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91470961225A78AE006B4632 /* ViewController.swift */; };
 		91470965225A78AE006B4632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91470963225A78AE006B4632 /* Main.storyboard */; };
@@ -131,7 +131,7 @@
 		1210CBAF22AC3B15007420AB /* ParameterRamper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ParameterRamper.hpp; sourceTree = "<group>"; };
 		121D5C8D2261FCE20038B2FD /* RURedux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RURedux.swift; sourceTree = "<group>"; };
 		1243453F2263CE4600B64561 /* Air - New Star In The Sky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Air - New Star In The Sky.mp3"; sourceTree = "<group>"; };
-		12BC303722C009BF00297389 /* CircularBuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CircularBuffer.hpp; sourceTree = "<group>"; };
+		12BC303722C009BF00297389 /* VarispeedCircularBuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VarispeedCircularBuffer.hpp; sourceTree = "<group>"; };
 		12DE25FD225E87AC00A4D390 /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		9147095D225A78AE006B4632 /* Ruin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9147095F225A78AE006B4632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 				1210CBA622AC3461007420AB /* BufferedAudioBus.hpp */,
 				1210CBA922AC35BD007420AB /* DSPKernel.hpp */,
 				1210CBA822AC35BD007420AB /* DSPKernel.mm */,
-				12BC303722C009BF00297389 /* CircularBuffer.hpp */,
+				12BC303722C009BF00297389 /* VarispeedCircularBuffer.hpp */,
 				1210CBAF22AC3B15007420AB /* ParameterRamper.hpp */,
 				1210CBA022AC3437007420AB /* RuinAUUtilites.h */,
 				1210CBA122AC3437007420AB /* Info.plist */,
@@ -409,7 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1210CBAB22AC35BD007420AB /* DSPKernel.hpp in Headers */,
-				12BC303922C009BF00297389 /* CircularBuffer.hpp in Headers */,
+				12BC303922C009BF00297389 /* VarispeedCircularBuffer.hpp in Headers */,
 				1210CBB022AC3B15007420AB /* ParameterRamper.hpp in Headers */,
 				1210CBA222AC3437007420AB /* RuinAUUtilites.h in Headers */,
 				1210CBA722AC3461007420AB /* BufferedAudioBus.hpp in Headers */,

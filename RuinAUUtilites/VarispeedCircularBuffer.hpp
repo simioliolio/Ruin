@@ -11,31 +11,31 @@
 
 #include <stdio.h>
 
-class CircularBuffer {
+class VarispeedCircularBuffer {
     
 public:
     
-    CircularBuffer(int length) {
+    VarispeedCircularBuffer(int length) {
         bufferLength = length;
         buffer = new float [length];
     }
     
-    ~CircularBuffer() {
+    ~VarispeedCircularBuffer() {
         delete [] buffer;
     }
     
-    float nextAtPlayhead() {
-        if (playbackPosition > bufferLength) {
-            playbackPosition = 0;
+    float nextAtPlayhead(float speed = 1.0) {
+        if (playbackPosition >= bufferLength) {
+            playbackPosition -= bufferLength;
         }
-        float next = buffer[playbackPosition];
+        float next = buffer[int(playbackPosition)];
         playbackPosition++;
         return next;
     }
     
     void nextAtRecordHead(float value) {
-        if (recordPosition > bufferLength) {
-            recordPosition = 0;
+        if (recordPosition >= bufferLength) {
+            recordPosition -= bufferLength;
         }
         buffer[recordPosition] = value;
         recordPosition++;
@@ -46,7 +46,7 @@ private:
     int bufferLength;
     float *buffer;
     int recordPosition = 0;
-    int playbackPosition = 0;
+    float playbackPosition = 0;
 };
 
 #endif /* CircularBuffer_hpp */
