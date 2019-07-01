@@ -30,6 +30,7 @@ public:
     
     void init(int inChannelCount, double inSampleRate) {
         channelCount = inChannelCount;
+        sampleRate = inSampleRate;
         enableRamper.init();
         lengthRamper.init();
         dezipperRampDuration = (AUAudioFrameCount)floor(0.02 * inSampleRate);
@@ -83,29 +84,54 @@ public:
     
     void process(AUAudioFrameCount frameCount, AUAudioFrameCount bufferOffset) {
         
-        enableRamper.dezipperCheck(dezipperRampDuration);
-        lengthRamper.dezipperCheck(dezipperRampDuration);
+        enableRamper.dezipperCheck(0); // instant
+        lengthRamper.dezipperCheck(0); //
         
         for (int frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
             
+            // not ramping
+            bool enableParameter = double(enableRamper.getAndStep()) > 0.0;
+            double lengthParameter = double(lengthRamper.getAndStep());
+            
+            // set mode for current frame
+            switch (enableStateTracker.hasStateChanged(enableParameter)) {
+                case BoolStateChangeResultUnchanged:
+                    // tumbleweed
+                    break;
+                case BoolStateChangeResultEnabled:
+                    // stutter has just been enabled. reset buffers to 0 and set mode to record
+                    buffer.reset();
+                    stutterState = StutterStateRecord;
+                    break;
+                case BoolStateChangeResultDisabled:
+                    // stutter has just been disabled. set mode back to passthrough
+                    stutterState = StutterStatePassthrough;
+                    break;
+            }
+            
+            int frameOffset = int(frameIndex + bufferOffset);
+            
             for (int channel = 0; channel < channelCount; ++channel) {
                 
-                bool enableParameter = double(enableRamper.getAndStep()) > 0.0;
-                double lengthParameter = double(lengthRamper.getAndStep());
-                
-                switch (enableStateTracker.hasStateChanged(enableParameter)) {
-                    case BoolStateChangeResultUnchanged:
-                        // Tumbleweed
+                float* in = (float*)inBufferListPtr->mBuffers[channel].mData + frameOffset;
+                float* out = (float*)outBufferListPtr->mBuffers[channel].mData + frameOffset;
+
+                switch (stutterState) {
+                    case StutterStatePassthrough:
+                        *out = *in;
                         break;
-                    case BoolStateChangeResultEnabled:
-                        // Stutter has just been enabled. Reset buffers to 0 and set mode to record
-                        break;
-                    case BoolStateChangeResultDisabled:
-                        // Stutter has just been disabled. Set mode back to passthrough
-                        break;
+                    case StutterStateRecord:
+                        buffer.nextAtRecordHead(*in);
+                        [[fallthrough]];
+                    case StutterStatePlayback:
+                        // TODO: Expensive
+                        buffer.playbackLength = int(lengthParameter * sampleRate * channelCount);
+                        *out = buffer.nextAtPlayhead();
+                        // after one wrap, the buffer no longer needs to record
+                        if (buffer.playbackWrapCount > 0) {
+                            stutterState = StutterStatePlayback;
+                        }
                 }
-                
-                outBufferListPtr->mBuffers[channel].mData = inBufferListPtr->mBuffers[channel].mData;
             }
         }
     }
@@ -117,6 +143,7 @@ public:
     
 private:
     int channelCount;
+    float sampleRate;
     AudioBufferList* inBufferListPtr = nullptr;
     AudioBufferList* outBufferListPtr = nullptr;
     ParameterRamper enableRamper = {0}; // off or on

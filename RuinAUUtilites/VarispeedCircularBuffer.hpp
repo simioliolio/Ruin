@@ -17,6 +17,7 @@ public:
     
     VarispeedCircularBuffer(int length) {
         bufferLength = length;
+        playbackLength = length;
         buffer = new float [length];
     }
     
@@ -25,8 +26,9 @@ public:
     }
     
     float nextAtPlayhead(float speed = 1.0) {
-        if (playbackPosition >= bufferLength) {
-            playbackPosition -= bufferLength;
+        if (playbackPosition >= playbackLength) {
+            playbackPosition = 0;
+            playbackWrapCount++;
         }
         float next = buffer[int(playbackPosition)];
         playbackPosition++;
@@ -35,15 +37,28 @@ public:
     
     void nextAtRecordHead(float value) {
         if (recordPosition >= bufferLength) {
-            recordPosition -= bufferLength;
+            return; // records once until reset
         }
         buffer[recordPosition] = value;
         recordPosition++;
     }
     
+    void reset() {
+        playbackLength = bufferLength;
+        playbackPosition = 0;
+        recordPosition = 0;
+        playbackWrapCount = 0;
+    }
+    
+    
+public:
+    
+    int playbackLength; // length of buffer used in playback
+    int playbackWrapCount = 0;
+    
 private:
     
-    int bufferLength;
+    int bufferLength; // absolute length of buffer
     float *buffer;
     int recordPosition = 0;
     float playbackPosition = 0;
