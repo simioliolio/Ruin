@@ -22,8 +22,8 @@ enum {
 
 static const int StutterMaxLengthInMS = 2000;
 static const int StutterMinLengthInMS = 1;
-static const float StutterMinPitchAsScalar = 0.5;
-static const float StutterMaxPitchAsScalar = 2.0;
+static const float StutterMinPitchAsRatio = 0.5;
+static const float StutterMaxPitchAsRatio = 2.0;
 
 class RuinStutterKernel : public DSPKernel {
     
@@ -55,7 +55,7 @@ public:
                 lengthRamper.setUIValue(clamp(secondsFromMS(value), 0.001f, 2.0f)); // TODO: Use min and max constants
                 break;
             case StutterParameterPitch:
-                pitchRamper.setUIValue(clamp(value, StutterMinPitchAsScalar, StutterMaxPitchAsScalar));
+                pitchRamper.setUIValue(clamp(value, StutterMinPitchAsRatio, StutterMaxPitchAsRatio));
                 break;
             default:
                 std::cout << "Setting unknown parameter" << std::endl;
@@ -70,7 +70,7 @@ public:
             case StutterParameterLength:
                 return msFromSeconds(lengthRamper.getUIValue());
             case StutterParameterPitch:
-                return lengthRamper.getUIValue();
+                return pitchRamper.getUIValue();
             default:
                 std::cout << "Getting unknown parameter" << std::endl;
                 abort();
@@ -86,7 +86,7 @@ public:
                 lengthRamper.startRamp(clamp(secondsFromMS(value), 0.001f, 2.0f), duration); // TODO: Use min and max constants
                 break;
             case StutterParameterPitch:
-                pitchRamper.startRamp(clamp(value, StutterMinPitchAsScalar, StutterMaxPitchAsScalar), duration);
+                pitchRamper.startRamp(clamp(value, StutterMinPitchAsRatio, StutterMaxPitchAsRatio), duration);
                 break;
         }
     }
@@ -168,7 +168,7 @@ private:
     AudioBufferList* outBufferListPtr = nullptr;
     ParameterRamper enableRamper = {0}; // off or on
     ParameterRamper lengthRamper = {1}; // length in s
-    ParameterRamper pitchRamper = {1}; // pitch as scalar
+    ParameterRamper pitchRamper = {1}; // pitch as ratio
     AUAudioFrameCount dezipperRampDuration;
     VarispeedCircularBuffer buffer = VarispeedCircularBuffer(88200);
     BoolStateChangeTracker enableStateTracker = false;

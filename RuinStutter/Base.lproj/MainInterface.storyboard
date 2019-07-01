@@ -35,12 +35,21 @@
                                     <action selector="lengthChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Qyh-7z-aVJ"/>
                                 </connections>
                             </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.5" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="TVd-Qz-g0o">
+                                <rect key="frame" x="18" y="169" width="378" height="31"/>
+                                <connections>
+                                    <action selector="pitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Enz-ub-hf8"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="TVd-Qz-g0o" firstAttribute="trailing" secondItem="kRh-8I-A0o" secondAttribute="trailing" id="Ap8-hv-CEt"/>
                             <constraint firstItem="1nZ-sk-ej0" firstAttribute="centerX" secondItem="u2v-qu-mbu" secondAttribute="centerX" id="DD1-9s-tIa"/>
                             <constraint firstItem="j5c-MY-xUb" firstAttribute="centerX" secondItem="u2v-qu-mbu" secondAttribute="centerX" id="GEu-gu-ROi"/>
+                            <constraint firstItem="TVd-Qz-g0o" firstAttribute="top" secondItem="kRh-8I-A0o" secondAttribute="bottom" constant="8" id="TAn-9N-4YV"/>
                             <constraint firstItem="kRh-8I-A0o" firstAttribute="leading" secondItem="u2v-qu-mbu" secondAttribute="leading" constant="20" id="Yyz-hn-bMH"/>
+                            <constraint firstItem="TVd-Qz-g0o" firstAttribute="leading" secondItem="kRh-8I-A0o" secondAttribute="leading" id="d1i-3H-UJO"/>
                             <constraint firstItem="kRh-8I-A0o" firstAttribute="centerX" secondItem="u2v-qu-mbu" secondAttribute="centerX" id="g7K-zK-gUx"/>
                             <constraint firstItem="1nZ-sk-ej0" firstAttribute="top" secondItem="j5c-MY-xUb" secondAttribute="bottom" constant="8" id="iLr-ca-HCv"/>
                             <constraint firstItem="kRh-8I-A0o" firstAttribute="top" secondItem="1nZ-sk-ej0" secondAttribute="bottom" constant="8" id="p3C-nw-Ln6"/>
@@ -52,6 +61,7 @@
                     <connections>
                         <outlet property="enable" destination="1nZ-sk-ej0" id="x6R-7p-xfX"/>
                         <outlet property="length" destination="kRh-8I-A0o" id="jIp-Kn-SHn"/>
+                        <outlet property="pitch" destination="TVd-Qz-g0o" id="2Hg-wb-NRl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -18,6 +18,7 @@ static const NSInteger kDefaultFactoryPreset = 0;
 typedef struct FactoryPresetParameters {
     AUValue enable; // TODO: Does not need to be part of preset
     AUValue length;
+    AUValue pitch;
 } FactoryPresetParameters;
 
 static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
@@ -25,6 +26,7 @@ static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
     {
         0.0f,    // StutterParameterEnable
         200.0f,  // StutterParameterLength
+        1.0f     // StutterParameterPitch
     }
 };
 
@@ -93,15 +95,27 @@ static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
                                                                      valueStrings:nil
                                                               dependentParameters:nil];
     
+    AUParameter *pitchParameter = [AUParameterTree createParameterWithIdentifier:@"pitch"
+                                                                            name:@"Pitch"
+                                                                         address:StutterParameterPitch
+                                                                             min:StutterMinPitchAsRatio
+                                                                             max:StutterMaxPitchAsRatio
+                                                                            unit:kAudioUnitParameterUnit_Ratio
+                                                                        unitName:nil
+                                                                           flags:kAudioUnitParameterFlag_IsReadable | kAudioUnitParameterFlag_IsWritable | kAudioUnitParameterFlag_CanRamp
+                                                                    valueStrings:nil
+                                                             dependentParameters:nil];
     // Set default for parameters
     enableParameter.value = 0;
     lengthParameter.value = 200;
+    pitchParameter.value = 1.0;
     
     _kernel.setParameter(StutterParameterEnable, enableParameter.value);
     _kernel.setParameter(StutterParameterLength, lengthParameter.value);
+    _kernel.setParameter(StutterParameterPitch, pitchParameter.value);
     
     // Create parameter tree
-    _parameterTree = [AUParameterTree createTreeWithChildren:@[enableParameter, lengthParameter]];
+    _parameterTree = [AUParameterTree createTreeWithChildren:@[enableParameter, lengthParameter, pitchParameter]];
     
     // A function to provide string representations of parameter values
     _parameterTree.implementorStringFromValueCallback = ^(AUParameter *param, const AUValue *__nullable valuePtr) {
@@ -111,6 +125,8 @@ static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
             case StutterParameterEnable:
                 return value == 0 ? @"Enabled" : @"Disabled";
             case StutterParameterLength:
+                return [NSString stringWithFormat:@"%.f", value];
+            case StutterParameterPitch:
                 return [NSString stringWithFormat:@"%.f", value];
             default:
                 return @"?";
@@ -223,9 +239,11 @@ static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
                 
                 AUParameter *enableParameter = [self.parameterTree valueForKey: @"enable"];
                 AUParameter *lengthParameter = [self.parameterTree valueForKey: @"length"];
+                AUParameter *pitchParameter = [self.parameterTree valueForKey: @"pitch"];
                 
                 enableParameter.value = presetParameters[factoryPreset.number].enable;
                 lengthParameter.value = presetParameters[factoryPreset.number].length;
+                pitchParameter.value = presetParameters[factoryPreset.number].pitch;
                 
                 // set factory preset as current
                 _currentPreset = currentPreset;

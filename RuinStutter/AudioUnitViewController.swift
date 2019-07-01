@@ -21,10 +21,17 @@ public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
         lengthParameter.value = slider.value
     }
     
+    @IBOutlet weak var pitch: UISlider!
+    @IBAction func pitchChanged(_ sender: Any) {
+        let slider = sender as! UISlider
+        pitchParameter.value = slider.value
+    }
+    
     // MARK: AU and AU parameters
     var audioUnit: AUAudioUnit!
     var enableParameter: AUParameter!
     var lengthParameter: AUParameter!
+    var pitchParameter: AUParameter!
     
     // MARK: Lifecycle
     public override func viewDidLoad() {
@@ -41,6 +48,9 @@ public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
         guard let lengthParameterFromTree = au.parameterTree?.allParameters.first(where:{$0.identifier == "length"})
             else { fatalError("Cannot get length parameter from AU") }
         lengthParameter = lengthParameterFromTree
+        guard let pitchParameterFromTree = au.parameterTree?.allParameters.first(where: {$0.identifier == "pitch"})
+            else { fatalError("Cannot get pitch parameter from AU") }
+        pitchParameter = pitchParameterFromTree
         
         au.parameterTree?.token(byAddingParameterObserver: { [weak self] address, value in
             guard let self = self else { return }
@@ -49,6 +59,8 @@ public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
                     value == 0 ? self.enable.setTitle("Enable", for: .normal) : self.enable.setTitle("Enabled", for: .normal)
                 } else if address == lengthParameterFromTree.address {
                     self.length.setValue(value, animated: false)
+                } else if address == pitchParameterFromTree.address {
+                    self.pitch.setValue(value, animated: false)
                 }
             }
         })
