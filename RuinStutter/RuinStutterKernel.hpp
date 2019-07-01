@@ -16,11 +16,14 @@
 
 enum {
     StutterParameterEnable = 0,
-    StutterParameterLength = 1
+    StutterParameterLength = 1,
+    StutterParameterPitch = 2
 };
 
 static const int StutterMaxLengthInMS = 2000;
 static const int StutterMinLengthInMS = 1;
+static const float StutterMinPitchAsScalar = 0.5;
+static const float StutterMaxPitchAsScalar = 2.0;
 
 class RuinStutterKernel : public DSPKernel {
     
@@ -33,6 +36,7 @@ public:
         sampleRate = inSampleRate;
         enableRamper.init();
         lengthRamper.init();
+        pitchRamper.init();
         dezipperRampDuration = (AUAudioFrameCount)floor(0.02 * inSampleRate);
         buffer = VarispeedCircularBuffer(inSampleRate * secondsFromMS(StutterMaxLengthInMS) * inChannelCount);
     }
@@ -48,8 +52,14 @@ public:
                 enableRamper.setUIValue(clamp(value, 0.0f, 1.0f));
                 break;
             case StutterParameterLength:
-                lengthRamper.setUIValue(clamp(secondsFromMS(value), 0.001f, 2.0f));
+                lengthRamper.setUIValue(clamp(secondsFromMS(value), 0.001f, 2.0f)); // TODO: Use min and max constants
                 break;
+            case StutterParameterPitch:
+                pitchRamper.setUIValue(clamp(value, StutterMinPitchAsScalar, StutterMaxPitchAsScalar));
+                break;
+            default:
+                std::cout << "Setting unknown parameter" << std::endl;
+                abort();
         }
     }
     
@@ -59,8 +69,10 @@ public:
                 return enableRamper.getUIValue();
             case StutterParameterLength:
                 return msFromSeconds(lengthRamper.getUIValue());
+            case StutterParameterPitch:
+                return lengthRamper.getUIValue();
             default:
-                std::cout << "Setting unknown parameter" << std::endl;
+                std::cout << "Getting unknown parameter" << std::endl;
                 abort();
         }
     }
@@ -71,7 +83,10 @@ public:
                 enableRamper.startRamp(value, duration);
                 break;
             case StutterParameterLength:
-                lengthRamper.startRamp(clamp(secondsFromMS(value), 0.001f, 2.0f), duration);
+                lengthRamper.startRamp(clamp(secondsFromMS(value), 0.001f, 2.0f), duration); // TODO: Use min and max constants
+                break;
+            case StutterParameterPitch:
+                pitchRamper.startRamp(clamp(value, StutterMinPitchAsScalar, StutterMaxPitchAsScalar), duration);
                 break;
         }
     }
@@ -86,12 +101,14 @@ public:
         
         enableRamper.dezipperCheck(0); // instant
         lengthRamper.dezipperCheck(0); //
+        pitchRamper.dezipperCheck(dezipperRampDuration);
         
         for (int frameIndex = 0; frameIndex < frameCount; ++frameIndex) {
             
             // not ramping
             bool enableParameter = double(enableRamper.getAndStep()) > 0.0;
             double lengthParameter = double(lengthRamper.getAndStep());
+            double pitchParameter = double(pitchRamper.getAndStep());
             
             // set mode for current frame
             switch (enableStateTracker.hasStateChanged(enableParameter)) {
@@ -126,9 +143,12 @@ public:
                     case StutterStatePlayback:
                         // TODO: Expensive
                         buffer.playbackLength = int(lengthParameter * sampleRate * channelCount);
-                        *out = buffer.nextAtPlayhead();
-                        // after one wrap, the buffer no longer needs to record
-                        if (buffer.playbackWrapCount > 0) {
+                        if (buffer.playbackWrapCount == 0) {
+                            // playback normal speed on first wrap
+                            *out = buffer.nextAtPlayhead(1.0);
+                        } else {
+                            *out = buffer.nextAtPlayhead(pitchParameter);
+                            // after one wrap, the buffer no longer needs to record
                             stutterState = StutterStatePlayback;
                         }
                 }
@@ -148,6 +168,7 @@ private:
     AudioBufferList* outBufferListPtr = nullptr;
     ParameterRamper enableRamper = {0}; // off or on
     ParameterRamper lengthRamper = {1}; // length in s
+    ParameterRamper pitchRamper = {1}; // pitch as scalar
     AUAudioFrameCount dezipperRampDuration;
     VarispeedCircularBuffer buffer = VarispeedCircularBuffer(88200);
     BoolStateChangeTracker enableStateTracker = false;

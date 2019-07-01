@@ -31,7 +31,7 @@ public:
             playbackWrapCount++;
         }
         float next = buffer[int(playbackPosition)];
-        playbackPosition++;
+        playbackPosition += speed;
         return next;
     }
     
