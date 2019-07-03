@@ -30,7 +30,7 @@ public:
             playbackPosition = 0;
             playbackWrapCount++;
         }
-        float next = buffer[int(playbackPosition)];
+        float next = valueOfSampleAtPosition(playbackPosition);
         playbackPosition += speed;
         return next;
     }
@@ -62,6 +62,22 @@ private:
     float *buffer;
     int recordPosition = 0;
     float playbackPosition = 0;
+    
+    float valueOfSampleAtPosition(float inPosition) {
+        int positionX0 = floor(inPosition);
+        int positionX1 = ceil(inPosition);
+        if (positionX0 == positionX1) {
+            return buffer[positionX0];
+        }
+        if (positionX1 >= playbackLength) {
+            positionX1 = 0; // wrap
+        }
+        float Y0 = buffer[positionX0];
+        float Y1 = buffer[positionX1];
+        float gapBetweenX0AndInPosition = inPosition - positionX0;
+        float amplitudeOffset = gapBetweenX0AndInPosition * (Y1 - Y0);
+        return Y0 + amplitudeOffset;
+    }
 };
 
 #endif /* CircularBuffer_hpp */
