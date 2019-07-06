@@ -17,15 +17,42 @@
 		12465E1F22D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E1822D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework */; };
 		12465E2022D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E1822D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		12465E2622D0C1AC00CAC542 /* RuinStutterAudioUnitViewController+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465E2522D0C1AC00CAC542 /* RuinStutterAudioUnitViewController+Factory.swift */; };
-		12465E2A22D0C28D00CAC542 /* RuinStutterAudioUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 12465E2722D0C28D00CAC542 /* RuinStutterAudioUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		12465E2B22D0C28D00CAC542 /* RuinStutterAudioUnit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12465E2822D0C28D00CAC542 /* RuinStutterAudioUnit.mm */; };
 		12465E2C22D0C28D00CAC542 /* RuinStutterAudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465E2922D0C28D00CAC542 /* RuinStutterAudioUnitViewController.swift */; };
-		12465E3022D0C2BA00CAC542 /* RuinStutterKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465E2E22D0C2BA00CAC542 /* RuinStutterKernel.hpp */; };
 		12465E3122D0C2F400CAC542 /* RuinStutterFramework_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E1822D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework */; };
 		12465E3222D0C31F00CAC542 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FF2D8B22D0B89F00465A05 /* AVFoundation.framework */; };
-		12465E3422D0C33900CAC542 /* RuinAUUtilites.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E3322D0C33900CAC542 /* RuinAUUtilites.framework */; };
 		12465E3822D0C57F00CAC542 /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E3722D0C57F00CAC542 /* RuinCore.framework */; };
 		12465E3D22D0C80000CAC542 /* Air - New Star In The Sky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 12465E3C22D0C80000CAC542 /* Air - New Star In The Sky.mp3 */; };
+		12465E4E22D0EB5B00CAC542 /* RuinStutterAUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465E4D22D0EB5B00CAC542 /* RuinStutterAUViewController.swift */; };
+		12465E5122D0EB5B00CAC542 /* RuinStutterAUViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12465E4F22D0EB5B00CAC542 /* RuinStutterAUViewController.xib */; };
+		12465E5F22D0EE0D00CAC542 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465E5E22D0EE0D00CAC542 /* AppDelegate.swift */; };
+		12465E6122D0EE0D00CAC542 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465E6022D0EE0D00CAC542 /* ViewController.swift */; };
+		12465E6322D0EE0E00CAC542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12465E6222D0EE0E00CAC542 /* Assets.xcassets */; };
+		12465E6622D0EE0E00CAC542 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12465E6422D0EE0E00CAC542 /* Main.storyboard */; };
+		12465E6C22D0EEDD00CAC542 /* RuinStutterAU-macOS.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 12465E4822D0EB5B00CAC542 /* RuinStutterAU-macOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		12465E7922D0EF3100CAC542 /* RuinStutterFramework_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 12465E7722D0EF3100CAC542 /* RuinStutterFramework_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465E7C22D0EF3100CAC542 /* RuinStutterFramework_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E7522D0EF3100CAC542 /* RuinStutterFramework_macOS.framework */; };
+		12465E7D22D0EF3100CAC542 /* RuinStutterFramework_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E7522D0EF3100CAC542 /* RuinStutterFramework_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		12465EDE22D0FD5300CAC542 /* RuinStutterFramework_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E7522D0EF3100CAC542 /* RuinStutterFramework_macOS.framework */; };
+		12465EEE22D100BD00CAC542 /* BoolStateChangeTracker.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465EE522D100BD00CAC542 /* BoolStateChangeTracker.hpp */; };
+		12465EEF22D100BD00CAC542 /* BoolStateChangeTracker.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465EE522D100BD00CAC542 /* BoolStateChangeTracker.hpp */; };
+		12465EF022D100BD00CAC542 /* ParameterRamper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465EE622D100BD00CAC542 /* ParameterRamper.hpp */; };
+		12465EF122D100BD00CAC542 /* ParameterRamper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465EE622D100BD00CAC542 /* ParameterRamper.hpp */; };
+		12465EF222D100BD00CAC542 /* DSPKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465EE722D100BD00CAC542 /* DSPKernel.hpp */; };
+		12465EF322D100BD00CAC542 /* DSPKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465EE722D100BD00CAC542 /* DSPKernel.hpp */; };
+		12465EF422D100BD00CAC542 /* DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12465EE822D100BD00CAC542 /* DSPKernel.mm */; };
+		12465EF522D100BD00CAC542 /* DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12465EE822D100BD00CAC542 /* DSPKernel.mm */; };
+		12465EF622D100BD00CAC542 /* RuinStutterAudioUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 12465EE922D100BD00CAC542 /* RuinStutterAudioUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465EF722D100BD00CAC542 /* RuinStutterAudioUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 12465EE922D100BD00CAC542 /* RuinStutterAudioUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465EF822D100BD00CAC542 /* RuinStutterAudioUnit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12465EEA22D100BD00CAC542 /* RuinStutterAudioUnit.mm */; };
+		12465EF922D100BD00CAC542 /* RuinStutterAudioUnit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12465EEA22D100BD00CAC542 /* RuinStutterAudioUnit.mm */; };
+		12465EFA22D100BD00CAC542 /* RuinStutterKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465EEB22D100BD00CAC542 /* RuinStutterKernel.hpp */; };
+		12465EFB22D100BD00CAC542 /* RuinStutterKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465EEB22D100BD00CAC542 /* RuinStutterKernel.hpp */; };
+		12465EFC22D100BD00CAC542 /* VarispeedCircularBuffer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465EEC22D100BD00CAC542 /* VarispeedCircularBuffer.hpp */; };
+		12465EFD22D100BD00CAC542 /* VarispeedCircularBuffer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465EEC22D100BD00CAC542 /* VarispeedCircularBuffer.hpp */; };
+		12465EFE22D100BD00CAC542 /* BufferedAudioBus.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465EED22D100BD00CAC542 /* BufferedAudioBus.hpp */; };
+		12465EFF22D100BD00CAC542 /* BufferedAudioBus.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465EED22D100BD00CAC542 /* BufferedAudioBus.hpp */; };
+		12465F0022D1068700CAC542 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E8722D0F44400CAC542 /* AVFoundation.framework */; };
+		12465F0222D1070100CAC542 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465F0122D1070100CAC542 /* AudioToolbox.framework */; };
 		1279B52922D0B29D0032D1F4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1279B52722D0B29D0032D1F4 /* MainInterface.storyboard */; };
 		1287677F22D0B69400C9D1FE /* RuinAUUtilites.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1287677D22D0B69400C9D1FE /* RuinAUUtilites.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -44,6 +71,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 12465E1722D0C0AF00CAC542;
 			remoteInfo = "RuinStutterFramework-iOS";
+		};
+		12465E6D22D0EEDD00CAC542 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1279B50822D0B14C0032D1F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12465E4722D0EB5B00CAC542;
+			remoteInfo = "RuinStutterAU-macOS";
+		};
+		12465E7A22D0EF3100CAC542 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1279B50822D0B14C0032D1F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12465E7422D0EF3100CAC542;
+			remoteInfo = "RuinStutterFramework-macOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -66,6 +107,28 @@
 			dstSubfolderSpec = 10;
 			files = (
 				12465E2022D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E6F22D0EEDE00CAC542 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				12465E6C22D0EEDD00CAC542 /* RuinStutterAU-macOS.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E8122D0EF3100CAC542 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				12465E7D22D0EF3100CAC542 /* RuinStutterFramework_macOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,13 +158,38 @@
 		12465E1A22D0C0AF00CAC542 /* RuinStutterFramework_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuinStutterFramework_iOS.h; sourceTree = "<group>"; };
 		12465E1B22D0C0AF00CAC542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12465E2522D0C1AC00CAC542 /* RuinStutterAudioUnitViewController+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RuinStutterAudioUnitViewController+Factory.swift"; sourceTree = "<group>"; };
-		12465E2722D0C28D00CAC542 /* RuinStutterAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuinStutterAudioUnit.h; sourceTree = "<group>"; };
-		12465E2822D0C28D00CAC542 /* RuinStutterAudioUnit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RuinStutterAudioUnit.mm; sourceTree = "<group>"; };
 		12465E2922D0C28D00CAC542 /* RuinStutterAudioUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuinStutterAudioUnitViewController.swift; sourceTree = "<group>"; };
-		12465E2E22D0C2BA00CAC542 /* RuinStutterKernel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RuinStutterKernel.hpp; sourceTree = "<group>"; };
 		12465E3322D0C33900CAC542 /* RuinAUUtilites.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinAUUtilites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12465E3722D0C57F00CAC542 /* RuinCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12465E3C22D0C80000CAC542 /* Air - New Star In The Sky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Air - New Star In The Sky.mp3"; path = "../../Test Material/Air - New Star In The Sky.mp3"; sourceTree = "<group>"; };
+		12465E4822D0EB5B00CAC542 /* RuinStutterAU-macOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RuinStutterAU-macOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12465E4D22D0EB5B00CAC542 /* RuinStutterAUViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuinStutterAUViewController.swift; sourceTree = "<group>"; };
+		12465E5022D0EB5B00CAC542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RuinStutterAUViewController.xib; sourceTree = "<group>"; };
+		12465E5222D0EB5B00CAC542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12465E5422D0EB5B00CAC542 /* RuinStutterAU_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuinStutterAU_macOS.entitlements; sourceTree = "<group>"; };
+		12465E5C22D0EE0D00CAC542 /* RuinStutterApp-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RuinStutterApp-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12465E5E22D0EE0D00CAC542 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		12465E6022D0EE0D00CAC542 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		12465E6222D0EE0E00CAC542 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		12465E6522D0EE0E00CAC542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		12465E6722D0EE0E00CAC542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12465E6822D0EE0E00CAC542 /* RuinStutterApp_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuinStutterApp_macOS.entitlements; sourceTree = "<group>"; };
+		12465E7522D0EF3100CAC542 /* RuinStutterFramework_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RuinStutterFramework_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12465E7722D0EF3100CAC542 /* RuinStutterFramework_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuinStutterFramework_macOS.h; sourceTree = "<group>"; };
+		12465E7822D0EF3100CAC542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12465E8522D0F2D800CAC542 /* RuinAUUtilites.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinAUUtilites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12465E8722D0F44400CAC542 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		12465EDF22D0FD9C00CAC542 /* RuinAUUtilities_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinAUUtilities_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12465EE522D100BD00CAC542 /* BoolStateChangeTracker.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BoolStateChangeTracker.hpp; sourceTree = "<group>"; };
+		12465EE622D100BD00CAC542 /* ParameterRamper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ParameterRamper.hpp; sourceTree = "<group>"; };
+		12465EE722D100BD00CAC542 /* DSPKernel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DSPKernel.hpp; sourceTree = "<group>"; };
+		12465EE822D100BD00CAC542 /* DSPKernel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DSPKernel.mm; sourceTree = "<group>"; };
+		12465EE922D100BD00CAC542 /* RuinStutterAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuinStutterAudioUnit.h; sourceTree = "<group>"; };
+		12465EEA22D100BD00CAC542 /* RuinStutterAudioUnit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RuinStutterAudioUnit.mm; sourceTree = "<group>"; };
+		12465EEB22D100BD00CAC542 /* RuinStutterKernel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RuinStutterKernel.hpp; sourceTree = "<group>"; };
+		12465EEC22D100BD00CAC542 /* VarispeedCircularBuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VarispeedCircularBuffer.hpp; sourceTree = "<group>"; };
+		12465EED22D100BD00CAC542 /* BufferedAudioBus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BufferedAudioBus.hpp; sourceTree = "<group>"; };
+		12465F0122D1070100CAC542 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		1279B52022D0B29D0032D1F4 /* RuinStutterAU-iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RuinStutterAU-iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1279B52822D0B29D0032D1F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		1279B52A22D0B29D0032D1F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,8 +211,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				12465E3822D0C57F00CAC542 /* RuinCore.framework in Frameworks */,
-				12465E3422D0C33900CAC542 /* RuinAUUtilites.framework in Frameworks */,
 				12465E3222D0C31F00CAC542 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E4522D0EB5B00CAC542 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465EDE22D0FD5300CAC542 /* RuinStutterFramework_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E5922D0EE0D00CAC542 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465E7C22D0EF3100CAC542 /* RuinStutterFramework_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E7222D0EF3100CAC542 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465F0222D1070100CAC542 /* AudioToolbox.framework in Frameworks */,
+				12465F0022D1068700CAC542 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,12 +283,51 @@
 			name = "Test material";
 			sourceTree = "<group>";
 		};
-		12465E4322D0E47900CAC542 /* Shared */ = {
+		12465E4922D0EB5B00CAC542 /* RuinStutterAU-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				12465E2722D0C28D00CAC542 /* RuinStutterAudioUnit.h */,
-				12465E2822D0C28D00CAC542 /* RuinStutterAudioUnit.mm */,
-				12465E2E22D0C2BA00CAC542 /* RuinStutterKernel.hpp */,
+				12465E4D22D0EB5B00CAC542 /* RuinStutterAUViewController.swift */,
+				12465E4F22D0EB5B00CAC542 /* RuinStutterAUViewController.xib */,
+				12465E5222D0EB5B00CAC542 /* Info.plist */,
+				12465E5422D0EB5B00CAC542 /* RuinStutterAU_macOS.entitlements */,
+			);
+			path = "RuinStutterAU-macOS";
+			sourceTree = "<group>";
+		};
+		12465E5D22D0EE0D00CAC542 /* RuinStutterApp-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				12465E5E22D0EE0D00CAC542 /* AppDelegate.swift */,
+				12465E6022D0EE0D00CAC542 /* ViewController.swift */,
+				12465E6222D0EE0E00CAC542 /* Assets.xcassets */,
+				12465E6422D0EE0E00CAC542 /* Main.storyboard */,
+				12465E6722D0EE0E00CAC542 /* Info.plist */,
+				12465E6822D0EE0E00CAC542 /* RuinStutterApp_macOS.entitlements */,
+			);
+			path = "RuinStutterApp-macOS";
+			sourceTree = "<group>";
+		};
+		12465E7622D0EF3100CAC542 /* RuinStutterFramework-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				12465E7722D0EF3100CAC542 /* RuinStutterFramework_macOS.h */,
+				12465E7822D0EF3100CAC542 /* Info.plist */,
+			);
+			path = "RuinStutterFramework-macOS";
+			sourceTree = "<group>";
+		};
+		12465EE422D100BD00CAC542 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				12465EE522D100BD00CAC542 /* BoolStateChangeTracker.hpp */,
+				12465EE622D100BD00CAC542 /* ParameterRamper.hpp */,
+				12465EE722D100BD00CAC542 /* DSPKernel.hpp */,
+				12465EE822D100BD00CAC542 /* DSPKernel.mm */,
+				12465EE922D100BD00CAC542 /* RuinStutterAudioUnit.h */,
+				12465EEA22D100BD00CAC542 /* RuinStutterAudioUnit.mm */,
+				12465EEB22D100BD00CAC542 /* RuinStutterKernel.hpp */,
+				12465EEC22D100BD00CAC542 /* VarispeedCircularBuffer.hpp */,
+				12465EED22D100BD00CAC542 /* BufferedAudioBus.hpp */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -184,10 +335,13 @@
 		1279B50722D0B14C0032D1F4 = {
 			isa = PBXGroup;
 			children = (
-				12465E4322D0E47900CAC542 /* Shared */,
+				12465EE422D100BD00CAC542 /* Shared */,
 				1279B52122D0B29D0032D1F4 /* RuinStutterAU-iOS */,
 				12465E1922D0C0AF00CAC542 /* RuinStutterFramework-iOS */,
 				12465DFE22D0BEED00CAC542 /* RuinStutterApp-iOS */,
+				12465E4922D0EB5B00CAC542 /* RuinStutterAU-macOS */,
+				12465E5D22D0EE0D00CAC542 /* RuinStutterApp-macOS */,
+				12465E7622D0EF3100CAC542 /* RuinStutterFramework-macOS */,
 				1279B51222D0B14C0032D1F4 /* Products */,
 				1287677C22D0B69400C9D1FE /* Frameworks */,
 			);
@@ -199,6 +353,9 @@
 				1279B52022D0B29D0032D1F4 /* RuinStutterAU-iOS.appex */,
 				12465DFD22D0BEED00CAC542 /* RuinStutterApp-iOS.app */,
 				12465E1822D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework */,
+				12465E4822D0EB5B00CAC542 /* RuinStutterAU-macOS.appex */,
+				12465E5C22D0EE0D00CAC542 /* RuinStutterApp-macOS.app */,
+				12465E7522D0EF3100CAC542 /* RuinStutterFramework_macOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,6 +373,10 @@
 		1287677C22D0B69400C9D1FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				12465F0122D1070100CAC542 /* AudioToolbox.framework */,
+				12465EDF22D0FD9C00CAC542 /* RuinAUUtilities_macOS.framework */,
+				12465E8722D0F44400CAC542 /* AVFoundation.framework */,
+				12465E8522D0F2D800CAC542 /* RuinAUUtilites.framework */,
 				12465E3722D0C57F00CAC542 /* RuinCore.framework */,
 				12465E3322D0C33900CAC542 /* RuinAUUtilites.framework */,
 				12FF2D8B22D0B89F00465A05 /* AVFoundation.framework */,
@@ -231,9 +392,29 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12465EF622D100BD00CAC542 /* RuinStutterAudioUnit.h in Headers */,
+				12465EFE22D100BD00CAC542 /* BufferedAudioBus.hpp in Headers */,
+				12465EFC22D100BD00CAC542 /* VarispeedCircularBuffer.hpp in Headers */,
+				12465EF022D100BD00CAC542 /* ParameterRamper.hpp in Headers */,
 				12465E1C22D0C0AF00CAC542 /* RuinStutterFramework_iOS.h in Headers */,
-				12465E3022D0C2BA00CAC542 /* RuinStutterKernel.hpp in Headers */,
-				12465E2A22D0C28D00CAC542 /* RuinStutterAudioUnit.h in Headers */,
+				12465EFA22D100BD00CAC542 /* RuinStutterKernel.hpp in Headers */,
+				12465EEE22D100BD00CAC542 /* BoolStateChangeTracker.hpp in Headers */,
+				12465EF222D100BD00CAC542 /* DSPKernel.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E7022D0EF3100CAC542 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465EF722D100BD00CAC542 /* RuinStutterAudioUnit.h in Headers */,
+				12465EFF22D100BD00CAC542 /* BufferedAudioBus.hpp in Headers */,
+				12465EFD22D100BD00CAC542 /* VarispeedCircularBuffer.hpp in Headers */,
+				12465EF122D100BD00CAC542 /* ParameterRamper.hpp in Headers */,
+				12465E7922D0EF3100CAC542 /* RuinStutterFramework_macOS.h in Headers */,
+				12465EFB22D100BD00CAC542 /* RuinStutterKernel.hpp in Headers */,
+				12465EEF22D100BD00CAC542 /* BoolStateChangeTracker.hpp in Headers */,
+				12465EF322D100BD00CAC542 /* DSPKernel.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +460,62 @@
 			productReference = 12465E1822D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		12465E4722D0EB5B00CAC542 /* RuinStutterAU-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12465E5722D0EB5B00CAC542 /* Build configuration list for PBXNativeTarget "RuinStutterAU-macOS" */;
+			buildPhases = (
+				12465E4422D0EB5B00CAC542 /* Sources */,
+				12465E4522D0EB5B00CAC542 /* Frameworks */,
+				12465E4622D0EB5B00CAC542 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RuinStutterAU-macOS";
+			productName = "RuinStutterAU-macOS";
+			productReference = 12465E4822D0EB5B00CAC542 /* RuinStutterAU-macOS.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		12465E5B22D0EE0D00CAC542 /* RuinStutterApp-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12465E6922D0EE0E00CAC542 /* Build configuration list for PBXNativeTarget "RuinStutterApp-macOS" */;
+			buildPhases = (
+				12465E5822D0EE0D00CAC542 /* Sources */,
+				12465E5922D0EE0D00CAC542 /* Frameworks */,
+				12465E5A22D0EE0D00CAC542 /* Resources */,
+				12465E6F22D0EEDE00CAC542 /* Embed App Extensions */,
+				12465E8122D0EF3100CAC542 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12465E6E22D0EEDD00CAC542 /* PBXTargetDependency */,
+				12465E7B22D0EF3100CAC542 /* PBXTargetDependency */,
+			);
+			name = "RuinStutterApp-macOS";
+			productName = "RuinStutterApp-macOS";
+			productReference = 12465E5C22D0EE0D00CAC542 /* RuinStutterApp-macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		12465E7422D0EF3100CAC542 /* RuinStutterFramework-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12465E7E22D0EF3100CAC542 /* Build configuration list for PBXNativeTarget "RuinStutterFramework-macOS" */;
+			buildPhases = (
+				12465E7022D0EF3100CAC542 /* Headers */,
+				12465E7122D0EF3100CAC542 /* Sources */,
+				12465E7222D0EF3100CAC542 /* Frameworks */,
+				12465E7322D0EF3100CAC542 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RuinStutterFramework-macOS";
+			productName = "RuinStutterFramework-macOS";
+			productReference = 12465E7522D0EF3100CAC542 /* RuinStutterFramework_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		1279B51F22D0B29D0032D1F4 /* RuinStutterAU-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1279B52C22D0B29D0032D1F4 /* Build configuration list for PBXNativeTarget "RuinStutterAU-iOS" */;
@@ -314,6 +551,15 @@
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
 					};
+					12465E4722D0EB5B00CAC542 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					12465E5B22D0EE0D00CAC542 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					12465E7422D0EF3100CAC542 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 					1279B51F22D0B29D0032D1F4 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -332,9 +578,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1279B51F22D0B29D0032D1F4 /* RuinStutterAU-iOS */,
 				12465DFC22D0BEED00CAC542 /* RuinStutterApp-iOS */,
 				12465E1722D0C0AF00CAC542 /* RuinStutterFramework-iOS */,
+				1279B51F22D0B29D0032D1F4 /* RuinStutterAU-iOS */,
+				12465E5B22D0EE0D00CAC542 /* RuinStutterApp-macOS */,
+				12465E7422D0EF3100CAC542 /* RuinStutterFramework-macOS */,
+				12465E4722D0EB5B00CAC542 /* RuinStutterAU-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -352,6 +601,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		12465E1622D0C0AF00CAC542 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E4622D0EB5B00CAC542 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465E5122D0EB5B00CAC542 /* RuinStutterAUViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E5A22D0EE0D00CAC542 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465E6322D0EE0E00CAC542 /* Assets.xcassets in Resources */,
+				12465E6622D0EE0E00CAC542 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E7322D0EF3100CAC542 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -382,8 +655,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12465E2B22D0C28D00CAC542 /* RuinStutterAudioUnit.mm in Sources */,
+				12465EF422D100BD00CAC542 /* DSPKernel.mm in Sources */,
+				12465EF822D100BD00CAC542 /* RuinStutterAudioUnit.mm in Sources */,
 				12465E2C22D0C28D00CAC542 /* RuinStutterAudioUnitViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E4422D0EB5B00CAC542 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465E4E22D0EB5B00CAC542 /* RuinStutterAUViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E5822D0EE0D00CAC542 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465E6122D0EE0D00CAC542 /* ViewController.swift in Sources */,
+				12465E5F22D0EE0D00CAC542 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E7122D0EF3100CAC542 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465EF922D100BD00CAC542 /* RuinStutterAudioUnit.mm in Sources */,
+				12465EF522D100BD00CAC542 /* DSPKernel.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +708,16 @@
 			target = 12465E1722D0C0AF00CAC542 /* RuinStutterFramework-iOS */;
 			targetProxy = 12465E1D22D0C0AF00CAC542 /* PBXContainerItemProxy */;
 		};
+		12465E6E22D0EEDD00CAC542 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12465E4722D0EB5B00CAC542 /* RuinStutterAU-macOS */;
+			targetProxy = 12465E6D22D0EEDD00CAC542 /* PBXContainerItemProxy */;
+		};
+		12465E7B22D0EF3100CAC542 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12465E7422D0EF3100CAC542 /* RuinStutterFramework-macOS */;
+			targetProxy = 12465E7A22D0EF3100CAC542 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -425,6 +735,22 @@
 				12465E0922D0BEEE00CAC542 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		12465E4F22D0EB5B00CAC542 /* RuinStutterAUViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12465E5022D0EB5B00CAC542 /* Base */,
+			);
+			name = RuinStutterAUViewController.xib;
+			sourceTree = "<group>";
+		};
+		12465E6422D0EE0E00CAC542 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12465E6522D0EE0E00CAC542 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		1279B52722D0B29D0032D1F4 /* MainInterface.storyboard */ = {
@@ -452,7 +778,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.RuinStutter;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutter-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -473,7 +799,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.RuinStutter;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutter-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -532,6 +858,160 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		12465E5522D0EB5B00CAC542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_ENTITLEMENTS = "RuinStutterAU-macOS/RuinStutterAU_macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				INFOPLIST_FILE = "RuinStutterAU-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutterApp-macOS.AU-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		12465E5622D0EB5B00CAC542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_ENTITLEMENTS = "RuinStutterAU-macOS/RuinStutterAU_macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				INFOPLIST_FILE = "RuinStutterAU-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutterApp-macOS.AU-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		12465E6A22D0EE0E00CAC542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_ENTITLEMENTS = "RuinStutterApp-macOS/RuinStutterApp_macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				INFOPLIST_FILE = "RuinStutterApp-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutterApp-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		12465E6B22D0EE0E00CAC542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_ENTITLEMENTS = "RuinStutterApp-macOS/RuinStutterApp_macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				INFOPLIST_FILE = "RuinStutterApp-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutterApp-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		12465E7F22D0EF3100CAC542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "RuinStutterFramework-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutterFramework-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		12465E8022D0EF3100CAC542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "RuinStutterFramework-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutterFramework-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -672,7 +1152,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutter.AU-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutter-iOS.AU-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -694,7 +1174,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutter.AU-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutter-iOS.AU-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -720,6 +1200,33 @@
 			buildConfigurations = (
 				12465E2222D0C0AF00CAC542 /* Debug */,
 				12465E2322D0C0AF00CAC542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12465E5722D0EB5B00CAC542 /* Build configuration list for PBXNativeTarget "RuinStutterAU-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12465E5522D0EB5B00CAC542 /* Debug */,
+				12465E5622D0EB5B00CAC542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12465E6922D0EE0E00CAC542 /* Build configuration list for PBXNativeTarget "RuinStutterApp-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12465E6A22D0EE0E00CAC542 /* Debug */,
+				12465E6B22D0EE0E00CAC542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12465E7E22D0EF3100CAC542 /* Build configuration list for PBXNativeTarget "RuinStutterFramework-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12465E7F22D0EF3100CAC542 /* Debug */,
+				12465E8022D0EF3100CAC542 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,8 +9,8 @@
 #import "RuinStutterAudioUnit.h"
 
 #import <AVFoundation/AVFoundation.h>
-#import "RuinAUUtilites/RuinAUUtilites.h"
 #import "RuinStutterKernel.hpp"
+#import "BufferedAudioBus.hpp"
 
 static const UInt8 kNumberOfPresets = 1;
 static const NSInteger kDefaultFactoryPreset = 0;

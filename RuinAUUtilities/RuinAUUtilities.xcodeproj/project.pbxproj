@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12465EBA22D0FC6E00CAC542 /* RuinAUUtilities_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 12465EB822D0FC6E00CAC542 /* RuinAUUtilities_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465EC722D0FC9600CAC542 /* RuinAUUtilities_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 12465EC522D0FC9600CAC542 /* RuinAUUtilities_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465ED222D0FCD500CAC542 /* BoolStateChangeTracker.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465ECC22D0FCD400CAC542 /* BoolStateChangeTracker.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465ED322D0FCD500CAC542 /* BoolStateChangeTracker.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465ECC22D0FCD400CAC542 /* BoolStateChangeTracker.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465ED422D0FCD500CAC542 /* DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12465ECD22D0FCD400CAC542 /* DSPKernel.mm */; };
+		12465ED522D0FCD500CAC542 /* DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12465ECD22D0FCD400CAC542 /* DSPKernel.mm */; };
+		12465ED622D0FCD500CAC542 /* ParameterRamper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465ECE22D0FCD400CAC542 /* ParameterRamper.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465ED722D0FCD500CAC542 /* ParameterRamper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465ECE22D0FCD400CAC542 /* ParameterRamper.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465ED822D0FCD500CAC542 /* BufferedAudioBus.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465ECF22D0FCD400CAC542 /* BufferedAudioBus.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465ED922D0FCD500CAC542 /* BufferedAudioBus.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465ECF22D0FCD400CAC542 /* BufferedAudioBus.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465EDA22D0FCD500CAC542 /* VarispeedCircularBuffer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465ED022D0FCD500CAC542 /* VarispeedCircularBuffer.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465EDB22D0FCD500CAC542 /* VarispeedCircularBuffer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465ED022D0FCD500CAC542 /* VarispeedCircularBuffer.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465EDC22D0FCD500CAC542 /* DSPKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465ED122D0FCD500CAC542 /* DSPKernel.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465EDD22D0FCD500CAC542 /* DSPKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465ED122D0FCD500CAC542 /* DSPKernel.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		12465EB622D0FC6E00CAC542 /* RuinAUUtilities_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RuinAUUtilities_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12465EB822D0FC6E00CAC542 /* RuinAUUtilities_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuinAUUtilities_iOS.h; sourceTree = "<group>"; };
+		12465EB922D0FC6E00CAC542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12465EC322D0FC9600CAC542 /* RuinAUUtilities_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RuinAUUtilities_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12465EC522D0FC9600CAC542 /* RuinAUUtilities_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuinAUUtilities_macOS.h; sourceTree = "<group>"; };
+		12465EC622D0FC9600CAC542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12465ECC22D0FCD400CAC542 /* BoolStateChangeTracker.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BoolStateChangeTracker.hpp; sourceTree = "<group>"; };
+		12465ECD22D0FCD400CAC542 /* DSPKernel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DSPKernel.mm; sourceTree = "<group>"; };
+		12465ECE22D0FCD400CAC542 /* ParameterRamper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ParameterRamper.hpp; sourceTree = "<group>"; };
+		12465ECF22D0FCD400CAC542 /* BufferedAudioBus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BufferedAudioBus.hpp; sourceTree = "<group>"; };
+		12465ED022D0FCD500CAC542 /* VarispeedCircularBuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VarispeedCircularBuffer.hpp; sourceTree = "<group>"; };
+		12465ED122D0FCD500CAC542 /* DSPKernel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DSPKernel.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12465EB322D0FC6E00CAC542 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465EC022D0FC9600CAC542 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12465E9C22D0FBEC00CAC542 = {
+			isa = PBXGroup;
+			children = (
+				12465ECB22D0FCA500CAC542 /* Shared */,
+				12465EB722D0FC6E00CAC542 /* RuinAUUtilities-iOS */,
+				12465EC422D0FC9600CAC542 /* RuinAUUtilities-macOS */,
+				12465EA722D0FBEC00CAC542 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		12465EA722D0FBEC00CAC542 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12465EB622D0FC6E00CAC542 /* RuinAUUtilities_iOS.framework */,
+				12465EC322D0FC9600CAC542 /* RuinAUUtilities_macOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		12465EB722D0FC6E00CAC542 /* RuinAUUtilities-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				12465EB822D0FC6E00CAC542 /* RuinAUUtilities_iOS.h */,
+				12465EB922D0FC6E00CAC542 /* Info.plist */,
+			);
+			path = "RuinAUUtilities-iOS";
+			sourceTree = "<group>";
+		};
+		12465EC422D0FC9600CAC542 /* RuinAUUtilities-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				12465EC522D0FC9600CAC542 /* RuinAUUtilities_macOS.h */,
+				12465EC622D0FC9600CAC542 /* Info.plist */,
+			);
+			path = "RuinAUUtilities-macOS";
+			sourceTree = "<group>";
+		};
+		12465ECB22D0FCA500CAC542 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				12465ECC22D0FCD400CAC542 /* BoolStateChangeTracker.hpp */,
+				12465ECF22D0FCD400CAC542 /* BufferedAudioBus.hpp */,
+				12465ED122D0FCD500CAC542 /* DSPKernel.hpp */,
+				12465ECD22D0FCD400CAC542 /* DSPKernel.mm */,
+				12465ECE22D0FCD400CAC542 /* ParameterRamper.hpp */,
+				12465ED022D0FCD500CAC542 /* VarispeedCircularBuffer.hpp */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		12465EB122D0FC6E00CAC542 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465ED822D0FCD500CAC542 /* BufferedAudioBus.hpp in Headers */,
+				12465ED622D0FCD500CAC542 /* ParameterRamper.hpp in Headers */,
+				12465EDA22D0FCD500CAC542 /* VarispeedCircularBuffer.hpp in Headers */,
+				12465EDC22D0FCD500CAC542 /* DSPKernel.hpp in Headers */,
+				12465EBA22D0FC6E00CAC542 /* RuinAUUtilities_iOS.h in Headers */,
+				12465ED222D0FCD500CAC542 /* BoolStateChangeTracker.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465EBE22D0FC9600CAC542 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465ED922D0FCD500CAC542 /* BufferedAudioBus.hpp in Headers */,
+				12465ED722D0FCD500CAC542 /* ParameterRamper.hpp in Headers */,
+				12465EDB22D0FCD500CAC542 /* VarispeedCircularBuffer.hpp in Headers */,
+				12465EDD22D0FCD500CAC542 /* DSPKernel.hpp in Headers */,
+				12465EC722D0FC9600CAC542 /* RuinAUUtilities_macOS.h in Headers */,
+				12465ED322D0FCD500CAC542 /* BoolStateChangeTracker.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		12465EB522D0FC6E00CAC542 /* RuinAUUtilities-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12465EBB22D0FC6E00CAC542 /* Build configuration list for PBXNativeTarget "RuinAUUtilities-iOS" */;
+			buildPhases = (
+				12465EB122D0FC6E00CAC542 /* Headers */,
+				12465EB222D0FC6E00CAC542 /* Sources */,
+				12465EB322D0FC6E00CAC542 /* Frameworks */,
+				12465EB422D0FC6E00CAC542 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RuinAUUtilities-iOS";
+			productName = "RuinAUUtilities-iOS";
+			productReference = 12465EB622D0FC6E00CAC542 /* RuinAUUtilities_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		12465EC222D0FC9600CAC542 /* RuinAUUtilities-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12465EC822D0FC9600CAC542 /* Build configuration list for PBXNativeTarget "RuinAUUtilities-macOS" */;
+			buildPhases = (
+				12465EBE22D0FC9600CAC542 /* Headers */,
+				12465EBF22D0FC9600CAC542 /* Sources */,
+				12465EC022D0FC9600CAC542 /* Frameworks */,
+				12465EC122D0FC9600CAC542 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RuinAUUtilities-macOS";
+			productName = "RuinAUUtilities-macOS";
+			productReference = 12465EC322D0FC9600CAC542 /* RuinAUUtilities_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12465E9D22D0FBEC00CAC542 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Hyper Barn LTD";
+				TargetAttributes = {
+					12465EB522D0FC6E00CAC542 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					12465EC222D0FC9600CAC542 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 12465EA022D0FBEC00CAC542 /* Build configuration list for PBXProject "RuinAUUtilities" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 12465E9C22D0FBEC00CAC542;
+			productRefGroup = 12465EA722D0FBEC00CAC542 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				12465EB522D0FC6E00CAC542 /* RuinAUUtilities-iOS */,
+				12465EC222D0FC9600CAC542 /* RuinAUUtilities-macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12465EB422D0FC6E00CAC542 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465EC122D0FC9600CAC542 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12465EB222D0FC6E00CAC542 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465ED422D0FCD500CAC542 /* DSPKernel.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465EBF22D0FC9600CAC542 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465ED522D0FCD500CAC542 /* DSPKernel.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		12465EAC22D0FBEC00CAC542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		12465EAD22D0FBEC00CAC542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		12465EBC22D0FC6E00CAC542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "RuinAUUtilities-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinAUUtilities-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		12465EBD22D0FC6E00CAC542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "RuinAUUtilities-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinAUUtilities-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		12465EC922D0FC9600CAC542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "RuinAUUtilities-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinAUUtilities-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		12465ECA22D0FC9600CAC542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "RuinAUUtilities-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinAUUtilities-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12465EA022D0FBEC00CAC542 /* Build configuration list for PBXProject "RuinAUUtilities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12465EAC22D0FBEC00CAC542 /* Debug */,
+				12465EAD22D0FBEC00CAC542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12465EBB22D0FC6E00CAC542 /* Build configuration list for PBXNativeTarget "RuinAUUtilities-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12465EBC22D0FC6E00CAC542 /* Debug */,
+				12465EBD22D0FC6E00CAC542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12465EC822D0FC9600CAC542 /* Build configuration list for PBXNativeTarget "RuinAUUtilities-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12465EC922D0FC9600CAC542 /* Debug */,
+				12465ECA22D0FC9600CAC542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 12465E9D22D0FBEC00CAC542 /* Project object */;
+}

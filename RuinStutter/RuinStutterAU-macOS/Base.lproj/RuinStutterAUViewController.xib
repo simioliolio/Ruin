@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="RuinStutterAUViewController" customModule="RuinStutterAU_macOS">
+            <connections>
+                <outlet property="enable" destination="jKP-We-u68" id="zoL-Sp-5ef"/>
+                <outlet property="length" destination="wIM-5s-RUw" id="JUM-E8-iNf"/>
+                <outlet property="pitch" destination="9gb-Rr-ZIp" id="N1t-9a-u5Z"/>
+                <outlet property="view" destination="c22-O7-iKe" id="hzH-WR-f05"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vuh-1d-ScV">
+                    <rect key="frame" x="181" y="216" width="119" height="19"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Stutter macOS" id="89P-9B-BR2">
+                        <font key="font" metaFont="systemBold" size="16"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jKP-We-u68">
+                    <rect key="frame" x="200" y="180" width="81" height="32"/>
+                    <buttonCell key="cell" type="push" title="Enable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gnt-ap-4h2">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="enableChanged:" target="-2" id="CjX-Gb-Q5a"/>
+                    </connections>
+                </button>
+                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eIr-J1-Obn">
+                    <rect key="frame" x="18" y="150" width="444" height="19"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="wIM-5s-RUw">
+                        <connections>
+                            <action selector="lengthChanged:" target="-2" id="yEN-uK-zva"/>
+                        </connections>
+                    </sliderCell>
+                </slider>
+                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tr9-5r-RdC">
+                    <rect key="frame" x="18" y="127" width="444" height="19"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="9gb-Rr-ZIp">
+                        <connections>
+                            <action selector="pitchChanged:" target="-2" id="U4j-8w-df4"/>
+                        </connections>
+                    </sliderCell>
+                </slider>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="eIr-J1-Obn" secondAttribute="trailing" constant="20" id="6Bl-b0-8EF"/>
+                <constraint firstItem="tr9-5r-RdC" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="8Wr-1X-Nru"/>
+                <constraint firstItem="tr9-5r-RdC" firstAttribute="top" secondItem="eIr-J1-Obn" secondAttribute="bottom" constant="8" id="Bqy-tI-y3b"/>
+                <constraint firstItem="eIr-J1-Obn" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="adg-cY-RZw"/>
+                <constraint firstItem="jKP-We-u68" firstAttribute="centerX" secondItem="vuh-1d-ScV" secondAttribute="centerX" id="glE-Mv-v36"/>
+                <constraint firstItem="vuh-1d-ScV" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="hJj-0N-Uz9"/>
+                <constraint firstAttribute="trailing" secondItem="tr9-5r-RdC" secondAttribute="trailing" constant="20" id="hoK-m6-DkT"/>
+                <constraint firstItem="jKP-We-u68" firstAttribute="top" secondItem="vuh-1d-ScV" secondAttribute="bottom" constant="8" id="iZ3-x0-u23"/>
+                <constraint firstItem="vuh-1d-ScV" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="37" id="p2j-1V-v3R"/>
+                <constraint firstItem="eIr-J1-Obn" firstAttribute="top" secondItem="jKP-We-u68" secondAttribute="bottom" constant="20" id="wnb-x1-haR"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>

@@ -9,9 +9,12 @@
 #ifndef RuinStutterKernel_h
 #define RuinStutterKernel_h
 
-#import "RuinAUUtilites/RuinAUUtilites.h"
 #import <iostream>
 #import <algorithm>
+#import "DSPKernel.hpp"
+#import "VarispeedCircularBuffer.hpp"
+#import "BoolStateChangeTracker.hpp"
+#import "ParameterRamper.hpp"
 
 enum {
     StutterParameterEnable = 0,

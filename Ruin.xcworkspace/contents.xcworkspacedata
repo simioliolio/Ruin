@@ -8,6 +8,9 @@
       location = "group:/Users/shaycock/Documents/Hyper Barn/Ruin/RuinStutter/RuinStutter.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:RuinAUUtilities/RuinAUUtilities.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Test Material">
    </FileRef>
 </Workspace>
