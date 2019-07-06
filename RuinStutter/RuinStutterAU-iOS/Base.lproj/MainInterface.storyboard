@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ruin Stutter Audio Unit View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RuinStutterAudioUnitViewController" customModule="RuinStutterFramework_iOS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stutter AU iOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5c-MY-xUb">
+                                <rect key="frame" x="148.5" y="64" width="117" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sr4-0B-dTj">
+                                <rect key="frame" x="183.5" y="93" width="47" height="30"/>
+                                <state key="normal" title="Enable"/>
+                                <connections>
+                                    <action selector="enableToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iuf-I7-iML"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="2000" translatesAutoresizingMaskIntoConstraints="NO" id="nSp-ih-zOu">
+                                <rect key="frame" x="18" y="131" width="378" height="31"/>
+                                <connections>
+                                    <action selector="lengthChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="vRK-cr-eBP"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.5" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="4dS-SX-Z6K">
+                                <rect key="frame" x="18" y="169" width="378" height="31"/>
+                                <connections>
+                                    <action selector="pitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="dnZ-U3-6ql"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u2v-qu-mbu" firstAttribute="trailing" secondItem="nSp-ih-zOu" secondAttribute="trailing" constant="20" id="1AI-FV-Zij"/>
+                            <constraint firstItem="4dS-SX-Z6K" firstAttribute="top" secondItem="nSp-ih-zOu" secondAttribute="bottom" constant="8" id="5vA-fz-fSA"/>
+                            <constraint firstItem="u2v-qu-mbu" firstAttribute="trailing" secondItem="4dS-SX-Z6K" secondAttribute="trailing" constant="20" id="9QC-xo-CdK"/>
+                            <constraint firstItem="j5c-MY-xUb" firstAttribute="centerX" secondItem="u2v-qu-mbu" secondAttribute="centerX" id="GEu-gu-ROi"/>
+                            <constraint firstItem="Sr4-0B-dTj" firstAttribute="top" secondItem="j5c-MY-xUb" secondAttribute="bottom" constant="8" id="HUO-lp-NlB"/>
+                            <constraint firstItem="nSp-ih-zOu" firstAttribute="leading" secondItem="u2v-qu-mbu" secondAttribute="leading" constant="20" id="YiL-Ih-as2"/>
+                            <constraint firstItem="Sr4-0B-dTj" firstAttribute="centerX" secondItem="j5c-MY-xUb" secondAttribute="centerX" id="i3w-M3-b4x"/>
+                            <constraint firstItem="4dS-SX-Z6K" firstAttribute="leading" secondItem="u2v-qu-mbu" secondAttribute="leading" constant="20" id="kJR-Mg-rJq"/>
+                            <constraint firstItem="nSp-ih-zOu" firstAttribute="top" secondItem="Sr4-0B-dTj" secondAttribute="bottom" constant="8" id="nEv-nI-XuW"/>
+                            <constraint firstItem="j5c-MY-xUb" firstAttribute="top" secondItem="u2v-qu-mbu" secondAttribute="top" constant="20" id="sbA-2i-4eA"/>
+                            <constraint firstItem="nSp-ih-zOu" firstAttribute="leading" secondItem="u2v-qu-mbu" secondAttribute="leading" constant="20" id="skC-fi-h0r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u2v-qu-mbu"/>
+                    </view>
+                    <connections>
+                        <outlet property="enable" destination="Sr4-0B-dTj" id="dUz-5F-xkL"/>
+                        <outlet property="length" destination="nSp-ih-zOu" id="7BE-zH-cZj"/>
+                        <outlet property="pitch" destination="4dS-SX-Z6K" id="pV4-3g-mhE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>

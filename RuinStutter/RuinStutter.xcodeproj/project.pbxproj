@@ -1,0 +1,742 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12465E0022D0BEED00CAC542 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465DFF22D0BEED00CAC542 /* AppDelegate.swift */; };
+		12465E0222D0BEED00CAC542 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465E0122D0BEED00CAC542 /* ViewController.swift */; };
+		12465E0522D0BEED00CAC542 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12465E0322D0BEED00CAC542 /* Main.storyboard */; };
+		12465E0722D0BEEE00CAC542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12465E0622D0BEEE00CAC542 /* Assets.xcassets */; };
+		12465E0A22D0BEEE00CAC542 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12465E0822D0BEEE00CAC542 /* LaunchScreen.storyboard */; };
+		12465E0F22D0BEF600CAC542 /* RuinStutterAU-iOS.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1279B52022D0B29D0032D1F4 /* RuinStutterAU-iOS.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		12465E1C22D0C0AF00CAC542 /* RuinStutterFramework_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 12465E1A22D0C0AF00CAC542 /* RuinStutterFramework_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465E1F22D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E1822D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework */; };
+		12465E2022D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E1822D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		12465E2622D0C1AC00CAC542 /* RuinStutterAudioUnitViewController+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465E2522D0C1AC00CAC542 /* RuinStutterAudioUnitViewController+Factory.swift */; };
+		12465E2A22D0C28D00CAC542 /* RuinStutterAudioUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 12465E2722D0C28D00CAC542 /* RuinStutterAudioUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12465E2B22D0C28D00CAC542 /* RuinStutterAudioUnit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12465E2822D0C28D00CAC542 /* RuinStutterAudioUnit.mm */; };
+		12465E2C22D0C28D00CAC542 /* RuinStutterAudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465E2922D0C28D00CAC542 /* RuinStutterAudioUnitViewController.swift */; };
+		12465E3022D0C2BA00CAC542 /* RuinStutterKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 12465E2E22D0C2BA00CAC542 /* RuinStutterKernel.hpp */; };
+		12465E3122D0C2F400CAC542 /* RuinStutterFramework_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E1822D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework */; };
+		12465E3222D0C31F00CAC542 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FF2D8B22D0B89F00465A05 /* AVFoundation.framework */; };
+		12465E3422D0C33900CAC542 /* RuinAUUtilites.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E3322D0C33900CAC542 /* RuinAUUtilites.framework */; };
+		12465E3822D0C57F00CAC542 /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E3722D0C57F00CAC542 /* RuinCore.framework */; };
+		12465E3D22D0C80000CAC542 /* Air - New Star In The Sky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 12465E3C22D0C80000CAC542 /* Air - New Star In The Sky.mp3 */; };
+		1279B52922D0B29D0032D1F4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1279B52722D0B29D0032D1F4 /* MainInterface.storyboard */; };
+		1287677F22D0B69400C9D1FE /* RuinAUUtilites.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1287677D22D0B69400C9D1FE /* RuinAUUtilites.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		12465E1022D0BEF600CAC542 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1279B50822D0B14C0032D1F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1279B51F22D0B29D0032D1F4;
+			remoteInfo = "RuinStutterAU-iOS";
+		};
+		12465E1D22D0C0AF00CAC542 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1279B50822D0B14C0032D1F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12465E1722D0C0AF00CAC542;
+			remoteInfo = "RuinStutterFramework-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		12465E1222D0BEF600CAC542 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				12465E0F22D0BEF600CAC542 /* RuinStutterAU-iOS.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E2422D0C0AF00CAC542 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				12465E2022D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1287678022D0B69400C9D1FE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1287677F22D0B69400C9D1FE /* RuinAUUtilites.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		12465DFD22D0BEED00CAC542 /* RuinStutterApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RuinStutterApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12465DFF22D0BEED00CAC542 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		12465E0122D0BEED00CAC542 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		12465E0422D0BEED00CAC542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		12465E0622D0BEEE00CAC542 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		12465E0922D0BEEE00CAC542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		12465E0B22D0BEEE00CAC542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12465E1822D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RuinStutterFramework_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12465E1A22D0C0AF00CAC542 /* RuinStutterFramework_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuinStutterFramework_iOS.h; sourceTree = "<group>"; };
+		12465E1B22D0C0AF00CAC542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12465E2522D0C1AC00CAC542 /* RuinStutterAudioUnitViewController+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RuinStutterAudioUnitViewController+Factory.swift"; sourceTree = "<group>"; };
+		12465E2722D0C28D00CAC542 /* RuinStutterAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuinStutterAudioUnit.h; sourceTree = "<group>"; };
+		12465E2822D0C28D00CAC542 /* RuinStutterAudioUnit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RuinStutterAudioUnit.mm; sourceTree = "<group>"; };
+		12465E2922D0C28D00CAC542 /* RuinStutterAudioUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuinStutterAudioUnitViewController.swift; sourceTree = "<group>"; };
+		12465E2E22D0C2BA00CAC542 /* RuinStutterKernel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RuinStutterKernel.hpp; sourceTree = "<group>"; };
+		12465E3322D0C33900CAC542 /* RuinAUUtilites.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinAUUtilites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12465E3722D0C57F00CAC542 /* RuinCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12465E3C22D0C80000CAC542 /* Air - New Star In The Sky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Air - New Star In The Sky.mp3"; path = "../../Test Material/Air - New Star In The Sky.mp3"; sourceTree = "<group>"; };
+		1279B52022D0B29D0032D1F4 /* RuinStutterAU-iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RuinStutterAU-iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1279B52822D0B29D0032D1F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		1279B52A22D0B29D0032D1F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1279B52B22D0B29D0032D1F4 /* RuinStutterAU_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RuinStutterAU_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		1287677D22D0B69400C9D1FE /* RuinAUUtilites.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinAUUtilites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12FF2D8B22D0B89F00465A05 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12465DFA22D0BEED00CAC542 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465E1F22D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E1522D0C0AF00CAC542 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465E3822D0C57F00CAC542 /* RuinCore.framework in Frameworks */,
+				12465E3422D0C33900CAC542 /* RuinAUUtilites.framework in Frameworks */,
+				12465E3222D0C31F00CAC542 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1279B51D22D0B29D0032D1F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465E3122D0C2F400CAC542 /* RuinStutterFramework_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12465DFE22D0BEED00CAC542 /* RuinStutterApp-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				12465E3B22D0C7F500CAC542 /* Test material */,
+				12465DFF22D0BEED00CAC542 /* AppDelegate.swift */,
+				12465E0122D0BEED00CAC542 /* ViewController.swift */,
+				12465E0322D0BEED00CAC542 /* Main.storyboard */,
+				12465E0622D0BEEE00CAC542 /* Assets.xcassets */,
+				12465E0822D0BEEE00CAC542 /* LaunchScreen.storyboard */,
+				12465E0B22D0BEEE00CAC542 /* Info.plist */,
+			);
+			path = "RuinStutterApp-iOS";
+			sourceTree = "<group>";
+		};
+		12465E1922D0C0AF00CAC542 /* RuinStutterFramework-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				12465E2722D0C28D00CAC542 /* RuinStutterAudioUnit.h */,
+				12465E2822D0C28D00CAC542 /* RuinStutterAudioUnit.mm */,
+				12465E2E22D0C2BA00CAC542 /* RuinStutterKernel.hpp */,
+				12465E2922D0C28D00CAC542 /* RuinStutterAudioUnitViewController.swift */,
+				12465E1A22D0C0AF00CAC542 /* RuinStutterFramework_iOS.h */,
+				12465E1B22D0C0AF00CAC542 /* Info.plist */,
+			);
+			path = "RuinStutterFramework-iOS";
+			sourceTree = "<group>";
+		};
+		12465E3B22D0C7F500CAC542 /* Test material */ = {
+			isa = PBXGroup;
+			children = (
+				12465E3C22D0C80000CAC542 /* Air - New Star In The Sky.mp3 */,
+			);
+			name = "Test material";
+			sourceTree = "<group>";
+		};
+		1279B50722D0B14C0032D1F4 = {
+			isa = PBXGroup;
+			children = (
+				1279B52122D0B29D0032D1F4 /* RuinStutterAU-iOS */,
+				12465E1922D0C0AF00CAC542 /* RuinStutterFramework-iOS */,
+				12465DFE22D0BEED00CAC542 /* RuinStutterApp-iOS */,
+				1279B51222D0B14C0032D1F4 /* Products */,
+				1287677C22D0B69400C9D1FE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1279B51222D0B14C0032D1F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1279B52022D0B29D0032D1F4 /* RuinStutterAU-iOS.appex */,
+				12465DFD22D0BEED00CAC542 /* RuinStutterApp-iOS.app */,
+				12465E1822D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1279B52122D0B29D0032D1F4 /* RuinStutterAU-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				12465E2522D0C1AC00CAC542 /* RuinStutterAudioUnitViewController+Factory.swift */,
+				1279B52722D0B29D0032D1F4 /* MainInterface.storyboard */,
+				1279B52A22D0B29D0032D1F4 /* Info.plist */,
+				1279B52B22D0B29D0032D1F4 /* RuinStutterAU_iOS-Bridging-Header.h */,
+			);
+			path = "RuinStutterAU-iOS";
+			sourceTree = "<group>";
+		};
+		1287677C22D0B69400C9D1FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12465E3722D0C57F00CAC542 /* RuinCore.framework */,
+				12465E3322D0C33900CAC542 /* RuinAUUtilites.framework */,
+				12FF2D8B22D0B89F00465A05 /* AVFoundation.framework */,
+				1287677D22D0B69400C9D1FE /* RuinAUUtilites.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		12465E1322D0C0AF00CAC542 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465E1C22D0C0AF00CAC542 /* RuinStutterFramework_iOS.h in Headers */,
+				12465E3022D0C2BA00CAC542 /* RuinStutterKernel.hpp in Headers */,
+				12465E2A22D0C28D00CAC542 /* RuinStutterAudioUnit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		12465DFC22D0BEED00CAC542 /* RuinStutterApp-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12465E0E22D0BEEE00CAC542 /* Build configuration list for PBXNativeTarget "RuinStutterApp-iOS" */;
+			buildPhases = (
+				12465DF922D0BEED00CAC542 /* Sources */,
+				12465DFA22D0BEED00CAC542 /* Frameworks */,
+				12465DFB22D0BEED00CAC542 /* Resources */,
+				12465E1222D0BEF600CAC542 /* Embed App Extensions */,
+				12465E2422D0C0AF00CAC542 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12465E1122D0BEF600CAC542 /* PBXTargetDependency */,
+				12465E1E22D0C0AF00CAC542 /* PBXTargetDependency */,
+			);
+			name = "RuinStutterApp-iOS";
+			productName = RuinStutter;
+			productReference = 12465DFD22D0BEED00CAC542 /* RuinStutterApp-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		12465E1722D0C0AF00CAC542 /* RuinStutterFramework-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12465E2122D0C0AF00CAC542 /* Build configuration list for PBXNativeTarget "RuinStutterFramework-iOS" */;
+			buildPhases = (
+				12465E1322D0C0AF00CAC542 /* Headers */,
+				12465E1422D0C0AF00CAC542 /* Sources */,
+				12465E1522D0C0AF00CAC542 /* Frameworks */,
+				12465E1622D0C0AF00CAC542 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RuinStutterFramework-iOS";
+			productName = "RuinStutterFramework-iOS";
+			productReference = 12465E1822D0C0AF00CAC542 /* RuinStutterFramework_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1279B51F22D0B29D0032D1F4 /* RuinStutterAU-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1279B52C22D0B29D0032D1F4 /* Build configuration list for PBXNativeTarget "RuinStutterAU-iOS" */;
+			buildPhases = (
+				1279B51C22D0B29D0032D1F4 /* Sources */,
+				1279B51D22D0B29D0032D1F4 /* Frameworks */,
+				1279B51E22D0B29D0032D1F4 /* Resources */,
+				1287678022D0B69400C9D1FE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RuinStutterAU-iOS";
+			productName = "RuinStutterAU-iOS";
+			productReference = 1279B52022D0B29D0032D1F4 /* RuinStutterAU-iOS.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1279B50822D0B14C0032D1F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Hyper Barn LTD";
+				TargetAttributes = {
+					12465DFC22D0BEED00CAC542 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					12465E1722D0C0AF00CAC542 = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+					};
+					1279B51F22D0B29D0032D1F4 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 1279B50B22D0B14C0032D1F4 /* Build configuration list for PBXProject "RuinStutter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1279B50722D0B14C0032D1F4;
+			productRefGroup = 1279B51222D0B14C0032D1F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1279B51F22D0B29D0032D1F4 /* RuinStutterAU-iOS */,
+				12465DFC22D0BEED00CAC542 /* RuinStutterApp-iOS */,
+				12465E1722D0C0AF00CAC542 /* RuinStutterFramework-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12465DFB22D0BEED00CAC542 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465E0A22D0BEEE00CAC542 /* LaunchScreen.storyboard in Resources */,
+				12465E0722D0BEEE00CAC542 /* Assets.xcassets in Resources */,
+				12465E0522D0BEED00CAC542 /* Main.storyboard in Resources */,
+				12465E3D22D0C80000CAC542 /* Air - New Star In The Sky.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E1622D0C0AF00CAC542 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1279B51E22D0B29D0032D1F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1279B52922D0B29D0032D1F4 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12465DF922D0BEED00CAC542 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465E0222D0BEED00CAC542 /* ViewController.swift in Sources */,
+				12465E0022D0BEED00CAC542 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12465E1422D0C0AF00CAC542 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465E2B22D0C28D00CAC542 /* RuinStutterAudioUnit.mm in Sources */,
+				12465E2C22D0C28D00CAC542 /* RuinStutterAudioUnitViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1279B51C22D0B29D0032D1F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12465E2622D0C1AC00CAC542 /* RuinStutterAudioUnitViewController+Factory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		12465E1122D0BEF600CAC542 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1279B51F22D0B29D0032D1F4 /* RuinStutterAU-iOS */;
+			targetProxy = 12465E1022D0BEF600CAC542 /* PBXContainerItemProxy */;
+		};
+		12465E1E22D0C0AF00CAC542 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12465E1722D0C0AF00CAC542 /* RuinStutterFramework-iOS */;
+			targetProxy = 12465E1D22D0C0AF00CAC542 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		12465E0322D0BEED00CAC542 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12465E0422D0BEED00CAC542 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		12465E0822D0BEEE00CAC542 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12465E0922D0BEEE00CAC542 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1279B52722D0B29D0032D1F4 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1279B52822D0B29D0032D1F4 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		12465E0C22D0BEEE00CAC542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				INFOPLIST_FILE = "$(SRCROOT)/RuinStutterApp-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.RuinStutter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		12465E0D22D0BEEE00CAC542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				INFOPLIST_FILE = "$(SRCROOT)/RuinStutterApp-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperbarn.RuinStutter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		12465E2222D0C0AF00CAC542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "RuinStutterFramework-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutterFramework-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		12465E2322D0C0AF00CAC542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "RuinStutterFramework-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutterFramework-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1279B51722D0B14C0032D1F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1279B51822D0B14C0032D1F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1279B52D22D0B29D0032D1F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				INFOPLIST_FILE = "RuinStutterAU-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutter.AU-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RuinStutterAU-iOS/RuinStutterAU_iOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1279B52E22D0B29D0032D1F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7JF57DB443;
+				INFOPLIST_FILE = "RuinStutterAU-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutter.AU-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RuinStutterAU-iOS/RuinStutterAU_iOS-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12465E0E22D0BEEE00CAC542 /* Build configuration list for PBXNativeTarget "RuinStutterApp-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12465E0C22D0BEEE00CAC542 /* Debug */,
+				12465E0D22D0BEEE00CAC542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12465E2122D0C0AF00CAC542 /* Build configuration list for PBXNativeTarget "RuinStutterFramework-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12465E2222D0C0AF00CAC542 /* Debug */,
+				12465E2322D0C0AF00CAC542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1279B50B22D0B14C0032D1F4 /* Build configuration list for PBXProject "RuinStutter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1279B51722D0B14C0032D1F4 /* Debug */,
+				1279B51822D0B14C0032D1F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1279B52C22D0B29D0032D1F4 /* Build configuration list for PBXNativeTarget "RuinStutterAU-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1279B52D22D0B29D0032D1F4 /* Debug */,
+				1279B52E22D0B29D0032D1F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1279B50822D0B14C0032D1F4 /* Project object */;
+}
