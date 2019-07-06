@@ -157,9 +157,6 @@
 		12465E1922D0C0AF00CAC542 /* RuinStutterFramework-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				12465E2722D0C28D00CAC542 /* RuinStutterAudioUnit.h */,
-				12465E2822D0C28D00CAC542 /* RuinStutterAudioUnit.mm */,
-				12465E2E22D0C2BA00CAC542 /* RuinStutterKernel.hpp */,
 				12465E2922D0C28D00CAC542 /* RuinStutterAudioUnitViewController.swift */,
 				12465E1A22D0C0AF00CAC542 /* RuinStutterFramework_iOS.h */,
 				12465E1B22D0C0AF00CAC542 /* Info.plist */,
@@ -175,9 +172,20 @@
 			name = "Test material";
 			sourceTree = "<group>";
 		};
+		12465E4322D0E47900CAC542 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				12465E2722D0C28D00CAC542 /* RuinStutterAudioUnit.h */,
+				12465E2822D0C28D00CAC542 /* RuinStutterAudioUnit.mm */,
+				12465E2E22D0C2BA00CAC542 /* RuinStutterKernel.hpp */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		1279B50722D0B14C0032D1F4 = {
 			isa = PBXGroup;
 			children = (
+				12465E4322D0E47900CAC542 /* Shared */,
 				1279B52122D0B29D0032D1F4 /* RuinStutterAU-iOS */,
 				12465E1922D0C0AF00CAC542 /* RuinStutterFramework-iOS */,
 				12465DFE22D0BEED00CAC542 /* RuinStutterApp-iOS */,
