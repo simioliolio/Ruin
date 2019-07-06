@@ -105,7 +105,6 @@
 		1279B52022D0B29D0032D1F4 /* RuinStutterAU-iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RuinStutterAU-iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1279B52822D0B29D0032D1F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		1279B52A22D0B29D0032D1F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1279B52B22D0B29D0032D1F4 /* RuinStutterAU_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RuinStutterAU_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		1287677D22D0B69400C9D1FE /* RuinAUUtilites.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinAUUtilites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FF2D8B22D0B89F00465A05 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -210,7 +209,6 @@
 				12465E2522D0C1AC00CAC542 /* RuinStutterAudioUnitViewController+Factory.swift */,
 				1279B52722D0B29D0032D1F4 /* MainInterface.storyboard */,
 				1279B52A22D0B29D0032D1F4 /* Info.plist */,
-				1279B52B22D0B29D0032D1F4 /* RuinStutterAU_iOS-Bridging-Header.h */,
 			);
 			path = "RuinStutterAU-iOS";
 			sourceTree = "<group>";
@@ -677,7 +675,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutter.AU-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "RuinStutterAU-iOS/RuinStutterAU_iOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -699,7 +697,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hyperbarn.RuinStutter.AU-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "RuinStutterAU-iOS/RuinStutterAU_iOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
