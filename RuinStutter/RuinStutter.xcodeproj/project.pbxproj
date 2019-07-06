@@ -54,7 +54,6 @@
 		12465F0022D1068700CAC542 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E8722D0F44400CAC542 /* AVFoundation.framework */; };
 		12465F0222D1070100CAC542 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465F0122D1070100CAC542 /* AudioToolbox.framework */; };
 		1279B52922D0B29D0032D1F4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1279B52722D0B29D0032D1F4 /* MainInterface.storyboard */; };
-		1287677F22D0B69400C9D1FE /* RuinAUUtilites.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1287677D22D0B69400C9D1FE /* RuinAUUtilites.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,17 +128,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				12465E7D22D0EF3100CAC542 /* RuinStutterFramework_macOS.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1287678022D0B69400C9D1FE /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1287677F22D0B69400C9D1FE /* RuinAUUtilites.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,7 +511,6 @@
 				1279B51C22D0B29D0032D1F4 /* Sources */,
 				1279B51D22D0B29D0032D1F4 /* Frameworks */,
 				1279B51E22D0B29D0032D1F4 /* Resources */,
-				1287678022D0B69400C9D1FE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
