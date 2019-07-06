@@ -40,9 +40,18 @@ public:
         buffer = VarispeedCircularBuffer(inSampleRate * secondsFromMS(StutterMaxLengthInMS) * inChannelCount);
     }
     
+    void allocateBuffer() {
+        buffer.allocate();
+    }
+    
+    void deallocateBuffer() {
+        buffer.deallocate();
+    }
+    
     void reset() {
         enableRamper.reset();
         lengthRamper.reset();
+        pitchRamper.reset();
     }
     
     void setParameter(AUParameterAddress address, AUValue value) {

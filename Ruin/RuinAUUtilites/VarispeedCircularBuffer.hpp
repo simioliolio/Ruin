@@ -16,16 +16,24 @@ class VarispeedCircularBuffer {
 public:
     
     VarispeedCircularBuffer(int length) {
-        bufferLength = length;
-        playbackLength = length;
-        buffer = new float [length];
+        bufferLengthInit = length;
+        bufferLength = playbackLength = bufferLengthInit;
     }
     
-    ~VarispeedCircularBuffer() {
+    void allocate() {
+        buffer = new float [bufferLengthInit];
+        bufferLength = playbackLength = bufferLengthInit;
+    }
+    
+    void deallocate() {
         delete [] buffer;
+        bufferLength = playbackLength = 0;
     }
     
     float nextAtPlayhead(float speed = 1.0) {
+        if (bufferLength == 0) { // no buffer allocated
+            return 0.0;
+        }
         if (playbackPosition >= playbackLength) {
             playbackPosition = 0;
             playbackWrapCount++;
@@ -36,6 +44,9 @@ public:
     }
     
     void nextAtRecordHead(float value) {
+        if (bufferLength == 0) { // no buffer allocated
+            return;
+        }
         if (recordPosition >= bufferLength) {
             return; // records once until reset
         }
@@ -58,6 +69,7 @@ public:
     
 private:
     
+    int bufferLengthInit;
     int bufferLength; // absolute length of buffer
     float *buffer;
     int recordPosition = 0;

@@ -195,8 +195,7 @@ static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
     }
     
     _inputBus.allocateRenderResources(self.maximumFramesToRender);
-    
-    // TODO: Allocate memory for kernel
+    _kernel.allocateBuffer();
     
     return YES;
 }
@@ -206,8 +205,7 @@ static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
 - (void)deallocateRenderResources {
     
     _inputBus.deallocateRenderResources();
-    
-    // TODO: Deallocate memory for stutter kernel
+    _kernel.deallocateBuffer();
     
     [super deallocateRenderResources];
 }
