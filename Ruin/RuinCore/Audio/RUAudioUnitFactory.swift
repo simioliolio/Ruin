@@ -28,6 +28,7 @@ final class RUAudioUnitFactory {
             AVAudioUnit.instantiate(with: audioUnitComponent.audioComponentDescription, options: []) { (audioUnit, error) in
                 guard let audioUnit = audioUnit else {
                     errors[audioUnitComponent.name] = error
+                    dispatchGroup.leave()
                     return
                 }
                 results.append(audioUnit)
