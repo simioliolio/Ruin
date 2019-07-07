@@ -9,7 +9,6 @@
 import UIKit
 import CoreAudioKit
 import RuinStutterFramework_iOS
-@testable import RuinCore
 
 class ViewController: UIViewController {
     

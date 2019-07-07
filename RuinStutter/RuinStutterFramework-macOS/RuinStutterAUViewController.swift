@@ -9,8 +9,8 @@
 import CoreAudioKit
 import RuinStutterFramework_macOS
 
-public class RuinStutterAUViewController: AUViewController, AUAudioUnitFactory {
-    var audioUnit: AUAudioUnit?
+public class RuinStutterAUViewController: AUViewController {
+    public var audioUnit: AUAudioUnit?
     
     @IBOutlet weak var enable: NSButton!
     @IBAction func enableChanged(_ sender: Any) {
@@ -36,10 +36,6 @@ public class RuinStutterAUViewController: AUViewController, AUAudioUnitFactory {
         // Get the parameter tree and add observers for any parameters that the UI needs to keep in sync with the AudioUnit
     }
     
-    public func createAudioUnit(with componentDescription: AudioComponentDescription) throws -> AUAudioUnit {
-        audioUnit = try RuinStutterAudioUnit(componentDescription: componentDescription, options: [])
-        
-        return audioUnit!
-    }
+    
     
 }

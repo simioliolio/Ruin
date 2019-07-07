@@ -32,7 +32,7 @@
 					<key>description</key>
 					<string>RuinStutterAU-macOS</string>
 					<key>factoryFunction</key>
-					<string>$(PRODUCT_MODULE_NAME).AudioUnitViewController</string>
+					<string>$(PRODUCT_MODULE_NAME).RuinStutterAUViewController</string>
 					<key>manufacturer</key>
 					<string>hypb</string>
 					<key>name</key>
