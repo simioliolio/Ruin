@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14835.7"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="RuinStutterAUViewController" customModule="RuinStutterAU_macOS">
             <connections>
                 <outlet property="enable" destination="jKP-We-u68" id="zoL-Sp-5ef"/>
-                <outlet property="length" destination="wIM-5s-RUw" id="JUM-E8-iNf"/>
-                <outlet property="pitch" destination="9gb-Rr-ZIp" id="N1t-9a-u5Z"/>
+                <outlet property="length" destination="eIr-J1-Obn" id="A0p-cs-ERK"/>
+                <outlet property="pitch" destination="tr9-5r-RdC" id="PtQ-Sh-3mc"/>
                 <outlet property="view" destination="c22-O7-iKe" id="hzH-WR-f05"/>
             </connections>
         </customObject>
@@ -39,11 +40,10 @@
                 </button>
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eIr-J1-Obn">
                     <rect key="frame" x="18" y="150" width="444" height="19"/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="wIM-5s-RUw">
-                        <connections>
-                            <action selector="lengthChanged:" target="-2" id="yEN-uK-zva"/>
-                        </connections>
-                    </sliderCell>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="wIM-5s-RUw"/>
+                    <connections>
+                        <action selector="lengthChanged:" target="-2" id="arM-oW-PB7"/>
+                    </connections>
                 </slider>
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tr9-5r-RdC">
                     <rect key="frame" x="18" y="127" width="444" height="19"/>
@@ -66,6 +66,7 @@
                 <constraint firstItem="vuh-1d-ScV" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="37" id="p2j-1V-v3R"/>
                 <constraint firstItem="eIr-J1-Obn" firstAttribute="top" secondItem="jKP-We-u68" secondAttribute="bottom" constant="20" id="wnb-x1-haR"/>
             </constraints>
+            <point key="canvasLocation" x="139" y="154"/>
         </customView>
     </objects>
 </document>

@@ -14,6 +14,9 @@ extension RuinStutterAUViewController: AUAudioUnitFactory {
     public func createAudioUnit(with componentDescription: AudioComponentDescription) throws -> AUAudioUnit {
         audioUnit = try RuinStutterAudioUnit(componentDescription: componentDescription, options: [])
         
+        if isViewLoaded {
+            connectUI(to: audioUnit!)
+        }
         return audioUnit!
     }
     
