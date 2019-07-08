@@ -13,4 +13,7 @@
    <FileRef
       location = "group:Test Material">
    </FileRef>
+   <FileRef
+      location = "group:TestAUHost/TestAUHost.xcodeproj">
+   </FileRef>
 </Workspace>
