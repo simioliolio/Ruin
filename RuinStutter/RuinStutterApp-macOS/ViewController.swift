@@ -38,11 +38,11 @@ class ViewController: NSViewController {
          
          Note that this registration is local to this process.
          */
-        AUAudioUnit.registerSubclass(RuinStutterAudioUnit.self, as: componentDescription, name:"RuinStutterAU-macOS", version: UInt32.max)
+        AUAudioUnit.registerSubclass(RuinStutterAudioUnit.self, as: componentDescription, name:"hypb: RuinStutterAU-macOS", version: UInt32.max)
         
         audioEngine.setup(desc: componentDescription) {
             // play a test track
-            let url = Bundle.main.url(forResource: "Air - New Star In The Sky", withExtension: "mp3")!
+            let url = Bundle.main.url(forResource: "100hz_5s", withExtension: "wav")!
             do {
                 try self.audioEngine.load(audioFile: url)
                 self.audioEngine.play()
@@ -58,11 +58,7 @@ class ViewController: NSViewController {
     
     private func showAUView(_ audioUnit: AUAudioUnit) {
         
-        let builtInPlugInsURL = Bundle.main.builtInPlugInsURL!
-        let pluginURL = builtInPlugInsURL.appendingPathComponent("RuinStutterAU-macOS.appex")
-        let appExtensionBundle = Bundle(url: pluginURL)
-        
-        let auViewController = RuinStutterAUViewController(nibName: "RuinStutterAUViewController", bundle: appExtensionBundle)
+        let auViewController = RuinStutterAUViewController(nibName: "RuinStutterAUViewController", bundle: Bundle(for: RuinStutterAUViewController.self))
         
         auViewController.audioUnit = audioUnit
         DispatchQueue.main.async {

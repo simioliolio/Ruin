@@ -13,15 +13,17 @@ public class RuinStutterAUViewController: AUViewController {
     
     @IBOutlet weak var enable: NSButton!
     @IBAction func enableChanged(_ sender: Any) {
-        
+        enableParameter.value = enableParameter.value > 0 ? 0 : 1
     }
     @IBOutlet weak var length: NSSlider!
     @IBAction func lengthChanged(_ sender: Any) {
-        
+        let slider = sender as! NSSlider
+        lengthParameter.value = slider.floatValue
     }
     @IBOutlet weak var pitch: NSSlider!
     @IBAction func pitchChanged(_ sender: Any) {
-        
+        let slider = sender as! NSSlider
+        pitchParameter.value = slider.floatValue
     }
     
     // MARK: AU and AU parameters

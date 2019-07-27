@@ -41,6 +41,9 @@ final public class AURAudioEngine {
         guard let effectOne = effectOne else { fatalError("setup not called before trying to loading audio file") } // TODO: Throw
         
         let audioFile = try AVAudioFile(forReading: url)
+        let audioFileBuffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: UInt32(audioFile.length))!
+        try! audioFile.read(into: audioFileBuffer)
+        
         if let currentPlayer = currentPlayer {
             currentPlayer.stop()
             engine.disconnectNodeOutput(currentPlayer)
@@ -51,9 +54,7 @@ final public class AURAudioEngine {
         engine.attach(newPlayer)
         engine.connect(newPlayer, to: effectOne, format: audioFile.processingFormat)
         if !engine.isRunning { try engine.start() }
-        newPlayer.scheduleFile(audioFile, at: nil) {
-            print("complete!")
-        }
+        newPlayer.scheduleBuffer(audioFileBuffer, at: nil, options: .loops, completionHandler: nil)
         self.currentPlayer = newPlayer
     }
     
