@@ -1,5 +1,5 @@
 //
-//  AudioUnitViewController.swift
+//  RuinStutterAUViewController.swift
 //  RuinStutterAU-macOS
 //
 //  Created by Simon Haycock on 06/07/2019.
