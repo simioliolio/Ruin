@@ -11,6 +11,7 @@
 
 #import <iostream>
 #import <algorithm>
+#include <vector>
 #import "DSPKernel.hpp"
 #import "VarispeedCircularBuffer.hpp"
 #import "BoolStateChangeTracker.hpp"
@@ -40,15 +41,23 @@ public:
         lengthRamper.init();
         pitchRamper.init();
         dezipperRampDuration = (AUAudioFrameCount)floor(0.02 * inSampleRate);
-        buffer = VarispeedCircularBuffer(inSampleRate * secondsFromMS(StutterMaxLengthInMS) * inChannelCount);
+        int numberOfSamplesInBuffers = inSampleRate * secondsFromMS(StutterMaxLengthInMS) * inChannelCount;
+        for (int i = 0; i < inChannelCount; i++) {
+            VarispeedCircularBuffer *buffer = new VarispeedCircularBuffer(numberOfSamplesInBuffers);
+            buffers.push_back(buffer);
+        }
     }
     
     void allocateBuffer() {
-        buffer.allocate();
+        for(std::size_t i=0; i<buffers.size(); ++i) {
+            buffers[i]->allocate();
+        }
     }
     
     void deallocateBuffer() {
-        buffer.deallocate();
+        for(std::size_t i=0; i<buffers.size(); ++i) {
+            buffers[i]->deallocate();
+        }
     }
     
     void reset() {
@@ -128,7 +137,9 @@ public:
                     break;
                 case BoolStateChangeResultEnabled:
                     // stutter has just been enabled. reset buffers to 0 and set mode to record
-                    buffer.reset();
+                    for(std::size_t i=0; i<buffers.size(); ++i) {
+                        buffers[i]->reset();
+                    }
                     stutterState = StutterStateRecord;
                     break;
                 case BoolStateChangeResultDisabled:
@@ -141,6 +152,8 @@ public:
             
             for (int channel = 0; channel < channelCount; ++channel) {
                 
+                VarispeedCircularBuffer *buffer = buffers[channel];
+                
                 float* in = (float*)inBufferListPtr->mBuffers[channel].mData + frameOffset;
                 float* out = (float*)outBufferListPtr->mBuffers[channel].mData + frameOffset;
 
@@ -149,16 +162,16 @@ public:
                         *out = *in;
                         break;
                     case StutterStateRecord:
-                        buffer.nextAtRecordHead(*in);
+                        buffer->nextAtRecordHead(*in);
                         [[fallthrough]];
                     case StutterStatePlayback:
                         // TODO: Expensive
-                        buffer.playbackLength = int(lengthParameter * sampleRate * channelCount);
-                        if (buffer.playbackWrapCount == 0) {
+                        buffer->playbackLength = int(lengthParameter * sampleRate * channelCount);
+                        if (buffer->playbackWrapCount == 0) {
                             // playback normal speed on first wrap
-                            *out = buffer.nextAtPlayhead(1.0);
+                            *out = buffer->nextAtPlayhead(1.0);
                         } else {
-                            *out = buffer.nextAtPlayhead(pitchParameter);
+                            *out = buffer->nextAtPlayhead(pitchParameter);
                             // after one wrap, the buffer no longer needs to record
                             stutterState = StutterStatePlayback;
                         }
@@ -181,7 +194,7 @@ private:
     ParameterRamper lengthRamper = {1}; // length in s
     ParameterRamper pitchRamper = {1}; // pitch as ratio
     AUAudioFrameCount dezipperRampDuration;
-    VarispeedCircularBuffer buffer = VarispeedCircularBuffer(88200);
+    std::vector<VarispeedCircularBuffer*> buffers;
     BoolStateChangeTracker enableStateTracker = false;
     
     float secondsFromMS(float ms) {
