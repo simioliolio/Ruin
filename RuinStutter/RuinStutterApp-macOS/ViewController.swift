@@ -28,7 +28,7 @@ class ViewController: NSViewController {
         var componentDescription = AudioComponentDescription()
         componentDescription.componentType = kAudioUnitType_Effect
         componentDescription.componentSubType = 0x64697374 /*'dist'*/
-        componentDescription.componentManufacturer = 0x68797062 /*'hypb'*/
+        componentDescription.componentManufacturer = 0x48797062 /*'Hypb'*/
         componentDescription.componentFlags = 0
         componentDescription.componentFlagsMask = 0
         

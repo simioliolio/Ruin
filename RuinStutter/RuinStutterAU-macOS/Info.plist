@@ -34,9 +34,9 @@
 					<key>factoryFunction</key>
 					<string>$(PRODUCT_MODULE_NAME).RuinStutterAUViewController</string>
 					<key>manufacturer</key>
-					<string>hypb</string>
+					<string>Hypb</string>
 					<key>name</key>
-					<string>hypb: RuinStutterAU-macOS</string>
+					<string>Hypb: RuinStutterAU-macOS</string>
 					<key>sandboxSafe</key>
 					<true/>
 					<key>subtype</key>
