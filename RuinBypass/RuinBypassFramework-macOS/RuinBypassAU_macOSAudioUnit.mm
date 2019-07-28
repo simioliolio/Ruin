@@ -76,13 +76,6 @@ static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
     return self;
 }
 
-- (AUAudioUnitPreset*)newPresetWithNumber:(NSInteger)number name:(NSString *)name {
-    AUAudioUnitPreset *aPreset = [AUAudioUnitPreset new];
-    aPreset.number = number;
-    aPreset.name = name;
-    return aPreset;
-}
-
 #pragma mark - AUAudioUnit Overrides
 
 // If an audio unit has input, an audio unit's audio input connection points.
@@ -170,6 +163,13 @@ static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
 
 - (NSArray<AUAudioUnitPreset*>*)factoryPresets {
     return _presets;
+}
+
+- (AUAudioUnitPreset*)newPresetWithNumber:(NSInteger)number name:(NSString *)name {
+    AUAudioUnitPreset *aPreset = [AUAudioUnitPreset new];
+    aPreset.number = number;
+    aPreset.name = name;
+    return aPreset;
 }
 
 #pragma mark - AUAudioUnit (AUAudioUnitImplementation)

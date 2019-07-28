@@ -21,16 +21,9 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var componentDescription = AudioComponentDescription()
-        componentDescription.componentType = kAudioUnitType_Effect
-        componentDescription.componentSubType = 0x64697374 /*'dist'*/
-        componentDescription.componentManufacturer = 0x48797062 /*'Hypb'*/
-        componentDescription.componentFlags = 0
-        componentDescription.componentFlagsMask = 0
-        
-        AUAudioUnit.registerSubclass(RuinBypassAU_macOSAudioUnit.self, as: componentDescription, name:"Hypb: RuinBypassAU-macOS", version: UInt32.max)
+        AUAudioUnit.registerSubclass(RuinBypassAU_macOSAudioUnit.self, as: RuinBypassAU_macOSAudioUnit.componentDescription, name:RuinBypassAU_macOSAudioUnit.componentName, version: UInt32.max)
 
-        audioEngine.setup(desc: componentDescription) {
+        audioEngine.setup(desc: RuinBypassAU_macOSAudioUnit.componentDescription) {
             // play a test track
             let url = Bundle.main.url(forResource: "100hz_5s", withExtension: "wav")!
             do {

@@ -9,6 +9,7 @@
 import Foundation
 import AudioToolbox
 
+@objc
 public protocol AURComponentDescriptionProviding {
     static var componentDescription: AudioComponentDescription { get }
     static var componentName: String { get }

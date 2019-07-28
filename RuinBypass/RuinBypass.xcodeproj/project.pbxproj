@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9195D84B22EDF43700A7D0CC /* RuinBypassAUViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9195D84922EDF43700A7D0CC /* RuinBypassAUViewController.xib */; };
+		9195D84D22EE140600A7D0CC /* RuinBypassAU_macOSAudioUnit+AURComponentDescriptionProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9195D84C22EE140600A7D0CC /* RuinBypassAU_macOSAudioUnit+AURComponentDescriptionProviding.swift */; };
 		919FE33622EDD91D000E9DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FE33522EDD91D000E9DB0 /* AppDelegate.swift */; };
 		919FE33822EDD91D000E9DB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FE33722EDD91D000E9DB0 /* ViewController.swift */; };
 		919FE33A22EDD91E000E9DB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 919FE33922EDD91E000E9DB0 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		9195D84A22EDF43700A7D0CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RuinBypassAUViewController.xib; sourceTree = "<group>"; };
+		9195D84C22EE140600A7D0CC /* RuinBypassAU_macOSAudioUnit+AURComponentDescriptionProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RuinBypassAU_macOSAudioUnit+AURComponentDescriptionProviding.swift"; sourceTree = "<group>"; };
 		919FE33222EDD91D000E9DB0 /* RuinBypass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuinBypass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		919FE33522EDD91D000E9DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		919FE33722EDD91D000E9DB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				919FE36E22EDDB34000E9DB0 /* RuinBypassAUViewController.swift */,
 				919FE36A22EDDAB0000E9DB0 /* RuinBypassAU_macOSAudioUnit.h */,
 				919FE36B22EDDAB0000E9DB0 /* RuinBypassAU_macOSAudioUnit.mm */,
+				9195D84C22EE140600A7D0CC /* RuinBypassAU_macOSAudioUnit+AURComponentDescriptionProviding.swift */,
 				919FE37222EDDDF7000E9DB0 /* RuinBypassKernel.hpp */,
 				919FE35F22EDDA97000E9DB0 /* RuinBypassFramework_macOS.h */,
 				919FE36022EDDA97000E9DB0 /* Info.plist */,
@@ -388,6 +391,7 @@
 				919FE39322EDE53D000E9DB0 /* DSPKernel.mm in Sources */,
 				919FE36F22EDDB34000E9DB0 /* RuinBypassAUViewController.swift in Sources */,
 				919FE36D22EDDAB0000E9DB0 /* RuinBypassAU_macOSAudioUnit.mm in Sources */,
+				9195D84D22EE140600A7D0CC /* RuinBypassAU_macOSAudioUnit+AURComponentDescriptionProviding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
