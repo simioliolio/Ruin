@@ -53,13 +53,17 @@ final public class AURAudioEngine {
         let newPlayer = AVAudioPlayerNode()
         engine.attach(newPlayer)
         engine.connect(newPlayer, to: effectOne, format: audioFile.processingFormat)
-        if !engine.isRunning { try engine.start() }
+        if !engine.isRunning {
+            try engine.start()
+            
+        }
         newPlayer.scheduleBuffer(audioFileBuffer, at: nil, options: .loops, completionHandler: nil)
         self.currentPlayer = newPlayer
+        print("finished loading")
     }
     
     public func play() {
-        
+        print("playing")
         currentPlayer?.play(at: nil)
     }
     
