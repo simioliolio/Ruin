@@ -20,4 +20,8 @@ extension RuinStutterAUViewController: AUAudioUnitFactory {
         return audioUnit!
     }
     
+    override public func beginRequest(with context: NSExtensionContext) {
+        super.beginRequest(with: context)
+    }
+    
 }
