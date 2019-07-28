@@ -12,12 +12,23 @@ import AVFoundation
 final public class AURAudioEngine {
     
     private let engine = AVAudioEngine()
-    private var currentPlayer: AVAudioPlayerNode?
+    private var player: AVAudioPlayerNode?
+    private var audioFileFormat: AVAudioFormat?
     public var effectOne: AVAudioNode?
     
     public init() { }
     
     public func setup(desc: AudioComponentDescription, completion: @escaping ()->()) {
+        
+        if let currentEffectOne = effectOne {
+            engine.disconnectNodeOutput(currentEffectOne)
+            engine.disconnectNodeInput(currentEffectOne)
+            engine.detach(currentEffectOne)
+            if let currentPlayer = player {
+                // reconnect the player to the mixer while effect is instantiated
+                engine.connect(currentPlayer, to: engine.mainMixerNode, format: audioFileFormat)
+            }
+        }
         
         AVAudioUnit.instantiate(with: desc, options: []) { (audioUnit, error) in
             
@@ -31,6 +42,11 @@ final public class AURAudioEngine {
             
             self.engine.attach(audioUnit)
             self.engine.connect(audioUnit, to: self.engine.mainMixerNode, format: nil)
+            
+            if let currentPlayer = self.player {
+                self.engine.connect(currentPlayer, to: audioUnit, format: self.audioFileFormat)
+            }
+            
             self.effectOne = audioUnit // keep reference
             completion()
         }
@@ -44,11 +60,11 @@ final public class AURAudioEngine {
         let audioFileBuffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: UInt32(audioFile.length))!
         try! audioFile.read(into: audioFileBuffer)
         
-        if let currentPlayer = currentPlayer {
+        if let currentPlayer = player {
             currentPlayer.stop()
             engine.disconnectNodeOutput(currentPlayer)
             engine.detach(currentPlayer)
-            self.currentPlayer = nil
+            self.player = nil
         }
         let newPlayer = AVAudioPlayerNode()
         engine.attach(newPlayer)
@@ -58,11 +74,12 @@ final public class AURAudioEngine {
             
         }
         newPlayer.scheduleBuffer(audioFileBuffer, at: nil, options: .loops, completionHandler: nil)
-        self.currentPlayer = newPlayer
+        player = newPlayer
+        audioFileFormat = audioFile.processingFormat
     }
     
     public func play() {
-        currentPlayer?.play(at: nil)
+        player?.play(at: nil)
     }
     
     lazy var availableAudioUnitComponents: [AVAudioUnitComponent] = {

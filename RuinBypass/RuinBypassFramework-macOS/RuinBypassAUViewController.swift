@@ -7,6 +7,7 @@
 //
 
 import CoreAudioKit
+import RuinAURoadie
 
 public class RuinBypassAUViewController: AUViewController {
     
@@ -17,3 +18,5 @@ public class RuinBypassAUViewController: AUViewController {
     }
     
 }
+
+extension RuinBypassAUViewController: AURAudioUnitViewController { }

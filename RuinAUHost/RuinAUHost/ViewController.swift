@@ -7,7 +7,9 @@
 //
 
 import Cocoa
+import RuinBypassFramework_macOS
 import RuinStutterFramework_macOS
+import RuinAURoadie
 
 class ViewController: NSViewController {
     
@@ -32,8 +34,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var learnY: NSButton!
     @IBOutlet weak var auContainer: NSView!
     
-    
-    
+    let audioEngine = AURAudioEngine()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +43,25 @@ class ViewController: NSViewController {
             auSelect.addItem(withTitle: $0.rawValue)
         }
         
-        let stutterVC = RuinStutterAUViewController(nibName: nil, bundle: Bundle(for: RuinStutterAUViewController.self))
-        auContainer.addSubview(stutterVC.view)
+        AUAudioUnit.registerSubclass(RuinBypassAudioUnit.self, as: RuinBypassAudioUnit.componentDescription, name:RuinBypassAudioUnit.componentName, version: UInt32.max)
         
+        audioEngine.setup(desc: RuinBypassAudioUnit.componentDescription) {
+            // play a test track
+            let url = Bundle.main.url(forResource: "Air - New Star In The Sky", withExtension: "mp3")!
+            do {
+                try self.audioEngine.load(audioFile: url)
+                self.audioEngine.play()
+            } catch {
+                fatalError("error playing audio file with url \(url). error: \(error)")
+            }
+            
+            let bypassVC = RuinBypassAUViewController(nibName: nil, bundle: Bundle(for: RuinBypassAUViewController.self))
+            bypassVC.view.frame = self.view.bounds
+            self.auContainer.addSubview(bypassVC.view)
+            self.addChild(bypassVC)
+        }
     }
-
+    
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.

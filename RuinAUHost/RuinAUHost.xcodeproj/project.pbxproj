@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9195D85122EE1DCB00A7D0CC /* RuinBypassFramework_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9195D85022EE1DCB00A7D0CC /* RuinBypassFramework_macOS.framework */; };
+		9195D85222EE1DCB00A7D0CC /* RuinBypassFramework_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9195D85022EE1DCB00A7D0CC /* RuinBypassFramework_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9195D85522EE1E8A00A7D0CC /* Air - New Star In The Sky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9195D85422EE1E8A00A7D0CC /* Air - New Star In The Sky.mp3 */; };
 		919FE2F422ED9469000E9DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FE2F322ED9469000E9DB0 /* AppDelegate.swift */; };
 		919FE2F622ED9469000E9DB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FE2F522ED9469000E9DB0 /* ViewController.swift */; };
 		919FE2F822ED946A000E9DB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 919FE2F722ED946A000E9DB0 /* Assets.xcassets */; };
@@ -23,6 +26,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				919FE30522EDAA3C000E9DB0 /* RuinStutterFramework_macOS.framework in Embed Frameworks */,
+				9195D85222EE1DCB00A7D0CC /* RuinBypassFramework_macOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,6 +34,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9195D85022EE1DCB00A7D0CC /* RuinBypassFramework_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinBypassFramework_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9195D85422EE1E8A00A7D0CC /* Air - New Star In The Sky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Air - New Star In The Sky.mp3"; path = "../../Test Material/Air - New Star In The Sky.mp3"; sourceTree = "<group>"; };
 		919FE2F022ED9469000E9DB0 /* RuinAUHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuinAUHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		919FE2F322ED9469000E9DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		919FE2F522ED9469000E9DB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,15 +52,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				919FE30422EDAA3C000E9DB0 /* RuinStutterFramework_macOS.framework in Frameworks */,
+				9195D85122EE1DCB00A7D0CC /* RuinBypassFramework_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9195D85322EE1E6900A7D0CC /* Test material */ = {
+			isa = PBXGroup;
+			children = (
+				9195D85422EE1E8A00A7D0CC /* Air - New Star In The Sky.mp3 */,
+			);
+			path = "Test material";
+			sourceTree = "<group>";
+		};
 		919FE2E722ED9469000E9DB0 = {
 			isa = PBXGroup;
 			children = (
+				9195D85322EE1E6900A7D0CC /* Test material */,
+				9195D85022EE1DCB00A7D0CC /* RuinBypassFramework_macOS.framework */,
 				919FE30322EDAA3C000E9DB0 /* RuinStutterFramework_macOS.framework */,
 				919FE2F222ED9469000E9DB0 /* RuinAUHost */,
 				919FE2F122ED9469000E9DB0 /* Products */,
@@ -115,6 +132,11 @@
 				TargetAttributes = {
 					919FE2EF22ED9469000E9DB0 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -143,6 +165,7 @@
 			files = (
 				919FE2F822ED946A000E9DB0 /* Assets.xcassets in Resources */,
 				919FE2FB22ED946A000E9DB0 /* Main.storyboard in Resources */,
+				9195D85522EE1E8A00A7D0CC /* Air - New Star In The Sky.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +314,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = RuinAUHost/RuinAUHost.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7JF57DB443;
@@ -310,7 +332,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = RuinAUHost/RuinAUHost.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7JF57DB443;

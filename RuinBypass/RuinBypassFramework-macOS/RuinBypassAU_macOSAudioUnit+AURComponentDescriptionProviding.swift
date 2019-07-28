@@ -22,6 +22,6 @@ extension RuinBypassAudioUnit: AURComponentDescriptionProviding {
     }
     
     public static var componentName: String {
-        return "Hypb: RuinStutterAU-macOS"
+        return "Hypb: RuinBypassAU-macOS"
     }
 }
