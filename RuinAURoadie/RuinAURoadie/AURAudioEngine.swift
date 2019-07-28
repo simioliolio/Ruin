@@ -59,11 +59,9 @@ final public class AURAudioEngine {
         }
         newPlayer.scheduleBuffer(audioFileBuffer, at: nil, options: .loops, completionHandler: nil)
         self.currentPlayer = newPlayer
-        print("finished loading")
     }
     
     public func play() {
-        print("playing")
         currentPlayer?.play(at: nil)
     }
     
