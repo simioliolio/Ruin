@@ -13,11 +13,11 @@ final public class AURAudioEngine {
     
     private let engine = AVAudioEngine()
     private var currentPlayer: AVAudioPlayerNode?
-    var effectOne: AVAudioNode?
+    public var effectOne: AVAudioNode?
     
-    init() { }
+    public init() { }
     
-    func setup(desc: AudioComponentDescription, completion: @escaping ()->()) {
+    public func setup(desc: AudioComponentDescription, completion: @escaping ()->()) {
         
         AVAudioUnit.instantiate(with: desc, options: []) { (audioUnit, error) in
             
@@ -36,7 +36,7 @@ final public class AURAudioEngine {
         }
     }
     
-    func load(audioFile url: URL) throws {
+    public func load(audioFile url: URL) throws {
         
         guard let effectOne = effectOne else { fatalError("setup not called before trying to loading audio file") } // TODO: Throw
         
@@ -58,7 +58,7 @@ final public class AURAudioEngine {
         self.currentPlayer = newPlayer
     }
     
-    func play() {
+    public func play() {
         
         currentPlayer?.play(at: nil)
     }

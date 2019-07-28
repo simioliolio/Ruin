@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/simioliolio/Documents/Xcode/Ruin/RuinAURoadie/RuinAURoadie.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:RuinAUHost/RuinAUHost.xcodeproj">
    </FileRef>
    <FileRef

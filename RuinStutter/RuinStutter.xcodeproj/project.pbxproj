@@ -52,15 +52,13 @@
 		12465F0222D1070100CAC542 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465F0122D1070100CAC542 /* AudioToolbox.framework */; };
 		12465F0C22D1E15100CAC542 /* RuinStutterAUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465F0A22D1E15100CAC542 /* RuinStutterAUViewController.swift */; };
 		12465F1122D1E1BE00CAC542 /* RuinStutterAUViewController+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465F1022D1E1BE00CAC542 /* RuinStutterAUViewController+Factory.swift */; };
-		12465F1722D28F2000CAC542 /* AURAudioUnitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465F1522D28F2000CAC542 /* AURAudioUnitFactory.swift */; };
-		12465F1822D28F2000CAC542 /* AURAudioUnitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465F1522D28F2000CAC542 /* AURAudioUnitFactory.swift */; };
-		12465F1922D28F2000CAC542 /* AURAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465F1622D28F2000CAC542 /* AURAudioEngine.swift */; };
-		12465F1A22D28F2000CAC542 /* AURAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12465F1622D28F2000CAC542 /* AURAudioEngine.swift */; };
 		12465F1D22D2936B00CAC542 /* Air - New Star In The Sky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 12465F1C22D2936B00CAC542 /* Air - New Star In The Sky.mp3 */; };
 		124F86CC22D7C8850063D65D /* RuinStutterAUViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F86CA22D7C8850063D65D /* RuinStutterAUViewController.xib */; };
 		124F86CD22D7CF8A0063D65D /* RuinStutterFramework_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E7522D0EF3100CAC542 /* RuinStutterFramework_macOS.framework */; };
 		124F86CE22D7CF8A0063D65D /* RuinStutterFramework_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E7522D0EF3100CAC542 /* RuinStutterFramework_macOS.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1279B52922D0B29D0032D1F4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1279B52722D0B29D0032D1F4 /* MainInterface.storyboard */; };
+		919FE32522EDBB10000E9DB0 /* RuinAURoadie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919FE32422EDBB10000E9DB0 /* RuinAURoadie.framework */; };
+		919FE32622EDBB10000E9DB0 /* RuinAURoadie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 919FE32422EDBB10000E9DB0 /* RuinAURoadie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +132,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				919FE32622EDBB10000E9DB0 /* RuinAURoadie.framework in Embed Frameworks */,
 				12465E7D22D0EF3100CAC542 /* RuinStutterFramework_macOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -197,8 +196,6 @@
 		12465F0122D1070100CAC542 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		12465F0A22D1E15100CAC542 /* RuinStutterAUViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuinStutterAUViewController.swift; sourceTree = "<group>"; };
 		12465F1022D1E1BE00CAC542 /* RuinStutterAUViewController+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RuinStutterAUViewController+Factory.swift"; sourceTree = "<group>"; };
-		12465F1522D28F2000CAC542 /* AURAudioUnitFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AURAudioUnitFactory.swift; sourceTree = "<group>"; };
-		12465F1622D28F2000CAC542 /* AURAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AURAudioEngine.swift; sourceTree = "<group>"; };
 		12465F1C22D2936B00CAC542 /* Air - New Star In The Sky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Air - New Star In The Sky.mp3"; path = "../../Test Material/Air - New Star In The Sky.mp3"; sourceTree = "<group>"; };
 		124F86CB22D7C8850063D65D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RuinStutterAUViewController.xib; sourceTree = "<group>"; };
 		1279B52022D0B29D0032D1F4 /* RuinStutterAU-iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RuinStutterAU-iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +203,7 @@
 		1279B52A22D0B29D0032D1F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1287677D22D0B69400C9D1FE /* RuinAUUtilites.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinAUUtilites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FF2D8B22D0B89F00465A05 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		919FE32422EDBB10000E9DB0 /* RuinAURoadie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinAURoadie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +235,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				919FE32522EDBB10000E9DB0 /* RuinAURoadie.framework in Frameworks */,
 				12465E7C22D0EF3100CAC542 /* RuinStutterFramework_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,8 +330,6 @@
 		12465EE422D100BD00CAC542 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				12465F1622D28F2000CAC542 /* AURAudioEngine.swift */,
-				12465F1522D28F2000CAC542 /* AURAudioUnitFactory.swift */,
 				12465EE522D100BD00CAC542 /* BoolStateChangeTracker.hpp */,
 				12465EE622D100BD00CAC542 /* ParameterRamper.hpp */,
 				12465EE722D100BD00CAC542 /* DSPKernel.hpp */,
@@ -358,6 +355,7 @@
 		1279B50722D0B14C0032D1F4 = {
 			isa = PBXGroup;
 			children = (
+				919FE32422EDBB10000E9DB0 /* RuinAURoadie.framework */,
 				12465EE422D100BD00CAC542 /* Shared */,
 				1279B52122D0B29D0032D1F4 /* RuinStutterAU-iOS */,
 				12465E1922D0C0AF00CAC542 /* RuinStutterFramework-iOS */,
@@ -678,8 +676,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12465F1922D28F2000CAC542 /* AURAudioEngine.swift in Sources */,
-				12465F1722D28F2000CAC542 /* AURAudioUnitFactory.swift in Sources */,
 				12465E0222D0BEED00CAC542 /* ViewController.swift in Sources */,
 				12465E0022D0BEED00CAC542 /* AppDelegate.swift in Sources */,
 			);
@@ -707,8 +703,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12465F1A22D28F2000CAC542 /* AURAudioEngine.swift in Sources */,
-				12465F1822D28F2000CAC542 /* AURAudioUnitFactory.swift in Sources */,
 				12465E6122D0EE0D00CAC542 /* ViewController.swift in Sources */,
 				12465E5F22D0EE0D00CAC542 /* AppDelegate.swift in Sources */,
 			);

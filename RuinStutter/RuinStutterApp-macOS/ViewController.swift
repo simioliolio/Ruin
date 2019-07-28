@@ -8,6 +8,7 @@
 
 import Cocoa
 import RuinStutterFramework_macOS
+import RuinAURoadie
 
 class ViewController: NSViewController {
     
