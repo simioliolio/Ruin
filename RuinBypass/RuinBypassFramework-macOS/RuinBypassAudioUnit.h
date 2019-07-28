@@ -8,6 +8,6 @@
 
 #import <AudioToolbox/AudioToolbox.h>
 
-@interface RuinBypassAU_macOSAudioUnit : AUAudioUnit
+@interface RuinBypassAudioUnit : AUAudioUnit
 
 @end

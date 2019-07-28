@@ -12,7 +12,7 @@ import RuinBypassFramework_macOS
 extension RuinBypassAUViewController: AUAudioUnitFactory {
     
     public func createAudioUnit(with componentDescription: AudioComponentDescription) throws -> AUAudioUnit {
-        audioUnit = try RuinBypassAU_macOSAudioUnit(componentDescription: componentDescription, options: [])
+        audioUnit = try RuinBypassAudioUnit(componentDescription: componentDescription, options: [])
         
         return audioUnit!
     }

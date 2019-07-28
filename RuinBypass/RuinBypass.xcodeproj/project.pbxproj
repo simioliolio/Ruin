@@ -16,8 +16,8 @@
 		919FE36122EDDA97000E9DB0 /* RuinBypassFramework_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 919FE35F22EDDA97000E9DB0 /* RuinBypassFramework_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		919FE36422EDDA97000E9DB0 /* RuinBypassFramework_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919FE35D22EDDA97000E9DB0 /* RuinBypassFramework_macOS.framework */; };
 		919FE36522EDDA97000E9DB0 /* RuinBypassFramework_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 919FE35D22EDDA97000E9DB0 /* RuinBypassFramework_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		919FE36C22EDDAB0000E9DB0 /* RuinBypassAU_macOSAudioUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 919FE36A22EDDAB0000E9DB0 /* RuinBypassAU_macOSAudioUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		919FE36D22EDDAB0000E9DB0 /* RuinBypassAU_macOSAudioUnit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 919FE36B22EDDAB0000E9DB0 /* RuinBypassAU_macOSAudioUnit.mm */; };
+		919FE36C22EDDAB0000E9DB0 /* RuinBypassAudioUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 919FE36A22EDDAB0000E9DB0 /* RuinBypassAudioUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		919FE36D22EDDAB0000E9DB0 /* RuinBypassAudioUnit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 919FE36B22EDDAB0000E9DB0 /* RuinBypassAudioUnit.mm */; };
 		919FE36F22EDDB34000E9DB0 /* RuinBypassAUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FE36E22EDDB34000E9DB0 /* RuinBypassAUViewController.swift */; };
 		919FE37322EDDDF7000E9DB0 /* RuinBypassKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 919FE37222EDDDF7000E9DB0 /* RuinBypassKernel.hpp */; };
 		919FE37E22EDE0CD000E9DB0 /* RuinAURoadie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919FE37D22EDE0CD000E9DB0 /* RuinAURoadie.framework */; };
@@ -87,8 +87,8 @@
 		919FE35D22EDDA97000E9DB0 /* RuinBypassFramework_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RuinBypassFramework_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		919FE35F22EDDA97000E9DB0 /* RuinBypassFramework_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuinBypassFramework_macOS.h; sourceTree = "<group>"; };
 		919FE36022EDDA97000E9DB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		919FE36A22EDDAB0000E9DB0 /* RuinBypassAU_macOSAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuinBypassAU_macOSAudioUnit.h; sourceTree = "<group>"; };
-		919FE36B22EDDAB0000E9DB0 /* RuinBypassAU_macOSAudioUnit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RuinBypassAU_macOSAudioUnit.mm; sourceTree = "<group>"; };
+		919FE36A22EDDAB0000E9DB0 /* RuinBypassAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuinBypassAudioUnit.h; sourceTree = "<group>"; };
+		919FE36B22EDDAB0000E9DB0 /* RuinBypassAudioUnit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RuinBypassAudioUnit.mm; sourceTree = "<group>"; };
 		919FE36E22EDDB34000E9DB0 /* RuinBypassAUViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuinBypassAUViewController.swift; sourceTree = "<group>"; };
 		919FE37222EDDDF7000E9DB0 /* RuinBypassKernel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RuinBypassKernel.hpp; sourceTree = "<group>"; };
 		919FE37D22EDE0CD000E9DB0 /* RuinAURoadie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinAURoadie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,8 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				919FE36E22EDDB34000E9DB0 /* RuinBypassAUViewController.swift */,
-				919FE36A22EDDAB0000E9DB0 /* RuinBypassAU_macOSAudioUnit.h */,
-				919FE36B22EDDAB0000E9DB0 /* RuinBypassAU_macOSAudioUnit.mm */,
+				919FE36A22EDDAB0000E9DB0 /* RuinBypassAudioUnit.h */,
+				919FE36B22EDDAB0000E9DB0 /* RuinBypassAudioUnit.mm */,
 				9195D84C22EE140600A7D0CC /* RuinBypassAU_macOSAudioUnit+AURComponentDescriptionProviding.swift */,
 				919FE37222EDDDF7000E9DB0 /* RuinBypassKernel.hpp */,
 				919FE35F22EDDA97000E9DB0 /* RuinBypassFramework_macOS.h */,
@@ -235,7 +235,7 @@
 				919FE39122EDE53D000E9DB0 /* BufferedAudioBus.hpp in Headers */,
 				919FE36122EDDA97000E9DB0 /* RuinBypassFramework_macOS.h in Headers */,
 				919FE39422EDE53D000E9DB0 /* DSPKernel.hpp in Headers */,
-				919FE36C22EDDAB0000E9DB0 /* RuinBypassAU_macOSAudioUnit.h in Headers */,
+				919FE36C22EDDAB0000E9DB0 /* RuinBypassAudioUnit.h in Headers */,
 				919FE39222EDE53D000E9DB0 /* ParameterRamper.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,7 +390,7 @@
 			files = (
 				919FE39322EDE53D000E9DB0 /* DSPKernel.mm in Sources */,
 				919FE36F22EDDB34000E9DB0 /* RuinBypassAUViewController.swift in Sources */,
-				919FE36D22EDDAB0000E9DB0 /* RuinBypassAU_macOSAudioUnit.mm in Sources */,
+				919FE36D22EDDAB0000E9DB0 /* RuinBypassAudioUnit.mm in Sources */,
 				9195D84D22EE140600A7D0CC /* RuinBypassAU_macOSAudioUnit+AURComponentDescriptionProviding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

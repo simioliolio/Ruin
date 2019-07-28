@@ -6,4 +6,4 @@
 //  Copyright © 2019 Hyper Barn LTD. All rights reserved.
 //
 
-#import "RuinBypassAU_macOSAudioUnit.h"
+#import "RuinBypassAudioUnit.h"

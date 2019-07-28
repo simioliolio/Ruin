@@ -9,7 +9,7 @@
 import Foundation
 import RuinAURoadie
 
-extension RuinBypassAU_macOSAudioUnit: AURComponentDescriptionProviding {
+extension RuinBypassAudioUnit: AURComponentDescriptionProviding {
     
     public static var componentDescription: AudioComponentDescription {
         var desc = AudioComponentDescription()

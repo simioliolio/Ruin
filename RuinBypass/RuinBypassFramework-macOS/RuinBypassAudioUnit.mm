@@ -6,7 +6,7 @@
 //  Copyright © 2019 Hyper Barn LTD. All rights reserved.
 //
 
-#import "RuinBypassAU_macOSAudioUnit.h"
+#import "RuinBypassAudioUnit.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import "RuinBypassKernel.hpp"
@@ -22,7 +22,7 @@ static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
 {
 };
 
-@interface RuinBypassAU_macOSAudioUnit ()
+@interface RuinBypassAudioUnit ()
 
 @property (nonatomic, readwrite) AUParameterTree *parameterTree;
 @property (nonatomic, readwrite) AUAudioUnitBus *outputBus;
@@ -32,7 +32,7 @@ static const FactoryPresetParameters presetParameters[kNumberOfPresets] =
 @end
 
 
-@implementation RuinBypassAU_macOSAudioUnit {
+@implementation RuinBypassAudioUnit {
     RuinBypassKernel _kernel;
     BufferedInputBus _inputBus;
     

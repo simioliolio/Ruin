@@ -21,9 +21,9 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        AUAudioUnit.registerSubclass(RuinBypassAU_macOSAudioUnit.self, as: RuinBypassAU_macOSAudioUnit.componentDescription, name:RuinBypassAU_macOSAudioUnit.componentName, version: UInt32.max)
+        AUAudioUnit.registerSubclass(RuinBypassAudioUnit.self, as: RuinBypassAudioUnit.componentDescription, name:RuinBypassAudioUnit.componentName, version: UInt32.max)
 
-        audioEngine.setup(desc: RuinBypassAU_macOSAudioUnit.componentDescription) {
+        audioEngine.setup(desc: RuinBypassAudioUnit.componentDescription) {
             // play a test track
             let url = Bundle.main.url(forResource: "100hz_5s", withExtension: "wav")!
             do {
