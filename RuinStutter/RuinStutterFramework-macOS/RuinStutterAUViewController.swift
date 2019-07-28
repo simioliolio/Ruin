@@ -7,7 +7,7 @@
 //
 
 import CoreAudioKit
-import RuinStutterFramework_macOS
+import RuinAURoadie
 
 public class RuinStutterAUViewController: AUViewController {
     
@@ -66,4 +66,22 @@ public class RuinStutterAUViewController: AUViewController {
         })
     }
     
+}
+
+// TODO: Move this to actual audio unit
+extension RuinStutterAUViewController: AURComponentDescriptionProviding {
+    
+    public static var componentDescription: AudioComponentDescription {
+        var componentDescription = AudioComponentDescription()
+        componentDescription.componentType = kAudioUnitType_Effect
+        componentDescription.componentSubType = 0x64697374 /*'dist'*/
+        componentDescription.componentManufacturer = 0x48797062 /*'Hypb'*/
+        componentDescription.componentFlags = 0
+        componentDescription.componentFlagsMask = 0
+        return componentDescription
+    }
+    
+    public static var componentName: String {
+        return "Hypb: RuinStutterAU-macOS"
+    }
 }

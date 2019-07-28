@@ -10,6 +10,7 @@
 		919FE31622EDBAA2000E9DB0 /* RuinAURoadie.h in Headers */ = {isa = PBXBuildFile; fileRef = 919FE31422EDBAA2000E9DB0 /* RuinAURoadie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		919FE32222EDBAD5000E9DB0 /* AURAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FE32022EDBAD5000E9DB0 /* AURAudioEngine.swift */; };
 		919FE32322EDBAD5000E9DB0 /* AURAudioUnitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FE32122EDBAD5000E9DB0 /* AURAudioUnitFactory.swift */; };
+		919FE32822EDBDB4000E9DB0 /* AURComponentDescriptionProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FE32722EDBDB4000E9DB0 /* AURComponentDescriptionProviding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		919FE31522EDBAA2000E9DB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		919FE32022EDBAD5000E9DB0 /* AURAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AURAudioEngine.swift; sourceTree = "<group>"; };
 		919FE32122EDBAD5000E9DB0 /* AURAudioUnitFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AURAudioUnitFactory.swift; sourceTree = "<group>"; };
+		919FE32722EDBDB4000E9DB0 /* AURComponentDescriptionProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AURComponentDescriptionProviding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			children = (
 				919FE32022EDBAD5000E9DB0 /* AURAudioEngine.swift */,
 				919FE32122EDBAD5000E9DB0 /* AURAudioUnitFactory.swift */,
+				919FE32722EDBDB4000E9DB0 /* AURComponentDescriptionProviding.swift */,
 				919FE31422EDBAA2000E9DB0 /* RuinAURoadie.h */,
 				919FE31522EDBAA2000E9DB0 /* Info.plist */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				919FE32322EDBAD5000E9DB0 /* AURAudioUnitFactory.swift in Sources */,
+				919FE32822EDBDB4000E9DB0 /* AURComponentDescriptionProviding.swift in Sources */,
 				919FE32222EDBAD5000E9DB0 /* AURAudioEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
