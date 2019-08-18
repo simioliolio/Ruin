@@ -14,7 +14,7 @@ import RuinAURoadie
 class ViewController: NSViewController {
     
     enum AudioUnit: String, CaseIterable {
-        case noAudioUnit
+        case Bypass
         case Stutter
     }
     
@@ -56,7 +56,6 @@ class ViewController: NSViewController {
             }
             
             let bypassVC = RuinBypassAUViewController(nibName: nil, bundle: Bundle(for: RuinBypassAUViewController.self))
-            bypassVC.view.frame = self.view.bounds
             self.auContainer.addSubview(bypassVC.view)
             self.addChild(bypassVC)
         }

@@ -42,10 +42,7 @@ class ViewController: NSViewController {
     }
     
     private func showAUView(_ audioUnit: AUAudioUnit) {
-        let pluginsURL = Bundle.main.builtInPlugInsURL
-        let auExtensionURL = pluginsURL?.appendingPathComponent("RuinBypassAU-macOS.appex")
-        let auExtensionBundle = Bundle(url: auExtensionURL!)!
-        let vc = RuinBypassAUViewController(nibName: nil, bundle: auExtensionBundle)
+        let vc = RuinBypassAUViewController(nibName: nil, bundle: Bundle(for: RuinBypassAUViewController.self))
         vc.audioUnit = audioUnit
         DispatchQueue.main.async {
             vc.view.frame = self.auContainer.bounds

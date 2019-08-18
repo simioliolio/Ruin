@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9195D84B22EDF43700A7D0CC /* RuinBypassAUViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9195D84922EDF43700A7D0CC /* RuinBypassAUViewController.xib */; };
 		9195D84D22EE140600A7D0CC /* RuinBypassAU_macOSAudioUnit+AURComponentDescriptionProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9195D84C22EE140600A7D0CC /* RuinBypassAU_macOSAudioUnit+AURComponentDescriptionProviding.swift */; };
 		919FE33622EDD91D000E9DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FE33522EDD91D000E9DB0 /* AppDelegate.swift */; };
 		919FE33822EDD91D000E9DB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FE33722EDD91D000E9DB0 /* ViewController.swift */; };
@@ -30,6 +29,7 @@
 		919FE3B022EDE8A4000E9DB0 /* RuinBypassAUViewController+AUAudioUnitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FE3AF22EDE8A4000E9DB0 /* RuinBypassAUViewController+AUAudioUnitFactory.swift */; };
 		919FE3B122EDE8CA000E9DB0 /* RuinBypassFramework_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919FE35D22EDDA97000E9DB0 /* RuinBypassFramework_macOS.framework */; };
 		919FE3B422EDECDC000E9DB0 /* 100hz_5s.wav in Resources */ = {isa = PBXBuildFile; fileRef = 919FE3B322EDECDC000E9DB0 /* 100hz_5s.wav */; };
+		91C6E8E72309317E00CCB195 /* RuinBypassAUViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C6E8E52309317E00CCB195 /* RuinBypassAUViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +75,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9195D84A22EDF43700A7D0CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RuinBypassAUViewController.xib; sourceTree = "<group>"; };
 		9195D84C22EE140600A7D0CC /* RuinBypassAU_macOSAudioUnit+AURComponentDescriptionProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RuinBypassAU_macOSAudioUnit+AURComponentDescriptionProviding.swift"; sourceTree = "<group>"; };
 		919FE33222EDD91D000E9DB0 /* RuinBypass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuinBypass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		919FE33522EDD91D000E9DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		919FE3A722EDE802000E9DB0 /* RuinBypassAU_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuinBypassAU_macOS.entitlements; sourceTree = "<group>"; };
 		919FE3AF22EDE8A4000E9DB0 /* RuinBypassAUViewController+AUAudioUnitFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RuinBypassAUViewController+AUAudioUnitFactory.swift"; sourceTree = "<group>"; };
 		919FE3B322EDECDC000E9DB0 /* 100hz_5s.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 100hz_5s.wav; path = "../../../Test Material/100hz_5s.wav"; sourceTree = "<group>"; };
+		91C6E8E62309317E00CCB195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RuinBypassAUViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				919FE36E22EDDB34000E9DB0 /* RuinBypassAUViewController.swift */,
+				91C6E8E52309317E00CCB195 /* RuinBypassAUViewController.xib */,
 				919FE36A22EDDAB0000E9DB0 /* RuinBypassAudioUnit.h */,
 				919FE36B22EDDAB0000E9DB0 /* RuinBypassAudioUnit.mm */,
 				9195D84C22EE140600A7D0CC /* RuinBypassAU_macOSAudioUnit+AURComponentDescriptionProviding.swift */,
@@ -208,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				919FE3AF22EDE8A4000E9DB0 /* RuinBypassAUViewController+AUAudioUnitFactory.swift */,
-				9195D84922EDF43700A7D0CC /* RuinBypassAUViewController.xib */,
 				919FE3A522EDE802000E9DB0 /* Info.plist */,
 				919FE3A622EDE802000E9DB0 /* RuinBypassAU_macOS-Bridging-Header.h */,
 				919FE3A722EDE802000E9DB0 /* RuinBypassAU_macOS.entitlements */,
@@ -361,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C6E8E72309317E00CCB195 /* RuinBypassAUViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +369,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9195D84B22EDF43700A7D0CC /* RuinBypassAUViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,20 +419,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9195D84922EDF43700A7D0CC /* RuinBypassAUViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9195D84A22EDF43700A7D0CC /* Base */,
-			);
-			name = RuinBypassAUViewController.xib;
-			sourceTree = "<group>";
-		};
 		919FE33B22EDD91E000E9DB0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				919FE33C22EDD91E000E9DB0 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		91C6E8E52309317E00CCB195 /* RuinBypassAUViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91C6E8E62309317E00CCB195 /* Base */,
+			);
+			name = RuinBypassAUViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
