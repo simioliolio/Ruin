@@ -8,41 +8,32 @@
 import Foundation
 import AVFoundation
 
-// MARK: - AURAudioEngine
-
-/**
- An audio engine for use during audio unit development.
-*/
+// Ruin's audio engine has an audio player and three effect slots.
 final public class AURAudioEngine {
     
     private let engine = AVAudioEngine()
     private var player: AVAudioPlayerNode?
     private var audioFileFormat: AVAudioFormat?
     public var effectOne: AVAudioNode?
-    public var effectTwo: AVAudioNode?
-    public var effectThree: AVAudioNode?
     
     public init() { }
     
-    public func setup(component: AudioComponentDescription, at position: EffectPosition, completion: @escaping ()->()) {
+    public func setup(desc: AudioComponentDescription, completion: @escaping ()->()) {
         
-        var nodeBeingModified = node(at: position)
-        
-        // Replace an existing node
-        if let existingNode = nodeBeingModified {
-            if existingNode.numberOfInputs > 0 {
-                engine.disconnectNodeInput(existingNode)
+        if let currentEffectOne = effectOne {
+            engine.disconnectNodeOutput(currentEffectOne)
+            engine.disconnectNodeInput(currentEffectOne)
+            engine.detach(currentEffectOne)
+            if let currentPlayer = player {
+                // reconnect the player to the mixer while effect is instantiated
+                engine.connect(currentPlayer, to: engine.mainMixerNode, format: audioFileFormat)
             }
-            if existingNode.numberOfOutputs > 0 {
-                engine.disconnectNodeOutput(existingNode)
-            }
-            engine.detach(existingNode)
         }
         
-        AVAudioUnit.instantiate(with: component, options: []) { (audioUnit, error) in
+        AVAudioUnit.instantiate(with: desc, options: []) { (audioUnit, error) in
             
             if let uwError = error {
-                fatalError("Error getting audio unit with desc: \(component), error: \(uwError)")
+                fatalError("Error getting audio unit with desc: \(desc), error: \(uwError)")
             }
             
             guard let audioUnit = audioUnit else {
@@ -50,19 +41,13 @@ final public class AURAudioEngine {
             }
             
             self.engine.attach(audioUnit)
-            guard let outputNode = self.outputNode(for: position) else {
-                fatalError("No output node for position \(position)")
-            }
-            self.engine.connect(audioUnit, to: outputNode, format: self.audioFileFormat)
+            self.engine.connect(audioUnit, to: self.engine.mainMixerNode, format: nil)
             
             if let currentPlayer = self.player {
-                if currentPlayer.numberOfOutputs == 0 {
-                    // Player has been disconnected by change in effect chain
-                    self.engine.connect(currentPlayer, to: self.firstEffectNode!, format: self.audioFileFormat)
-                }
+                self.engine.connect(currentPlayer, to: audioUnit, format: self.audioFileFormat)
             }
             
-            nodeBeingModified = audioUnit // keep reference
+            self.effectOne = audioUnit // keep reference
             completion()
         }
     }
@@ -103,58 +88,4 @@ final public class AURAudioEngine {
         return AVAudioUnitComponentManager.shared().components(matching: hyperBarnAUDescription) // slow
     }()
     
-}
-
-// MARK: - Routing
-extension AURAudioEngine {
-    
-    public enum EffectPosition {
-        case one
-        case two
-        case three
-    }
-    
-    private func node(at position: EffectPosition) -> AVAudioNode? {
-        switch position {
-        case .one:
-            return effectOne
-        case .two:
-            return effectTwo
-        case .three:
-            return effectThree
-        }
-    }
-    
-    private func outputNode(for position: EffectPosition) -> AVAudioNode? {
-        switch position {
-        case .one:
-            return effectTwo
-        case .two:
-            return effectThree
-        case .three:
-            return engine.mainMixerNode
-        }
-    }
-    
-    private func inputNode(for position: EffectPosition) -> AVAudioNode? {
-        switch position {
-        case .one:
-            return player
-        case .two:
-            return effectOne
-        case .three:
-            return effectTwo
-        }
-    }
-    
-    private var firstEffectNode: AVAudioNode? {
-        if effectOne != nil {
-            return effectOne
-        } else if effectTwo != nil {
-            return effectTwo
-        } else if effectThree != nil {
-            return effectThree
-        }
-        return nil
-    }
 }

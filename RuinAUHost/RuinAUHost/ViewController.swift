@@ -45,7 +45,7 @@ class ViewController: NSViewController {
         
         AUAudioUnit.registerSubclass(RuinBypassAudioUnit.self, as: RuinBypassAudioUnit.componentDescription, name:RuinBypassAudioUnit.componentName, version: UInt32.max)
         
-        audioEngine.setup(component: RuinBypassAudioUnit.componentDescription, at: .one) {
+        audioEngine.setup(desc: RuinBypassAudioUnit.componentDescription) {
             // play a test track
             let url = Bundle.main.url(forResource: "Air - New Star In The Sky", withExtension: "mp3")!
             do {
