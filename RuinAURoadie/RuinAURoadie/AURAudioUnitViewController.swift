@@ -10,5 +10,5 @@ import Foundation
 import AudioUnit
 
 public protocol AURAudioUnitViewController {
-    var audioUnit: AUAudioUnit? { get }
+    var audioUnit: AUAudioUnit? { get set }
 }

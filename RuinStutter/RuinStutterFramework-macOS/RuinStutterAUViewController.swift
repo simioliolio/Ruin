@@ -9,7 +9,7 @@
 import CoreAudioKit
 import RuinAURoadie
 
-public class RuinStutterAUViewController: AUViewController {
+public class RuinStutterAUViewController: AUViewController, AURAudioUnitViewController {
     
     @IBOutlet weak var enable: NSButton!
     @IBAction func enableChanged(_ sender: Any) {
@@ -27,7 +27,7 @@ public class RuinStutterAUViewController: AUViewController {
     }
     
     // MARK: AU and AU parameters
-    public var audioUnit: AUAudioUnit!
+    public var audioUnit: AUAudioUnit?
     var enableParameter: AUParameter!
     var lengthParameter: AUParameter!
     var pitchParameter: AUParameter!

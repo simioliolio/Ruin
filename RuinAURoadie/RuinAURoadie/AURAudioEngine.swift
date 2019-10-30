@@ -18,7 +18,7 @@ final public class AURAudioEngine {
     
     public init() { }
     
-    public func setup(desc: AudioComponentDescription, completion: @escaping ()->()) {
+    public func setup(desc: AudioComponentDescription, completion: @escaping (AVAudioUnit?)->()) {
         
         if let currentEffectOne = effectOne {
             engine.disconnectNodeOutput(currentEffectOne)
@@ -48,7 +48,7 @@ final public class AURAudioEngine {
             }
             
             self.effectOne = audioUnit // keep reference
-            completion()
+            completion(audioUnit)
         }
     }
     

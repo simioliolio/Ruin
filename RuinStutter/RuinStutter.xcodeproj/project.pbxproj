@@ -49,6 +49,7 @@
 		124F86CD22D7CF8A0063D65D /* RuinStutterFramework_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E7522D0EF3100CAC542 /* RuinStutterFramework_macOS.framework */; };
 		124F86CE22D7CF8A0063D65D /* RuinStutterFramework_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E7522D0EF3100CAC542 /* RuinStutterFramework_macOS.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1279B52922D0B29D0032D1F4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1279B52722D0B29D0032D1F4 /* MainInterface.storyboard */; };
+		916BB144234BCC8D00FAE17B /* RuinStutterAU_macOSAudioUnit+AURComponentDescriptionProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916BB143234BCC8D00FAE17B /* RuinStutterAU_macOSAudioUnit+AURComponentDescriptionProviding.swift */; };
 		919FE32522EDBB10000E9DB0 /* RuinAURoadie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919FE32422EDBB10000E9DB0 /* RuinAURoadie.framework */; };
 		919FE32622EDBB10000E9DB0 /* RuinAURoadie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 919FE32422EDBB10000E9DB0 /* RuinAURoadie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		919FE38422EDE508000E9DB0 /* DSPKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 919FE38022EDE508000E9DB0 /* DSPKernel.hpp */; };
@@ -199,6 +200,7 @@
 		1279B52A22D0B29D0032D1F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1287677D22D0B69400C9D1FE /* RuinAUUtilites.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinAUUtilites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FF2D8B22D0B89F00465A05 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		916BB143234BCC8D00FAE17B /* RuinStutterAU_macOSAudioUnit+AURComponentDescriptionProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RuinStutterAU_macOSAudioUnit+AURComponentDescriptionProviding.swift"; sourceTree = "<group>"; };
 		919FE32422EDBB10000E9DB0 /* RuinAURoadie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinAURoadie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		919FE38022EDE508000E9DB0 /* DSPKernel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DSPKernel.hpp; path = "../../Shared Utilities/DSPKernel.hpp"; sourceTree = "<group>"; };
 		919FE38122EDE508000E9DB0 /* ParameterRamper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ParameterRamper.hpp; path = "../../Shared Utilities/ParameterRamper.hpp"; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			children = (
 				124F86CA22D7C8850063D65D /* RuinStutterAUViewController.xib */,
 				12465F0A22D1E15100CAC542 /* RuinStutterAUViewController.swift */,
+				916BB143234BCC8D00FAE17B /* RuinStutterAU_macOSAudioUnit+AURComponentDescriptionProviding.swift */,
 				12465E7722D0EF3100CAC542 /* RuinStutterFramework_macOS.h */,
 				12465E7822D0EF3100CAC542 /* Info.plist */,
 			);
@@ -721,6 +724,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				919FE38B22EDE508000E9DB0 /* DSPKernel.mm in Sources */,
+				916BB144234BCC8D00FAE17B /* RuinStutterAU_macOSAudioUnit+AURComponentDescriptionProviding.swift in Sources */,
 				12465F0C22D1E15100CAC542 /* RuinStutterAUViewController.swift in Sources */,
 				12465EF922D100BD00CAC542 /* RuinStutterAudioUnit.mm in Sources */,
 			);
