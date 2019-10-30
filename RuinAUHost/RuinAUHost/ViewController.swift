@@ -24,7 +24,10 @@ class ViewController: NSViewController {
         guard let auName = popUp.titleOfSelectedItem, let au = ViewController.AudioUnit(rawValue: auName) else {
             fatalError("either no selected item, or selected item is not a known audio unit")
         }
-        load(au: au) { }
+        load(au: au) {
+            let url = Bundle.main.url(forResource: "Air - New Star In The Sky", withExtension: "mp3")!
+            try! self.audioEngine.play(url: url)
+        }
     }
     
     @IBOutlet weak var effectOn: NSButton!
@@ -47,14 +50,8 @@ class ViewController: NSViewController {
         
         AUAudioUnit.registerSubclass(RuinBypassAudioUnit.self, as: RuinBypassAudioUnit.componentDescription, name:RuinBypassAudioUnit.componentName, version: UInt32.max)
         load(au: .bypass) {
-            // play a test track
             let url = Bundle.main.url(forResource: "Air - New Star In The Sky", withExtension: "mp3")!
-            do {
-                try self.audioEngine.load(audioFile: url)
-                self.audioEngine.play()
-            } catch {
-                fatalError("error playing audio file with url \(url). error: \(error)")
-            }
+            try! self.audioEngine.play(url: url) // TODO: Handle error
         }
     }
     
@@ -77,6 +74,7 @@ class ViewController: NSViewController {
             audioUnitVC.audioUnit = audioUnit?.auAudioUnit
             self.auContainer.addSubview(audioUnitVC.view)
             self.addChild(audioUnitVC)
+            self.currentVC = audioUnitVC
             completion()
         }
         

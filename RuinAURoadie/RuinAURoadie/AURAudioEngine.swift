@@ -12,8 +12,7 @@ import AVFoundation
 final public class AURAudioEngine {
     
     private let engine = AVAudioEngine()
-    private var player: AVAudioPlayerNode?
-    private var audioFileFormat: AVAudioFormat?
+    private var player = AVAudioPlayerNode()
     public var effectOne: AVAudioNode?
     
     public init() { }
@@ -22,12 +21,6 @@ final public class AURAudioEngine {
         
         if let currentEffectOne = effectOne {
             engine.disconnectNodeOutput(currentEffectOne)
-            engine.disconnectNodeInput(currentEffectOne)
-            engine.detach(currentEffectOne)
-            if let currentPlayer = player {
-                // reconnect the player to the mixer while effect is instantiated
-                engine.connect(currentPlayer, to: engine.mainMixerNode, format: audioFileFormat)
-            }
         }
         
         AVAudioUnit.instantiate(with: desc, options: []) { (audioUnit, error) in
@@ -35,51 +28,35 @@ final public class AURAudioEngine {
             if let uwError = error {
                 fatalError("Error getting audio unit with desc: \(desc), error: \(uwError)")
             }
-            
             guard let audioUnit = audioUnit else {
                 fatalError("Audio unit nil when error is nil")
             }
             
             self.engine.attach(audioUnit)
-            self.engine.connect(audioUnit, to: self.engine.mainMixerNode, format: nil)
-            
-            if let currentPlayer = self.player {
-                self.engine.connect(currentPlayer, to: audioUnit, format: self.audioFileFormat)
+            if self.player.engine == nil {
+                self.engine.attach(self.player)
             }
+            self.engine.connect(audioUnit, to: self.engine.mainMixerNode, format: nil)
+            self.engine.connect(self.player, to: audioUnit, format: nil)
             
-            self.effectOne = audioUnit // keep reference
+            self.effectOne = audioUnit
+            if !self.engine.isRunning {
+                try? self.engine.start()
+            }
             completion(audioUnit)
         }
     }
     
-    public func load(audioFile url: URL) throws {
-        
-        guard let effectOne = effectOne else { fatalError("setup not called before trying to loading audio file") } // TODO: Throw
-        
-        let audioFile = try AVAudioFile(forReading: url)
-        let audioFileBuffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: UInt32(audioFile.length))!
-        try! audioFile.read(into: audioFileBuffer)
-        
-        if let currentPlayer = player {
-            currentPlayer.stop()
-            engine.disconnectNodeOutput(currentPlayer)
-            engine.detach(currentPlayer)
-            self.player = nil
+    public func play(url: URL) throws {
+        guard let audioFile = try? AVAudioFile(forReading: url) else { return assertionFailure("could not get av audio file") }
+        guard let audioFileBuffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: UInt32(audioFile.length)) else { return assertionFailure("Couldn't make audio buffer from audio file \(audioFile)") } // TODO: Throw
+        do {
+            try audioFile.read(into: audioFileBuffer) // TODO: Handle unwrap
+        } catch {
+            fatalError("error: \(error)")
         }
-        let newPlayer = AVAudioPlayerNode()
-        engine.attach(newPlayer)
-        engine.connect(newPlayer, to: effectOne, format: audioFile.processingFormat)
-        if !engine.isRunning {
-            try engine.start()
-            
-        }
-        newPlayer.scheduleBuffer(audioFileBuffer, at: nil, options: .loops, completionHandler: nil)
-        player = newPlayer
-        audioFileFormat = audioFile.processingFormat
-    }
-    
-    public func play() {
-        player?.play(at: nil)
+        player.scheduleBuffer(audioFileBuffer, at: nil, options: .loops, completionHandler: nil)
+        player.play(at: nil)
     }
     
     lazy var availableAudioUnitComponents: [AVAudioUnitComponent] = {
