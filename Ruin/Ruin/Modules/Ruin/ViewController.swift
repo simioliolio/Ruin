@@ -14,14 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var play: UIButton!
     private var store = Store.shared.store
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         store.subscribe(self)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        // TODO: Unsubscribe
+        store.unsubscribe(self)
     }
     
     @IBAction func playTapped(_ sender: Any) {
@@ -30,6 +30,8 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: ReduxStoreSubscriber {
+    
+    var id: String { String(describing: ViewController.self) }
     
     func newState(_ state: State) {
         play.isSelected = state.playing

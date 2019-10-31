@@ -14,8 +14,9 @@ public protocol ReduxState {}
 
 typealias ReduxReducer<AppState: ReduxState> = (_ action: ReduxAction, _ state: AppState?) -> AppState
 
-public protocol ReduxStoreSubscriber {
+public protocol ReduxStoreSubscriber: Equatable {
     associatedtype SubscribedState: ReduxState
+    var id: String { get }
     func newState(_ state: SubscribedState)
 }
 
@@ -23,13 +24,19 @@ struct ReduxAnyStoreSubscriber<AppState: ReduxState>: ReduxStoreSubscriber {
     
     typealias SubscribedState = AppState
     let subscription: (SubscribedState) -> ()
+    let id: String
     
     init<Base: ReduxStoreSubscriber>(_ base: Base) where Base.SubscribedState == AppState {
         subscription = base.newState
+        id = base.id
     }
     
     func newState(_ state: AppState) {
         subscription(state)
+    }
+    
+    static func == (lhs: ReduxAnyStoreSubscriber<AppState>, rhs: ReduxAnyStoreSubscriber<AppState>) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 
@@ -53,7 +60,12 @@ public class ReduxStore<AppState: ReduxState> {
     }
     
     public func subscribe<Subscriber: ReduxStoreSubscriber>(_ newSubscriber: Subscriber) where Subscriber.SubscribedState == AppState {
-        subscribers.append(ReduxAnyStoreSubscriber(newSubscriber))
+        subscribers = subscribers + [ReduxAnyStoreSubscriber(newSubscriber)]
+    }
+    
+    public func unsubscribe<Subscriber: ReduxStoreSubscriber>(_ subscriber: Subscriber) where Subscriber.SubscribedState == AppState {
+        let excludedSubscriber = ReduxAnyStoreSubscriber(subscriber)
+        subscribers = subscribers.filter{ $0 != excludedSubscriber }
     }
 }
 
