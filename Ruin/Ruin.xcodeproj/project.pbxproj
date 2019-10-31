@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1243453A2263B8FC00B64561 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE25FD225E87AC00A4D390 /* Redux.swift */; };
-		1243453B2263B90000B64561 /* RURedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121D5C8D2261FCE20038B2FD /* RURedux.swift */; };
 		1279DCAC2263AD7100723BFB /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
 		1279DCAD2263AD7100723BFB /* RuinCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9100DEF8236B6DEA005A3622 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100DEF7236B6DEA005A3622 /* Store.swift */; };
+		9100DEFB236B6E57005A3622 /* TogglePlaybackAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100DEFA236B6E57005A3622 /* TogglePlaybackAction.swift */; };
+		9100DEFD236B6E88005A3622 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100DEFC236B6E88005A3622 /* State.swift */; };
+		9100DF00236B6EF6005A3622 /* TransportReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100DEFF236B6EF6005A3622 /* TransportReducer.swift */; };
+		9100DF02236B7586005A3622 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100DF01236B7586005A3622 /* Reducer.swift */; };
 		91470960225A78AE006B4632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147095F225A78AE006B4632 /* AppDelegate.swift */; };
 		91470962225A78AE006B4632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91470961225A78AE006B4632 /* ViewController.swift */; };
 		91470965225A78AE006B4632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91470963225A78AE006B4632 /* Main.storyboard */; };
@@ -64,8 +68,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		121D5C8D2261FCE20038B2FD /* RURedux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RURedux.swift; sourceTree = "<group>"; };
 		12DE25FD225E87AC00A4D390 /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
+		9100DEF7236B6DEA005A3622 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9100DEFA236B6E57005A3622 /* TogglePlaybackAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglePlaybackAction.swift; sourceTree = "<group>"; };
+		9100DEFC236B6E88005A3622 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		9100DEFF236B6EF6005A3622 /* TransportReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportReducer.swift; sourceTree = "<group>"; };
+		9100DF01236B7586005A3622 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		9147095D225A78AE006B4632 /* Ruin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9147095F225A78AE006B4632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91470961225A78AE006B4632 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,9 +167,29 @@
 			isa = PBXGroup;
 			children = (
 				12DE25FD225E87AC00A4D390 /* Redux.swift */,
-				121D5C8D2261FCE20038B2FD /* RURedux.swift */,
+				9100DEF7236B6DEA005A3622 /* Store.swift */,
+				9100DEFC236B6E88005A3622 /* State.swift */,
+				9100DF01236B7586005A3622 /* Reducer.swift */,
+				9100DEF9236B6E47005A3622 /* Actions */,
+				9100DEFE236B6EAB005A3622 /* Reducers */,
 			);
 			path = Redux;
+			sourceTree = "<group>";
+		};
+		9100DEF9236B6E47005A3622 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				9100DEFA236B6E57005A3622 /* TogglePlaybackAction.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		9100DEFE236B6EAB005A3622 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				9100DEFF236B6EF6005A3622 /* TransportReducer.swift */,
+			);
+			path = Reducers;
 			sourceTree = "<group>";
 		};
 		9147095E225A78AE006B4632 /* Ruin */ = {
@@ -438,9 +466,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				91FF566C2275BEB5007C0A82 /* RUAudioUnitFactory.swift in Sources */,
+				9100DEFB236B6E57005A3622 /* TogglePlaybackAction.swift in Sources */,
+				9100DF02236B7586005A3622 /* Reducer.swift in Sources */,
 				1243453A2263B8FC00B64561 /* Redux.swift in Sources */,
+				9100DF00236B6EF6005A3622 /* TransportReducer.swift in Sources */,
 				91FF565022749DE1007C0A82 /* RUAudioEngine.swift in Sources */,
-				1243453B2263B90000B64561 /* RURedux.swift in Sources */,
+				9100DEF8236B6DEA005A3622 /* Store.swift in Sources */,
+				9100DEFD236B6E88005A3622 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

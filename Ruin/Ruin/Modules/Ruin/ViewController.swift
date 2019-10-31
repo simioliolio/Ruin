@@ -12,21 +12,26 @@ import RuinCore
 class ViewController: UIViewController {
     
     @IBOutlet weak var play: UIButton!
-    private var store = RUStore.shared.store
+    private var store = Store.shared.store
     
     override func viewDidLoad() {
         super.viewDidLoad()
         store.subscribe(self)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        // TODO: Unsubscribe
+    }
+    
     @IBAction func playTapped(_ sender: Any) {
-        store.dispatchAction(RUTogglePlaybackAction())
+        store.dispatchAction(TogglePlaybackAction())
     }
 }
 
-extension ViewController: StoreSubscriber {
+extension ViewController: ReduxStoreSubscriber {
     
-    func newState(_ state: RUState) {
+    func newState(_ state: State) {
         play.setTitle(state.playing ? "Playing" : "Stopped", for: .normal)
     }
     

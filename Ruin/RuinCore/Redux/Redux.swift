@@ -8,23 +8,23 @@
 
 import Foundation
 
-public protocol Action {}
+public protocol ReduxAction {}
 
-public protocol State {}
+public protocol ReduxState {}
 
-typealias Reducer<AppState: State> = (_ action: Action, _ state: AppState?) -> AppState
+typealias ReduxReducer<AppState: ReduxState> = (_ action: ReduxAction, _ state: AppState?) -> AppState
 
-public protocol StoreSubscriber {
-    associatedtype SubscribedState: State
+public protocol ReduxStoreSubscriber {
+    associatedtype SubscribedState: ReduxState
     func newState(_ state: SubscribedState)
 }
 
-struct AnyStoreSubscriber<AppState: State>: StoreSubscriber {
+struct ReduxAnyStoreSubscriber<AppState: ReduxState>: ReduxStoreSubscriber {
     
     typealias SubscribedState = AppState
     let subscription: (SubscribedState) -> ()
     
-    init<Base: StoreSubscriber>(_ base: Base) where Base.SubscribedState == AppState {
+    init<Base: ReduxStoreSubscriber>(_ base: Base) where Base.SubscribedState == AppState {
         subscription = base.newState
     }
     
@@ -33,27 +33,27 @@ struct AnyStoreSubscriber<AppState: State>: StoreSubscriber {
     }
 }
 
-public class Store<AppState: State> {
+public class ReduxStore<AppState: ReduxState> {
     
     typealias SubscribedState = AppState
     
-    let reducer: Reducer<AppState>
+    let reducer: ReduxReducer<AppState>
     var state: AppState?
-    var subscribers: [AnyStoreSubscriber<AppState>] = []
+    var subscribers: [ReduxAnyStoreSubscriber<AppState>] = []
     
-    init(reducer: @escaping Reducer<AppState>, state: AppState?) {
+    init(reducer: @escaping ReduxReducer<AppState>, state: AppState?) {
         self.reducer = reducer
         self.state = state
     }
     
-    public func dispatchAction(_ action: Action) {
+    public func dispatchAction(_ action: ReduxAction) {
         state = reducer(action, state)
         guard state != nil else { fatalError("State nil after action!") }
         subscribers.forEach { $0.newState(state!) }
     }
     
-    public func subscribe<Subscriber: StoreSubscriber>(_ newSubscriber: Subscriber) where Subscriber.SubscribedState == AppState {
-        subscribers.append(AnyStoreSubscriber(newSubscriber))
+    public func subscribe<Subscriber: ReduxStoreSubscriber>(_ newSubscriber: Subscriber) where Subscriber.SubscribedState == AppState {
+        subscribers.append(ReduxAnyStoreSubscriber(newSubscriber))
     }
 }
 
