@@ -32,7 +32,7 @@ class ViewController: UIViewController {
 extension ViewController: ReduxStoreSubscriber {
     
     func newState(_ state: State) {
-        play.setTitle(state.playing ? "Playing" : "Stopped", for: .normal)
+        play.isSelected = state.playing
     }
     
 }
