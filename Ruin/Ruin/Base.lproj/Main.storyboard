@@ -92,6 +92,11 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERK-6r-mzH" userLabel="XY1" customClass="XYControl" customModule="Ruin" customModuleProvider="target">
                                                 <rect key="frame" x="6" y="0.0" width="131.5" height="709"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="7"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83x-4v-sg0" userLabel="XY2" customClass="XYControl" customModule="Ruin" customModuleProvider="target">
                                                 <rect key="frame" x="141.5" y="0.0" width="131" height="709"/>
