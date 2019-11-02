@@ -25,6 +25,7 @@
 		916A5F3E20D6A29400B30E8B /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
 		916A5F4520D6A29400B30E8B /* RuinCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A5F4420D6A29400B30E8B /* RuinCoreTests.swift */; };
 		916A5F4720D6A29500B30E8B /* RuinCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 916A5F3720D6A29400B30E8B /* RuinCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91CCC8AB236D9ACC0040E59B /* XYControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CCC8AA236D9ACC0040E59B /* XYControl.swift */; };
 		91FF565022749DE1007C0A82 /* RUAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */; };
 		91FF566C2275BEB5007C0A82 /* RUAudioUnitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF566B2275BEB5007C0A82 /* RUAudioUnitFactory.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		916A5F3D20D6A29400B30E8B /* RuinCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuinCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		916A5F4420D6A29400B30E8B /* RuinCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuinCoreTests.swift; sourceTree = "<group>"; };
 		916A5F4620D6A29400B30E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91CCC8AA236D9ACC0040E59B /* XYControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYControl.swift; sourceTree = "<group>"; };
 		91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUAudioEngine.swift; sourceTree = "<group>"; };
 		91FF566B2275BEB5007C0A82 /* RUAudioUnitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUAudioUnitFactory.swift; sourceTree = "<group>"; };
 		91FF566E2275E750007C0A82 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				91470961225A78AE006B4632 /* ViewController.swift */,
+				91CCC8AA236D9ACC0040E59B /* XYControl.swift */,
 			);
 			path = Ruin;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91CCC8AB236D9ACC0040E59B /* XYControl.swift in Sources */,
 				91470968225A78AE006B4632 /* Ruin.xcdatamodeld in Sources */,
 				91470962225A78AE006B4632 /* ViewController.swift in Sources */,
 				91470960225A78AE006B4632 /* AppDelegate.swift in Sources */,
