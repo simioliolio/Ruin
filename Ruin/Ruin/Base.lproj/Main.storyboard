@@ -91,7 +91,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERK-6r-mzH" userLabel="XY1" customClass="XYControl" customModule="Ruin" customModuleProvider="target">
                                                 <rect key="frame" x="6" y="0.0" width="131.5" height="709"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" red="0.92157584428787231" green="0.76203757524490356" blue="0.60168951749801636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="7"/>
@@ -100,11 +100,11 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83x-4v-sg0" userLabel="XY2" customClass="XYControl" customModule="Ruin" customModuleProvider="target">
                                                 <rect key="frame" x="141.5" y="0.0" width="131" height="709"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" red="0.79059845209121704" green="0.91512179374694824" blue="0.55072999000549316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnx-AB-gUu" userLabel="XY3" customClass="XYControl" customModule="Ruin" customModuleProvider="target">
                                                 <rect key="frame" x="276.5" y="0.0" width="131.5" height="709"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" red="0.53235214948654175" green="0.82375591993331909" blue="0.91526025533676147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXk-ds-ds3" userLabel="Space">
                                                 <rect key="frame" x="412" y="0.0" width="2" height="709"/>
