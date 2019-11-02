@@ -10,23 +10,26 @@ import UIKit
 
 @IBDesignable final class XYControl: UIControl {
     
-    private let minimumOfXAndY: CGFloat = 0
-    private let maximumOfXAndY: CGFloat = 1
-    private var rangeOfXAndY: CGFloat {
-        maximumOfXAndY - minimumOfXAndY
-    }
-    
+    let touchView = UIView()
+
     private let dot = CALayer()
     private let dotBackground = UIColor.white
     private let dotBorderWidth: CGFloat = 2
-    private let dotDiameterAsFractionOfWidth: CGFloat = 0.1
+    private let dotDiameterAsFractionOfWidth: CGFloat = 0.15
     private var dotDiameter: CGFloat {
         dotDiameterAsFractionOfWidth * frame.width
+    }
+    private var dotRadius: CGFloat {
+        return dotDiameter / 2
     }
     private var dotSize: CGSize {
         CGSize(width: dotDiameter, height: dotDiameter)
     }
-    private var positionOfDotAsPercentage: CGPoint = CGPoint(x: 0.5, y: 0.5)
+    private var positionOfDotAsPercentage: CGPoint = CGPoint(x: 0.5, y: 0.5) { // TODO: Use xyMid
+        didSet {
+            updateDot()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,27 +41,108 @@ import UIKit
         commonInit()
     }
     
-    func commonInit() {
+    private func commonInit() {
         layer.cornerRadius = 5
         
-        dot.backgroundColor = dotBackground.cgColor
-        layer.addSublayer(dot)
+        setupTouchView()
+        // TODO: Delete
+        touchView.layer.borderWidth = 1.0
         
-        updateDotFrame()
+        dot.backgroundColor = dotBackground.cgColor
+        touchView.layer.addSublayer(dot)
+        
+        updateDot()
     }
     
-    func updateDotFrame() {
-        dot.frame = CGRect(origin: positionOfDotAsPercentage.scaledTo(bounds.size),
-                           size: dotSize)
+    private func setupTouchView() {
+        touchView.translatesAutoresizingMaskIntoConstraints = false
+        touchView.isUserInteractionEnabled = false
+        self.addSubview(touchView)
+        self.pin(view: touchView, with: dotRadius)
+    }
+    
+    override var frame: CGRect {
+        didSet {
+            updateDot()
+        }
+    }
+    
+    override func layoutSubviews() {
+        updateDot()
+        super.layoutSubviews()
+    }
+    
+    private func updateDot() {
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        dot.frame.size = dotSize
+        dot.cornerRadius = dotRadius
+        dot.borderWidth = dotBorderWidth
+        let positionInTouchView = positionOfDotAsPercentage.scaledTo(touchView.bounds.size)
+        dot.position = positionInTouchView
+        dot.setNeedsDisplay()
+        CATransaction.commit()
     }
 }
 
-extension CGPoint {
+extension XYControl {
     
-    func scaledTo(_ size: CGSize) -> CGPoint {
-        guard x <= 1.0, y <= 1.0 else {
-            fatalError("Point \(self) is unsuitable for scaling")
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let positionInTouchView = touch.location(in: touchView)
+        moveDotTo(positionInTouchView)
+        return true
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let positionInTouchView = touch.location(in: touchView)
+        moveDotTo(positionInTouchView)
+        return true
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        if let positionInTouchView = touch?.location(in: touchView) {
+            moveDotTo(positionInTouchView)
         }
-        return CGPoint(x: x * size.width, y: y * size.height)
+    }
+    
+    private func moveDotTo(_ positionInTouchView: CGPoint) {
+        guard touchView.bounds.contains(positionInTouchView) else { return }
+        positionOfDotAsPercentage = positionInTouchView.scaledTo(CGSize.unit, from: touchView.bounds.size)
+    }
+}
+
+private extension CGPoint {
+    
+    func scaledTo(_ size: CGSize, from initialSize: CGSize = CGSize.unit) -> CGPoint {
+        guard x <= initialSize.width, y <= initialSize.height else {
+            fatalError("Point \(self) is beyond bounds of reference size")
+        }
+        let newX = x / initialSize.width * size.width
+        let newY = y / initialSize.height * size.height
+        return CGPoint(x: newX, y: newY)
+    }
+    
+    func location(in rect: CGRect) -> CGPoint {
+        return CGPoint(x: x - rect.origin.x, y: y - rect.origin.y)
+    }
+}
+
+private extension CGSize {
+    static var unit = CGSize(width: 1, height: 1)
+}
+
+private extension UIEdgeInsets {
+    static func insetOnAllSides(by inset: CGFloat) -> UIEdgeInsets {
+        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+    }
+}
+
+extension UIView {
+    
+    func pin(view: UIView, with inset: CGFloat) {
+        self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -inset).isActive = true
+        self.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: inset).isActive = true
+        self.topAnchor.constraint(equalTo: view.topAnchor, constant: -inset).isActive = true
+        self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: inset).isActive = true
     }
 }
