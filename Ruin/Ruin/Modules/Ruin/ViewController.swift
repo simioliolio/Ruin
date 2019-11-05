@@ -34,7 +34,8 @@ extension ViewController: ReduxStoreSubscriber {
     var id: String { String(describing: ViewController.self) }
     
     func newState(_ state: State) {
-        play.isSelected = state.playing
+        play.isSelected = state.isPlaying
+        #warning ("isPlaying is not hooked up")
     }
     
 }

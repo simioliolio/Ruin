@@ -9,22 +9,26 @@
 import Foundation
 
 public struct State: ReduxState {
-    public var playing: Bool = false
-    public var currentPlaybackPosition: TimeInterval = 0
-    public var audioFileLength: TimeInterval = 0
-    public var positionInteractionState: SliderInteractionState = SliderInteractionState()
+    // Interactions
+    public var playInteraction: Bool = false
+    public var positionInteraction: SliderInteractionState = SliderInteractionState()
     public var xYInteractionState: (
         left: XYInteractionState,
         middle: XYInteractionState,
         right: XYInteractionState) = (XYInteractionState(),
                                       XYInteractionState(),
                                       XYInteractionState())
+    // Audio engine
+    public var isPlaying: Bool = false
+    public var currentPlaybackPosition: TimeInterval = 0
+    public var audioFileLength: TimeInterval = 0
         
 }
 
 public struct SliderInteractionState {
     public var position: CGFloat = 0.0
     public var enabled: Bool = false
+    public var previouslyEnabled: Bool = false
 }
 
 public struct XYInteractionState {

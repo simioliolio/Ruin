@@ -19,7 +19,7 @@ struct TransportReducer {
             switch action {
                 
             case _ as TogglePlaybackAction:
-                newState.playing = !newState.playing
+                newState.playInteraction = !newState.playInteraction
                 
             default:
                 // TODO: Enum cases for actions?
