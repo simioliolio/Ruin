@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable final class XYControl: UIControl {
+final class XYControl: UIControl {
     
     let touchView = UIView()
 
