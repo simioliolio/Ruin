@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Ruin/Ruin.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:RuinBypass/RuinBypass.xcodeproj">
    </FileRef>
    <FileRef
