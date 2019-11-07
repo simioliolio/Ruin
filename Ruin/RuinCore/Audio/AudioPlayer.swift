@@ -10,29 +10,26 @@ import AVFoundation
 
 final public class AudioPlayer {
     
-    let playerNode = AVAudioPlayerNode()
+    let player = AVAudioPlayerNode()
+    var audioFile: AVAudioFile?
     
     // TODO: key path to expose player node's property?
-    var isPlaying: Bool { playerNode.isPlaying }
+    var isPlaying: Bool { player.isPlaying }
     
     init() { }
     
     func load(url: URL) {
         guard let audioFile = try? AVAudioFile(forReading: url) else { return assertionFailure("could not get av audio file") }
-        guard let audioFileBuffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: UInt32(audioFile.length)) else { return assertionFailure("Couldn't make audio buffer from audio file \(audioFile)") } // TODO: Throw
-        do {
-            try audioFile.read(into: audioFileBuffer)
-        } catch {
-            fatalError("error: \(error)")
-        }
-        playerNode.scheduleBuffer(audioFileBuffer, at: nil, options: .loops, completionHandler: nil)
+        self.audioFile = audioFile
     }
     
     func play() {
-        playerNode.play(at: nil)
+        guard let audioFile = audioFile else { return }
+        player.scheduleFile(audioFile, at: nil, completionHandler: nil)
+        player.play(at: nil)
     }
     
     func stop() {
-        playerNode.stop()
+        player.stop()
     }
 }

@@ -24,7 +24,9 @@ final public class AudioInterface {
     public init() {
         audioPlayer = AudioPlayer()
         audioEngine = AudioEngine(player: audioPlayer)
+        audioEngine.delegate = self
         store.subscribe(self)
+        try? audioEngine.setup()
     }
     
     deinit {
@@ -36,7 +38,11 @@ final public class AudioInterface {
 extension AudioInterface {
     
     private func apply(playbackStatus: Bool) {
-        // TODO: Implement
+        if playbackStatus == true {
+            audioPlayer.play()
+        } else {
+            audioPlayer.stop()
+        }
     }
     
     private func apply(position: TimeInterval) {
@@ -46,7 +52,17 @@ extension AudioInterface {
 }
 
 // MARK: Reacting to changes in the audio engine
-extension AudioInterface {
+// TODO: Make AudioEngine a middleware?
+extension AudioInterface: AudioEngineDelegate {
+    
+    func didStartAudioEngine() {
+        let url = Bundle.main.url(forResource: "Air - New Star In The Sky", withExtension: "mp3")!
+        audioPlayer.load(url: url)
+    }
+    
+    func didFailToStartAudioEngine() {
+        //
+    }
     
 }
 
