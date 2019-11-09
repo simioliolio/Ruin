@@ -2,13 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:RuinAURoadie/RuinAURoadie.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Ruin/Ruin.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:RuinBypass/RuinBypass.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/simioliolio/Documents/Xcode/Ruin/RuinAURoadie/RuinAURoadie.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:RuinAUHost/RuinAUHost.xcodeproj">
@@ -17,6 +17,6 @@
       location = "group:RuinStutter/RuinStutter.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/simioliolio/Documents/Xcode/Ruin/Shared Utilities">
+      location = "group:Shared Utilities">
    </FileRef>
 </Workspace>
