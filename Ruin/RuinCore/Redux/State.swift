@@ -10,7 +10,6 @@ import Foundation
 
 public struct State: ReduxState {
     // Interactions
-    public var playInteraction: Bool = false
     public var positionInteraction: SliderInteractionState = SliderInteractionState()
     public var xYInteractionState: (
         left: XYInteractionState,

@@ -17,10 +17,13 @@ struct TransportReducer {
             var newState = state ?? State()
             
             switch action {
-                
+
             case _ as TogglePlaybackAction:
-                newState.playInteraction = !newState.playInteraction
-                
+                break
+
+            case let action as AudioPlayerPlaybackStatusAction:
+                newState.isPlaying = action.playing
+                break
             default:
                 // TODO: Enum cases for actions?
                 fatalError("unknown action")

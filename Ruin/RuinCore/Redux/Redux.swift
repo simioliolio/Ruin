@@ -23,7 +23,7 @@ public protocol ReduxStoreSubscriber: Equatable {
 public protocol ReduxMiddleware: Equatable {
     associatedtype SubscribedState: ReduxState
     var id: String { get }
-    func action(_ action: ReduxAction, state: SubscribedState)
+    func action(_ action: ReduxAction, state: SubscribedState?)
 }
 
 struct ReduxAnyStoreSubscriber<AppState: ReduxState>: ReduxStoreSubscriber {
@@ -50,14 +50,14 @@ struct ReduxAnyMiddleware<AppState: ReduxState>: ReduxMiddleware {
     
     typealias SubscribedState = AppState
     let id: String
-    let performAction: (ReduxAction, SubscribedState) -> ()
+    let performAction: (ReduxAction, SubscribedState?) -> ()
     
     init<Base: ReduxMiddleware>(_ base: Base) where Base.SubscribedState == AppState {
         id = base.id
         performAction = base.action
     }
     
-    func action(_ action: ReduxAction, state: AppState) {
+    func action(_ action: ReduxAction, state: AppState?) {
         performAction(action, state)
     }
     
@@ -81,9 +81,10 @@ public class ReduxStore<AppState: ReduxState> {
     }
     
     public func dispatchAction(_ action: ReduxAction) {
+        middlewares.forEach { $0.action(action, state: state) }
         state = reducer(action, state)
-        guard state != nil else { fatalError("State nil after action!") }
-        subscribers.forEach { $0.newState(state!) }
+        guard let state = state else { fatalError("State nil after action!") }
+        subscribers.forEach { $0.newState(state) }
     }
     
     public func subscribe<Subscriber: ReduxStoreSubscriber>(_ newSubscriber: Subscriber) where Subscriber.SubscribedState == AppState {

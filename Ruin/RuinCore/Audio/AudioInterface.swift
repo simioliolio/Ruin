@@ -25,6 +25,7 @@ final public class AudioInterface {
         audioPlayer = AudioPlayer()
         audioEngine = AudioEngine(player: audioPlayer)
         audioEngine.delegate = self
+        audioPlayer.delegate = self
         store.subscribe(self)
         try? audioEngine.setup()
     }
@@ -34,7 +35,24 @@ final public class AudioInterface {
     }
 }
 
-// MARK: Reacting to interactions
+extension AudioInterface: ReduxMiddleware {
+    
+    public typealias SubscribedState = State
+    public var id: String { uuid.uuidString }
+    
+    public func action(_ action: ReduxAction, state: State?) {
+        
+        guard let state = state else { return }
+        switch action {
+        case is TogglePlaybackAction:
+            apply(playbackStatus: !state.isPlaying)
+        default:
+            break
+        }
+    }
+}
+
+// MARK: Apply changes to audio engine / player
 extension AudioInterface {
     
     private func apply(playbackStatus: Bool) {
@@ -45,17 +63,13 @@ extension AudioInterface {
         }
     }
     
-    private func apply(position: TimeInterval) {
-        // TODO: Implement
-    }
-    
 }
-
-// MARK: Reacting to changes in the audio engine
-// TODO: Make AudioEngine a middleware?
+ 
 extension AudioInterface: AudioEngineDelegate {
     
     func didStartAudioEngine() {
+        // TODO: Issue action
+        // temp
         let url = Bundle.main.url(forResource: "Air - New Star In The Sky", withExtension: "mp3")!
         audioPlayer.load(url: url)
     }
@@ -63,30 +77,20 @@ extension AudioInterface: AudioEngineDelegate {
     func didFailToStartAudioEngine() {
         //
     }
-    
 }
 
-extension AudioInterface: ReduxStoreSubscriber {
+extension AudioInterface: AudioPlayerDelegate {
     
-    public typealias SubscribedState = State
-    public var id: String { uuid.uuidString }
+    func playerStarted(_ player: AudioPlayer) {
+        store.dispatchAction(AudioPlayerPlaybackStatusAction(playing: true))
+    }
     
-    public func newState(_ state: State) {
-        
-        // Playback
-        if state.playInteraction != audioPlayer.isPlaying {
-            apply(playbackStatus: state.playInteraction)
-        }
-        
-        // Position
-        // TODO: Different type of state for this?
-        if state.positionInteraction.previouslyEnabled == true && state.positionInteraction.enabled == false {
-            // Apply new position
-            apply(position: TimeInterval(state.positionInteraction.position) * state.audioFileLength)
-        }
-        
-        // XY interaction
-        // TODO: Implement
+    func playerStopped(_ player: AudioPlayer) {
+        store.dispatchAction(AudioPlayerPlaybackStatusAction(playing: false))
+    }
+    
+    func error(in player: AudioPlayer, error: Error?) {
+        // TODO: Dispatch error action
     }
 }
 
