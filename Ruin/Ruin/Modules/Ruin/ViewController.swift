@@ -11,15 +11,17 @@ import RuinCore
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var leftXyControl: XYControl!
-    @IBOutlet weak var middleXyControl: XYControl!
-    @IBOutlet weak var rightXyControl: XYControl!
+    @IBOutlet weak var position: UISlider!
+    @IBOutlet weak var leftXy: XYControl!
+    @IBOutlet weak var middleXy: XYControl!
+    @IBOutlet weak var rightXy: XYControl!
     @IBOutlet weak var play: UIButton!
+    
     private var store = Store.shared.store
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        [leftXyControl, middleXyControl, rightXyControl].enumerated().forEach {
+        [leftXy, middleXy, rightXy].enumerated().forEach {
             $1?.tag = $0
             $1?.delegate = self
         }

@@ -62,9 +62,13 @@
                                                     <action selector="playTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hx8-m5-jam"/>
                                                 </connections>
                                             </button>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gjj-72-pCi">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjj-72-pCi">
                                                 <rect key="frame" x="63.5" y="0.0" width="342.5" height="51"/>
                                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="editingPositionDidBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="j3B-VB-kmm"/>
+                                                    <action selector="editingPositionDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="wpc-nx-nzJ"/>
+                                                </connections>
                                             </slider>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHI-4k-fOx" userLabel="Space">
                                                 <rect key="frame" x="404" y="0.0" width="10" height="50"/>
@@ -129,10 +133,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="leftXyControl" destination="ERK-6r-mzH" id="ZMP-73-8x6"/>
-                        <outlet property="middleXyControl" destination="83x-4v-sg0" id="I5n-TW-0jd"/>
+                        <outlet property="leftXy" destination="ERK-6r-mzH" id="obQ-UL-N18"/>
+                        <outlet property="middleXy" destination="83x-4v-sg0" id="WJH-uP-yve"/>
                         <outlet property="play" destination="TPV-sh-6uL" id="Z9h-7k-ua0"/>
-                        <outlet property="rightXyControl" destination="Bnx-AB-gUu" id="nmy-Ue-vct"/>
+                        <outlet property="position" destination="Gjj-72-pCi" id="3PO-i4-bGR"/>
+                        <outlet property="rightXy" destination="Bnx-AB-gUu" id="bcf-Lu-n6r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
