@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12240D002376AC14004CEA22 /* RuinStutterFramework_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12240CFF2376AC14004CEA22 /* RuinStutterFramework_iOS.framework */; };
 		1243453A2263B8FC00B64561 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE25FD225E87AC00A4D390 /* Redux.swift */; };
 		1279DCAC2263AD7100723BFB /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
 		1279DCAD2263AD7100723BFB /* RuinCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -77,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		12240CFF2376AC14004CEA22 /* RuinStutterFramework_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinStutterFramework_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DE25FD225E87AC00A4D390 /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		9100DEF7236B6DEA005A3622 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9100DEFA236B6E57005A3622 /* TogglePlaybackAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglePlaybackAction.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12240D002376AC14004CEA22 /* RuinStutterFramework_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +295,7 @@
 		916A5FA120D6A31200B30E8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				12240CFF2376AC14004CEA22 /* RuinStutterFramework_iOS.framework */,
 				910743512374A267005B2936 /* RuinStutterFramework_iOS.framework */,
 				91FF566E2275E750007C0A82 /* AVFoundation.framework */,
 			);
