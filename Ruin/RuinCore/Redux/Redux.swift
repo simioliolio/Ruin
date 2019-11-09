@@ -20,6 +20,12 @@ public protocol ReduxStoreSubscriber: Equatable {
     func newState(_ state: SubscribedState)
 }
 
+public protocol ReduxMiddleware: Equatable {
+    associatedtype SubscribedState: ReduxState
+    var id: String { get }
+    func action(_ action: ReduxAction, state: SubscribedState)
+}
+
 struct ReduxAnyStoreSubscriber<AppState: ReduxState>: ReduxStoreSubscriber {
     
     typealias SubscribedState = AppState
@@ -40,6 +46,26 @@ struct ReduxAnyStoreSubscriber<AppState: ReduxState>: ReduxStoreSubscriber {
     }
 }
 
+struct ReduxAnyMiddleware<AppState: ReduxState>: ReduxMiddleware {
+    
+    typealias SubscribedState = AppState
+    let id: String
+    let performAction: (ReduxAction, SubscribedState) -> ()
+    
+    init<Base: ReduxMiddleware>(_ base: Base) where Base.SubscribedState == AppState {
+        id = base.id
+        performAction = base.action
+    }
+    
+    func action(_ action: ReduxAction, state: AppState) {
+        performAction(action, state)
+    }
+    
+    static func == (lhs: ReduxAnyMiddleware<AppState>, rhs: ReduxAnyMiddleware<AppState>) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 public class ReduxStore<AppState: ReduxState> {
     
     typealias SubscribedState = AppState
@@ -47,6 +73,7 @@ public class ReduxStore<AppState: ReduxState> {
     let reducer: ReduxReducer<AppState>
     var state: AppState?
     var subscribers: [ReduxAnyStoreSubscriber<AppState>] = []
+    var middlewares: [ReduxAnyMiddleware<AppState>] = []
     
     init(reducer: @escaping ReduxReducer<AppState>, state: AppState?) {
         self.reducer = reducer
@@ -66,6 +93,15 @@ public class ReduxStore<AppState: ReduxState> {
     public func unsubscribe<Subscriber: ReduxStoreSubscriber>(_ subscriber: Subscriber) where Subscriber.SubscribedState == AppState {
         let excludedSubscriber = ReduxAnyStoreSubscriber(subscriber)
         subscribers = subscribers.filter{ $0 != excludedSubscriber }
+    }
+    
+    public func subscribe<Middleware: ReduxMiddleware>(_ middleware: Middleware) where Middleware.SubscribedState == AppState {
+        middlewares = middlewares + [ReduxAnyMiddleware(middleware)]
+    }
+    
+    public func unsubscribe<Middleware: ReduxMiddleware>(_ middleware: Middleware) where Middleware.SubscribedState == AppState {
+        let excludedMiddleware = ReduxAnyMiddleware(middleware)
+        middlewares = middlewares.filter{ $0 != excludedMiddleware }
     }
 }
 
