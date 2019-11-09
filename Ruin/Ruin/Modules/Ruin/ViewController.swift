@@ -11,8 +11,19 @@ import RuinCore
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var leftXyControl: XYControl!
+    @IBOutlet weak var middleXyControl: XYControl!
+    @IBOutlet weak var rightXyControl: XYControl!
     @IBOutlet weak var play: UIButton!
     private var store = Store.shared.store
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        [leftXyControl, middleXyControl, rightXyControl].enumerated().forEach {
+            $1?.tag = $0
+            $1?.delegate = self
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -40,5 +51,12 @@ extension ViewController: ReduxStoreSubscriber {
         }
     }
     
+}
+
+extension ViewController: XYControlDelegate {
+    func xyControl(_ xyControl: XYControl, didUpdateTo state: XYControl.Status) {
+        let action = XyControlAction(index: xyControl.tag, activated: state.activated, position: state.point)
+        store.dispatchAction(action)
+    }
 }
 

@@ -8,7 +8,18 @@
 
 import UIKit
 
+protocol XYControlDelegate: class {
+    func xyControl(_ xyControl: XYControl, didUpdateTo state: XYControl.Status)
+}
+
 final class XYControl: UIControl {
+    
+    struct Status {
+        let activated: Bool
+        let point: CGPoint
+    }
+    
+    weak var delegate: XYControlDelegate?
     
     let touchView = UIView()
 
@@ -25,10 +36,15 @@ final class XYControl: UIControl {
     private var dotSize: CGSize {
         CGSize(width: dotDiameter, height: dotDiameter)
     }
-    private var positionOfDotAsPercentage: CGPoint = CGPoint(x: 0.5, y: 0.5) { // TODO: Use xyMid
+    private var positionOfDotAsPercentage: CGPoint = CGPoint(x: 0.5, y: 0.5) {
         didSet {
-            updateDot()
+            delegate?.xyControl(self, didUpdateTo: currentStatus)
+            updateDotInView()
         }
+    }
+    private var activated: Bool = false
+    private var currentStatus: XYControl.Status {
+        return Status(activated: activated, point: positionOfDotAsPercentage)
     }
     
     override init(frame: CGRect) {
@@ -51,7 +67,7 @@ final class XYControl: UIControl {
         dot.backgroundColor = dotBackground.cgColor
         touchView.layer.addSublayer(dot)
         
-        updateDot()
+        updateDotInView()
     }
     
     private func setupTouchView() {
@@ -63,16 +79,16 @@ final class XYControl: UIControl {
     
     override var frame: CGRect {
         didSet {
-            updateDot()
+            updateDotInView()
         }
     }
     
     override func layoutSubviews() {
-        updateDot()
+        updateDotInView()
         super.layoutSubviews()
     }
     
-    private func updateDot() {
+    private func updateDotInView() {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         dot.frame.size = dotSize
@@ -88,18 +104,21 @@ final class XYControl: UIControl {
 extension XYControl {
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        activated = true
         let positionInTouchView = touch.location(in: touchView)
         moveDotTo(positionInTouchView)
         return true
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        activated = true
         let positionInTouchView = touch.location(in: touchView)
         moveDotTo(positionInTouchView)
         return true
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        activated = false
         if let positionInTouchView = touch?.location(in: touchView) {
             moveDotTo(positionInTouchView)
         }

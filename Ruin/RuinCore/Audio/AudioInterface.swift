@@ -46,6 +46,8 @@ extension AudioInterface: ReduxMiddleware {
         switch action {
         case is TogglePlaybackAction:
             apply(playbackStatus: !state.isPlaying)
+        case let action as XyControlAction:
+            apply(xyControlState: (action.index, action.activated, action.position))
         default:
             break
         }
@@ -63,6 +65,12 @@ extension AudioInterface {
         }
     }
     
+    private func apply(xyControlState: (index: Int, activated: Bool, position: CGPoint)) {
+        // TODO: Forward xy control changes to effect interface which
+        // controls the audio unit's parameters
+        
+    }
+    
 }
  
 extension AudioInterface: AudioEngineDelegate {
@@ -75,7 +83,7 @@ extension AudioInterface: AudioEngineDelegate {
     }
     
     func didFailToStartAudioEngine() {
-        //
+        // TODO: Handle didFailToStartAudioEngine
     }
 }
 

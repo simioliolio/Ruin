@@ -129,7 +129,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="leftXyControl" destination="ERK-6r-mzH" id="ZMP-73-8x6"/>
+                        <outlet property="middleXyControl" destination="83x-4v-sg0" id="I5n-TW-0jd"/>
                         <outlet property="play" destination="TPV-sh-6uL" id="Z9h-7k-ua0"/>
+                        <outlet property="rightXyControl" destination="Bnx-AB-gUu" id="nmy-Ue-vct"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

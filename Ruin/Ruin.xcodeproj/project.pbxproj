@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		12240D002376AC14004CEA22 /* RuinStutterFramework_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12240CFF2376AC14004CEA22 /* RuinStutterFramework_iOS.framework */; };
 		12240D042376B92E004CEA22 /* AudioPlayerPlaybackStatusAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12240D032376B92E004CEA22 /* AudioPlayerPlaybackStatusAction.swift */; };
+		12240D0623774F5E004CEA22 /* XyControlAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12240D0523774F5E004CEA22 /* XyControlAction.swift */; };
 		1243453A2263B8FC00B64561 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE25FD225E87AC00A4D390 /* Redux.swift */; };
 		1279DCAC2263AD7100723BFB /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
 		1279DCAD2263AD7100723BFB /* RuinCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -81,6 +82,7 @@
 /* Begin PBXFileReference section */
 		12240CFF2376AC14004CEA22 /* RuinStutterFramework_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinStutterFramework_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12240D032376B92E004CEA22 /* AudioPlayerPlaybackStatusAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerPlaybackStatusAction.swift; sourceTree = "<group>"; };
+		12240D0523774F5E004CEA22 /* XyControlAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XyControlAction.swift; sourceTree = "<group>"; };
 		12DE25FD225E87AC00A4D390 /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		9100DEF7236B6DEA005A3622 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9100DEFA236B6E57005A3622 /* TogglePlaybackAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglePlaybackAction.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				9100DEFA236B6E57005A3622 /* TogglePlaybackAction.swift */,
+				12240D0523774F5E004CEA22 /* XyControlAction.swift */,
 				12240D032376B92E004CEA22 /* AudioPlayerPlaybackStatusAction.swift */,
 			);
 			path = Actions;
@@ -512,6 +515,7 @@
 				91FF566C2275BEB5007C0A82 /* RUAudioUnitFactory.swift in Sources */,
 				910743552374A953005B2936 /* AudioUnitComponentLibrary.swift in Sources */,
 				9100DEFB236B6E57005A3622 /* TogglePlaybackAction.swift in Sources */,
+				12240D0623774F5E004CEA22 /* XyControlAction.swift in Sources */,
 				9100DF02236B7586005A3622 /* Reducer.swift in Sources */,
 				12240D042376B92E004CEA22 /* AudioPlayerPlaybackStatusAction.swift in Sources */,
 				1243453A2263B8FC00B64561 /* Redux.swift in Sources */,
