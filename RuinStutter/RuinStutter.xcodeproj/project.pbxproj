@@ -47,7 +47,7 @@
 		12465F1D22D2936B00CAC542 /* Air - New Star In The Sky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 12465F1C22D2936B00CAC542 /* Air - New Star In The Sky.mp3 */; };
 		124F86CC22D7C8850063D65D /* RuinStutterAUViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F86CA22D7C8850063D65D /* RuinStutterAUViewController.xib */; };
 		124F86CD22D7CF8A0063D65D /* RuinStutterFramework_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E7522D0EF3100CAC542 /* RuinStutterFramework_macOS.framework */; };
-		124F86CE22D7CF8A0063D65D /* RuinStutterFramework_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E7522D0EF3100CAC542 /* RuinStutterFramework_macOS.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		124F86CE22D7CF8A0063D65D /* RuinStutterFramework_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12465E7522D0EF3100CAC542 /* RuinStutterFramework_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1279B52922D0B29D0032D1F4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1279B52722D0B29D0032D1F4 /* MainInterface.storyboard */; };
 		916BB144234BCC8D00FAE17B /* RuinStutterAU_macOSAudioUnit+AURComponentDescriptionProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916BB143234BCC8D00FAE17B /* RuinStutterAU_macOSAudioUnit+AURComponentDescriptionProviding.swift */; };
 		919FE32522EDBB10000E9DB0 /* RuinAURoadie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919FE32422EDBB10000E9DB0 /* RuinAURoadie.framework */; };
@@ -573,7 +573,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Hyper Barn LTD";
 				TargetAttributes = {
 					12465DFC22D0BEED00CAC542 = {
@@ -853,7 +853,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7JF57DB443;
@@ -881,7 +881,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7JF57DB443;
@@ -913,6 +913,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7JF57DB443;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "RuinStutterAU-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -939,6 +940,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7JF57DB443;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "RuinStutterAU-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -965,6 +967,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7JF57DB443;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "RuinStutterApp-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -988,6 +991,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7JF57DB443;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "RuinStutterApp-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1006,7 +1010,7 @@
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -1037,7 +1041,7 @@
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
