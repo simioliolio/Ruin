@@ -53,6 +53,8 @@ extension AudioInterface: ReduxMiddleware {
                 let newPosition = AVAudioFramePosition(action.positionAsPercentage * Float(state.audioFileFrames))
                 apply(newPosition: newPosition)
             }
+        case let action as AudioPlayerFileLoadAction:
+            apply(processingFormat: action.processingFormat)
         default:
             break
         }
@@ -73,8 +75,11 @@ extension AudioInterface {
     }
     
     private func apply(newPosition: AVAudioFramePosition) {
-        // TODO: go to new position using audioPlayer
         audioPlayer.play(at: newPosition)
+    }
+    
+    private func apply(processingFormat: AVAudioFormat) {
+        audioEngine.applyNewProcessingFormat(processingFormat)
     }
     
 }

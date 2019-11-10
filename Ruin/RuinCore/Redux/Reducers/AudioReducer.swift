@@ -24,6 +24,7 @@ struct AudioReducer {
                 
             default:
                 print("unhandled action \(action)")
+                break
             }
             
             return newState

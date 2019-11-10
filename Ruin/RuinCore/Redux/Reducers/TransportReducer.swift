@@ -26,7 +26,8 @@ struct TransportReducer {
                 newState.choosingPosition = action.choosing
                 
             default:
-                print("unhandled action \(action)")
+                //                print("unhandled action \(action)")
+                break
             }
             
             return newState

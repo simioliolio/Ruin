@@ -15,16 +15,11 @@ protocol AudioPlayerDelegate: class {
     func error(in player: AudioPlayer, error: Error?)
 }
 
-protocol AudioPlayerFormatDelegate: class {
-    func player(_ player: AudioPlayer, didUpdate format: AVAudioFormat)
-}
-
 final public class AudioPlayer {
     
     let player = AVAudioPlayerNode()
     var audioFile: AVAudioFile?
     weak var delegate: AudioPlayerDelegate?
-    weak var formatDelegate: AudioPlayerFormatDelegate?
     
     // TODO: key path to expose player node's property?
     var isPlaying: Bool { player.isPlaying }
@@ -34,8 +29,7 @@ final public class AudioPlayer {
     func load(url: URL) {
         guard let audioFile = try? AVAudioFile(forReading: url) else { return assertionFailure("could not get av audio file") }
         self.audioFile = audioFile
-        formatDelegate?.player(self, didUpdate: audioFile.processingFormat) // inform of change in format before scheduling file
-        delegate?.player(self, didLoad: audioFile) // TODO: Single delegate which issues action
+        delegate?.player(self, didLoad: audioFile)
         player.scheduleFile(audioFile, at: nil, completionHandler:nil)
         delegate?.playerPaused(self)
     }
