@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 public struct State: ReduxState {
     
@@ -17,4 +18,5 @@ public struct State: ReduxState {
     public var isPlaying: Bool = false
     public var currentPlaybackPosition: TimeInterval = 0
     public var audioFileLength: TimeInterval = 0
+    public var audioFileFrames: AVAudioFramePosition = 0
 }

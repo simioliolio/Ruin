@@ -9,6 +9,7 @@
 import AVFoundation
 
 protocol AudioPlayerDelegate: class {
+    func player(_ player: AudioPlayer, didLoad audioFile: AVAudioFile)
     func playerStarted(_ player: AudioPlayer)
     func playerPaused(_ player: AudioPlayer)
     func error(in player: AudioPlayer, error: Error?)
@@ -34,6 +35,7 @@ final public class AudioPlayer {
         guard let audioFile = try? AVAudioFile(forReading: url) else { return assertionFailure("could not get av audio file") }
         self.audioFile = audioFile
         formatDelegate?.player(self, didUpdate: audioFile.processingFormat) // inform of change in format before scheduling file
+        delegate?.player(self, didLoad: audioFile) // TODO: Single delegate which issues action
         player.scheduleFile(audioFile, at: nil, completionHandler:nil)
         delegate?.playerPaused(self)
     }
@@ -41,6 +43,19 @@ final public class AudioPlayer {
     func play() {
         player.play(at: nil)
         delegate?.playerStarted(self)
+    }
+    
+    func play(at startFrame: AVAudioFramePosition) {
+        let wasPlaying = isPlaying
+        stop()
+        guard let audioFile = audioFile else {
+            delegate?.error(in: self, error: PlayerError.noAudioFileLoaded)
+            return
+        }
+        player.scheduleSegment(audioFile, startingFrame: startFrame, frameCount: AVAudioFrameCount(audioFile.length - startFrame), at: nil, completionHandler: nil)
+        if wasPlaying {
+            play()
+        }
     }
     
     func pause() {

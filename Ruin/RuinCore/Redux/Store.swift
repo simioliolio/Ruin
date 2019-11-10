@@ -18,12 +18,25 @@ public class Store {
     public init() {
         
         // Combine more reducers here
-        reducer = TransportReducer.reduce
+        reducer = Store.combine(reducers: [TransportReducer.reduce,
+                                           AudioReducer.reduce])
         
-        store = ReduxStore<State>(reducer: reducer, state: nil)
+        store = ReduxStore<State>(reducer: reducer, state: State())
     }
     
     public func dispatchAction(_ action: ReduxAction) {
         store.dispatchAction(action)
+    }
+}
+
+extension Store {
+    
+    static func combine(reducers: [Reducer]) -> Reducer {
+        return { action, state in
+            
+            reducers.reduce(state) { (resultState: State, reducer: Reducer) -> State in
+                return reducer(action, resultState)
+            }
+        }
     }
 }

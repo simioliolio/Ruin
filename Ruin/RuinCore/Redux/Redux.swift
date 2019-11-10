@@ -12,7 +12,7 @@ public protocol ReduxAction {}
 
 public protocol ReduxState {}
 
-typealias ReduxReducer<AppState: ReduxState> = (_ action: ReduxAction, _ state: AppState?) -> AppState
+typealias ReduxReducer<AppState: ReduxState> = (_ action: ReduxAction, _ state: AppState) -> AppState
 
 public protocol ReduxStoreSubscriber: Equatable {
     associatedtype SubscribedState: ReduxState
@@ -23,7 +23,7 @@ public protocol ReduxStoreSubscriber: Equatable {
 public protocol ReduxMiddleware: Equatable {
     associatedtype SubscribedState: ReduxState
     var id: String { get }
-    func action(_ action: ReduxAction, state: SubscribedState?)
+    func action(_ action: ReduxAction, state: SubscribedState)
 }
 
 struct ReduxAnyStoreSubscriber<AppState: ReduxState>: ReduxStoreSubscriber {
@@ -50,14 +50,14 @@ struct ReduxAnyMiddleware<AppState: ReduxState>: ReduxMiddleware {
     
     typealias SubscribedState = AppState
     let id: String
-    let performAction: (ReduxAction, SubscribedState?) -> ()
+    let performAction: (ReduxAction, SubscribedState) -> ()
     
     init<Base: ReduxMiddleware>(_ base: Base) where Base.SubscribedState == AppState {
         id = base.id
         performAction = base.action
     }
     
-    func action(_ action: ReduxAction, state: AppState?) {
+    func action(_ action: ReduxAction, state: AppState) {
         performAction(action, state)
     }
     
@@ -71,11 +71,11 @@ public class ReduxStore<AppState: ReduxState> {
     typealias SubscribedState = AppState
     
     let reducer: ReduxReducer<AppState>
-    var state: AppState?
+    var state: AppState
     var subscribers: [ReduxAnyStoreSubscriber<AppState>] = []
     var middlewares: [ReduxAnyMiddleware<AppState>] = []
     
-    init(reducer: @escaping ReduxReducer<AppState>, state: AppState?) {
+    init(reducer: @escaping ReduxReducer<AppState>, state: AppState) {
         self.reducer = reducer
         self.state = state
     }
@@ -83,7 +83,6 @@ public class ReduxStore<AppState: ReduxState> {
     public func dispatchAction(_ action: ReduxAction) {
         middlewares.forEach { $0.action(action, state: state) }
         state = reducer(action, state)
-        guard let state = state else { fatalError("State nil after action!") }
         subscribers.forEach { $0.newState(state) }
     }
     

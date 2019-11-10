@@ -7,12 +7,11 @@
 //
 
 import Foundation
-
-//*
+import AVFoundation
 
 /**
  Takes simple interactions and translates them into operations on the audio engine
- Also reacts to changes in the audio engine and sends out data useful for the UI
+ Also reacts to changes in the audio engine and sends out actions useful for the UI
  */
 final public class AudioInterface {
     
@@ -40,9 +39,8 @@ extension AudioInterface: ReduxMiddleware {
     public typealias SubscribedState = State
     public var id: String { uuid.uuidString }
     
-    public func action(_ action: ReduxAction, state: State?) {
+    public func action(_ action: ReduxAction, state: State) {
         
-        guard let state = state else { return }
         switch action {
         case is TogglePlaybackAction:
             apply(playbackStatus: !state.isPlaying)
@@ -52,7 +50,7 @@ extension AudioInterface: ReduxMiddleware {
             if action.choosing == false {
                 // TODO: Should view know more about audio file length, and handle
                 // converting from % to time?
-                let newPosition = TimeInterval(action.positionAsPercentage) * state.audioFileLength
+                let newPosition = AVAudioFramePosition(action.positionAsPercentage * Float(state.audioFileFrames))
                 apply(newPosition: newPosition)
             }
         default:
@@ -74,8 +72,9 @@ extension AudioInterface {
         
     }
     
-    private func apply(newPosition: TimeInterval) {
+    private func apply(newPosition: AVAudioFramePosition) {
         // TODO: go to new position using audioPlayer
+        audioPlayer.play(at: newPosition)
     }
     
 }
@@ -95,6 +94,10 @@ extension AudioInterface: AudioEngineDelegate {
 }
 
 extension AudioInterface: AudioPlayerDelegate {
+    
+    func player(_ player: AudioPlayer, didLoad audioFile: AVAudioFile) {
+        store.dispatchAction(AudioPlayerFileLoadAction(processingFormat: audioFile.processingFormat, length: audioFile.length))
+    }
     
     func playerStarted(_ player: AudioPlayer) {
         store.dispatchAction(AudioPlayerPlaybackStatusAction(playing: true))
