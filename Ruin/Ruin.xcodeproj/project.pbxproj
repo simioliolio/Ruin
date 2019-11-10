@@ -14,6 +14,7 @@
 		12240D0A23786F37004CEA22 /* AudioPlayerFileLoadAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12240D0923786F37004CEA22 /* AudioPlayerFileLoadAction.swift */; };
 		12240D0C23787095004CEA22 /* AudioReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12240D0B23787095004CEA22 /* AudioReducer.swift */; };
 		12240D0E23789B5A004CEA22 /* AudioUnitInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12240D0D23789B5A004CEA22 /* AudioUnitInterface.swift */; };
+		12240D102378A5FE004CEA22 /* AudioUnitParametersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12240D0F2378A5FE004CEA22 /* AudioUnitParametersAdapter.swift */; };
 		1243453A2263B8FC00B64561 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE25FD225E87AC00A4D390 /* Redux.swift */; };
 		1279DCAC2263AD7100723BFB /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
 		1279DCAD2263AD7100723BFB /* RuinCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -91,6 +92,7 @@
 		12240D0923786F37004CEA22 /* AudioPlayerFileLoadAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFileLoadAction.swift; sourceTree = "<group>"; };
 		12240D0B23787095004CEA22 /* AudioReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioReducer.swift; sourceTree = "<group>"; };
 		12240D0D23789B5A004CEA22 /* AudioUnitInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitInterface.swift; sourceTree = "<group>"; };
+		12240D0F2378A5FE004CEA22 /* AudioUnitParametersAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitParametersAdapter.swift; sourceTree = "<group>"; };
 		12DE25FD225E87AC00A4D390 /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		9100DEF7236B6DEA005A3622 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9100DEFA236B6E57005A3622 /* TogglePlaybackAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglePlaybackAction.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				91CCC8B0237205080040E59B /* AudioPlayer.swift */,
 				910743542374A953005B2936 /* AudioUnitComponentLibrary.swift */,
 				12240D0D23789B5A004CEA22 /* AudioUnitInterface.swift */,
+				12240D0F2378A5FE004CEA22 /* AudioUnitParametersAdapter.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12240D102378A5FE004CEA22 /* AudioUnitParametersAdapter.swift in Sources */,
 				91CCC8AF2371FD200040E59B /* AudioInterface.swift in Sources */,
 				91CCC8AD2371FC8A0040E59B /* AudioEngine.swift in Sources */,
 				91CCC8B1237205080040E59B /* AudioPlayer.swift in Sources */,
