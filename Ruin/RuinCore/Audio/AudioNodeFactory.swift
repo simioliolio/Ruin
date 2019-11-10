@@ -21,11 +21,11 @@ class AudioNodeFactory {
         var aquiredNode: AVAudioUnit?
         
         audioUnitComponentLibrary.refresh {
-            let stutterComponent = self.audioUnitComponentLibrary.components.first(where: {$0.name == "Stutter" })!
-            AVAudioUnit.instantiate(with: stutterComponent.audioComponentDescription, options: []) { (node, error) in
+            let component = self.audioUnitComponentLibrary.components.first(where: {$0.name == name })!
+            AVAudioUnit.instantiate(with: component.audioComponentDescription, options: []) { (node, error) in
                 
                 guard error == nil else {
-                    fatalError("Error instantiating node: \(String(describing: error))")
+                    fatalError("Error instantiating node \(name): \(String(describing: error))")
                 }
                 
                 aquiredNode = node
