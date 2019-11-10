@@ -32,6 +32,8 @@ class AudioUnitComponentLibrary {
     private func registerRuinAudioUnits() {
         
         AUAudioUnit.registerSubclass(RuinStutterAudioUnit.self, as: hypbEffectComponentDescription, name: "Stutter", version: 999)
+        
+        // TODO: Register more effects here
     }
     
     var hypbEffectComponentDescription: AudioComponentDescription {
