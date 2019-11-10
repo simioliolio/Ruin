@@ -16,7 +16,7 @@ public struct State: ReduxState {
     
     // Audio engine
     public var isPlaying: Bool = false
-    public var currentPlaybackPosition: TimeInterval = 0
+    public var currentPlaybackPosition: TimeInterval = 0 // unused
     public var audioFileLength: TimeInterval = 0
     public var audioFileFrames: AVAudioFramePosition = 0
 }
