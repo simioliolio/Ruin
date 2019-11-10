@@ -12,6 +12,18 @@ import RuinCore
 class ViewController: UIViewController {
     
     @IBOutlet weak var position: UISlider!
+    @IBAction func positionValueChanged(_ sender: UISlider) {
+        positionChanged(choosing: true, positionAsPercentage: sender.value)
+    }
+    @IBAction func positionTouchCancel(_ sender: UISlider) {
+        positionChanged(choosing: false, positionAsPercentage: sender.value)
+    }
+    @IBAction func positionTouchUpInside(_ sender: UISlider) {
+        positionChanged(choosing: false, positionAsPercentage: sender.value)
+    }
+    @IBAction func positionTouchUpOutside(_ sender: UISlider) {
+        positionChanged(choosing: false, positionAsPercentage: sender.value)
+    }
     @IBOutlet weak var leftXy: XYControl!
     @IBOutlet weak var middleXy: XYControl!
     @IBOutlet weak var rightXy: XYControl!
@@ -37,8 +49,16 @@ class ViewController: UIViewController {
         store.unsubscribe(self)
     }
     
+}
+
+extension ViewController {
+    
     @IBAction func playTapped(_ sender: Any) {
         store.dispatchAction(TogglePlaybackAction())
+    }
+    
+    func positionChanged(choosing: Bool, positionAsPercentage: Float) {
+        store.dispatchAction(PositionChangeAction(choosing: choosing, positionAsPercentage: positionAsPercentage))
     }
 }
 

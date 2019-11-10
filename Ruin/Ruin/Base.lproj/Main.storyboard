@@ -62,12 +62,14 @@
                                                     <action selector="playTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hx8-m5-jam"/>
                                                 </connections>
                                             </button>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjj-72-pCi">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gjj-72-pCi">
                                                 <rect key="frame" x="63.5" y="0.0" width="342.5" height="51"/>
                                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="editingPositionDidBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="j3B-VB-kmm"/>
-                                                    <action selector="editingPositionDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="wpc-nx-nzJ"/>
+                                                    <action selector="positionTouchCancel:" destination="BYZ-38-t0r" eventType="touchCancel" id="gC3-L1-Txt"/>
+                                                    <action selector="positionTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iYK-YV-gQc"/>
+                                                    <action selector="positionTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="lLH-kr-I1T"/>
+                                                    <action selector="positionValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="i5B-sW-e4Z"/>
                                                 </connections>
                                             </slider>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHI-4k-fOx" userLabel="Space">

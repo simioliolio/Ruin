@@ -48,6 +48,13 @@ extension AudioInterface: ReduxMiddleware {
             apply(playbackStatus: !state.isPlaying)
         case let action as XyControlAction:
             apply(xyControlState: (action.index, action.activated, action.position))
+        case let action as PositionChangeAction:
+            if action.choosing == false {
+                // TODO: Should view know more about audio file length, and handle
+                // converting from % to time?
+                let newPosition = TimeInterval(action.positionAsPercentage) * state.audioFileLength
+                apply(newPosition: newPosition)
+            }
         default:
             break
         }
@@ -69,6 +76,10 @@ extension AudioInterface {
         // TODO: Forward xy control changes to effect interface which
         // controls the audio unit's parameters
         
+    }
+    
+    private func apply(newPosition: TimeInterval) {
+        // TODO: go to new position using audioPlayer
     }
     
 }

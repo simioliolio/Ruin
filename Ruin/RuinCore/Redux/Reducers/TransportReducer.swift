@@ -22,6 +22,8 @@ struct TransportReducer {
                 newState.isPlaying = action.playing
                 break
                 
+            case let action as PositionChangeAction:
+                newState.choosingPosition = action.choosing
             default:
                 print("un-reduced action")
             }

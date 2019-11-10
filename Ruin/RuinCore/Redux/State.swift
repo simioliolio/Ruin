@@ -10,6 +10,9 @@ import Foundation
 
 public struct State: ReduxState {
     
+    // UI
+    public var choosingPosition: Bool = false
+    
     // Audio engine
     public var isPlaying: Bool = false
     public var currentPlaybackPosition: TimeInterval = 0
