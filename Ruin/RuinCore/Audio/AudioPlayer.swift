@@ -10,8 +10,12 @@ import AVFoundation
 
 protocol AudioPlayerDelegate: class {
     func playerStarted(_ player: AudioPlayer)
-    func playerStopped(_ player: AudioPlayer)
+    func playerPaused(_ player: AudioPlayer)
     func error(in player: AudioPlayer, error: Error?)
+}
+
+protocol AudioPlayerFormatDelegate: class {
+    func player(_ player: AudioPlayer, didUpdate format: AVAudioFormat)
 }
 
 final public class AudioPlayer {
@@ -19,6 +23,7 @@ final public class AudioPlayer {
     let player = AVAudioPlayerNode()
     var audioFile: AVAudioFile?
     weak var delegate: AudioPlayerDelegate?
+    weak var formatDelegate: AudioPlayerFormatDelegate?
     
     // TODO: key path to expose player node's property?
     var isPlaying: Bool { player.isPlaying }
@@ -28,22 +33,25 @@ final public class AudioPlayer {
     func load(url: URL) {
         guard let audioFile = try? AVAudioFile(forReading: url) else { return assertionFailure("could not get av audio file") }
         self.audioFile = audioFile
-        delegate?.playerStopped(self)
+        formatDelegate?.player(self, didUpdate: audioFile.processingFormat) // inform of change in format before scheduling file
+        player.scheduleFile(audioFile, at: nil, completionHandler:nil)
+        delegate?.playerPaused(self)
     }
     
     func play() {
-        guard let audioFile = audioFile else {
-            delegate?.error(in: self, error: PlayerError.noAudioFileLoaded)
-            return
-        }
-        player.scheduleFile(audioFile, at: nil, completionHandler:nil)
-        self.player.play(at: nil)
-        self.delegate?.playerStarted(self)
+        player.play(at: nil)
+        delegate?.playerStarted(self)
+    }
+    
+    func pause() {
+        player.pause()
+        delegate?.playerPaused(self)
     }
     
     func stop() {
         player.stop()
-        delegate?.playerStopped(self)
+        // TODO: new method for when player is stopped?
+        delegate?.playerPaused(self)
     }
     
     public enum PlayerError: Error {

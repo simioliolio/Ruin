@@ -26,6 +26,7 @@ final public class AudioEngine {
     
     public init(player: AudioPlayer) {
         self.player = player
+        self.player.formatDelegate = self
     }
     
     public func setup() throws {
@@ -59,5 +60,20 @@ final public class AudioEngine {
             try? self.engine.start()
             delegate?.didStartAudioEngine()
         }
+    }
+}
+
+extension AudioEngine: AudioPlayerFormatDelegate {
+    
+    func player(_ player: AudioPlayer, didUpdate format: AVAudioFormat) {
+        applyNewProcessingFormat(format)
+    }
+    
+    private func applyNewProcessingFormat(_ format: AVAudioFormat) {
+        guard let effect = effectOne else { fatalError("no effect to connect") }
+        engine.disconnectNodeOutput(player.player)
+        engine.disconnectNodeOutput(effect)
+        engine.connect(effect, to: engine.mainMixerNode, format: format)
+        engine.connect(player.player, to: effect, format: format)
     }
 }

@@ -65,11 +65,7 @@ extension AudioInterface: ReduxMiddleware {
 extension AudioInterface {
     
     private func apply(playbackStatus: Bool) {
-        if playbackStatus == true {
-            audioPlayer.play()
-        } else {
-            audioPlayer.stop()
-        }
+        playbackStatus ? audioPlayer.play() : audioPlayer.pause()
     }
     
     private func apply(xyControlState: (index: Int, activated: Bool, position: CGPoint)) {
@@ -104,7 +100,7 @@ extension AudioInterface: AudioPlayerDelegate {
         store.dispatchAction(AudioPlayerPlaybackStatusAction(playing: true))
     }
     
-    func playerStopped(_ player: AudioPlayer) {
+    func playerPaused(_ player: AudioPlayer) {
         store.dispatchAction(AudioPlayerPlaybackStatusAction(playing: false))
     }
     
