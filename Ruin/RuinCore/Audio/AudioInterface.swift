@@ -21,6 +21,7 @@ final public class AudioInterface {
     private let audioEngine: AudioEngine
     private let audioNodeFactory = AudioNodeFactory()
     private let backgroundQueue = DispatchQueue(label: "AudioInterfaceQueue", qos: .background)
+    private var parameterAdapters: [AudioUnitParametersAdapter] = []
     
     public init() {
         audioEngine = AudioEngine(player: audioPlayer)
@@ -38,6 +39,9 @@ final public class AudioInterface {
         // create stutter audio unit
         backgroundQueue.async {
             guard let stutterNode = self.audioNodeFactory.makeAudioUnitSynchronously(named: "Stutter") else { fatalError("Could not get stutter node" )}
+            let stutterInterface = AudioUnitInterface(audioUnit: stutterNode.auAudioUnit)
+            let stutterAdapter = AudioUnitParametersAdapter(audioUnitInterface: stutterInterface, inputToAddressRoute: [.enabled: 0, .x: 1, .y: 2])
+            self.parameterAdapters.append(stutterAdapter)
             self.audioEngine.setup(effect: stutterNode)
         }
     }
@@ -78,9 +82,8 @@ extension AudioInterface {
     }
     
     private func apply(xyControlState: (index: Int, activated: Bool, position: CGPoint)) {
-        // TODO: Forward xy control changes to effect interface which
-        // controls the audio unit's parameters
-        
+        guard let adapter = parameterAdapters[safe: xyControlState.index] else { return }
+        adapter.route(enabled: xyControlState.activated, x: Float(xyControlState.position.x), y: Float(xyControlState.position.y))
     }
     
     private func apply(newPosition: AVAudioFramePosition) {
