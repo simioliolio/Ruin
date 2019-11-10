@@ -28,27 +28,9 @@ final public class AudioEngine {
         self.player = player
     }
     
-    public func setup() throws {
+    public func setup(effect: AVAudioNode) {
         
-        audioUnitComponentLibrary.refresh {
-            
-            // TODO: Handle loading three effects
-            let stutterComponent = self.audioUnitComponentLibrary.components.first(where: {$0.name == "Stutter" })!
-            AVAudioUnit.instantiate(with: stutterComponent.audioComponentDescription, options: []) { (stutterNode, error) in
-                
-                guard error == nil else {
-                    fatalError("Error instantiating stutter node") // TODO: Throw
-                }
-                
-                self.effectOne = stutterNode
-                self.attachAndConnect()
-            }
-        }
-    }
-    
-    private func attachAndConnect() {
-        
-        guard let effect = effectOne else { fatalError("no effect to connect") }
+        self.effectOne = effect
         
         engine.attach(effect)
         engine.attach(player.player)
@@ -56,8 +38,12 @@ final public class AudioEngine {
         engine.connect(player.player, to: effect, format: nil)
 
         if !self.engine.isRunning {
-            try? self.engine.start()
-            delegate?.didStartAudioEngine()
+            do {
+                try self.engine.start()
+                delegate?.didStartAudioEngine()
+            } catch {
+                delegate?.didFailToStartAudioEngine()
+            }
         }
     }
     

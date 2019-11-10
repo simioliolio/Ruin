@@ -17,20 +17,29 @@ final public class AudioInterface {
     
     private let store = Store.shared.store
     private let uuid = UUID()
-    private let audioPlayer: AudioPlayer
+    private let audioPlayer = AudioPlayer()
     private let audioEngine: AudioEngine
+    private let audioNodeFactory = AudioNodeFactory()
+    private let backgroundQueue = DispatchQueue(label: "AudioInterfaceQueue", qos: .background)
     
     public init() {
-        audioPlayer = AudioPlayer()
         audioEngine = AudioEngine(player: audioPlayer)
         audioEngine.delegate = self
         audioPlayer.delegate = self
         store.subscribe(self)
-        try? audioEngine.setup()
     }
     
     deinit {
         store.unsubscribe(self)
+    }
+    
+    public func setup() {
+        
+        // create stutter audio unit
+        backgroundQueue.async {
+            guard let stutterNode = self.audioNodeFactory.makeAudioUnitSynchronously(named: "Stutter") else { fatalError("Could not get stutter node" )}
+            self.audioEngine.setup(effect: stutterNode)
+        }
     }
 }
 
