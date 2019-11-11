@@ -43,6 +43,9 @@ final public class AudioInterface {
             let stutterAdapter = AudioUnitParametersAdapter(audioUnitInterface: stutterInterface, inputToAddressRoute: [.enabled: 0, .x: 1, .y: 2])
             self.parameterAdapters.append(stutterAdapter)
             self.audioEngine.setup(effect: stutterNode)
+            
+            // TODO: Move to reponse of delegate method
+            self.store.dispatchAction(AudioEngineEffectLoadAction(effect: stutterNode.auAudioUnit, index: 0))
         }
     }
 }

@@ -29,7 +29,8 @@
 		910743532374A267005B2936 /* RuinStutterFramework_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 910743512374A267005B2936 /* RuinStutterFramework_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		910743552374A953005B2936 /* AudioUnitComponentLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910743542374A953005B2936 /* AudioUnitComponentLibrary.swift */; };
 		910743592374B4F8005B2936 /* Air - New Star In The Sky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 910743562374B4AF005B2936 /* Air - New Star In The Sky.mp3 */; };
-		9107435B2379E7FC005B2936 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9107435A2379E7FC005B2936 /* ConfigViewController.swift */; };
+		9107435D2379EE7E005B2936 /* ConfigRootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9107435C2379EE7E005B2936 /* ConfigRootTableViewController.swift */; };
+		9107435F2379F182005B2936 /* ConfigEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9107435E2379F182005B2936 /* ConfigEffectViewController.swift */; };
 		91470960225A78AE006B4632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147095F225A78AE006B4632 /* AppDelegate.swift */; };
 		91470962225A78AE006B4632 /* RuinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91470961225A78AE006B4632 /* RuinViewController.swift */; };
 		91470965225A78AE006B4632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91470963225A78AE006B4632 /* Main.storyboard */; };
@@ -44,6 +45,8 @@
 		91CCC8AD2371FC8A0040E59B /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CCC8AC2371FC8A0040E59B /* AudioEngine.swift */; };
 		91CCC8AF2371FD200040E59B /* AudioInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CCC8AE2371FD200040E59B /* AudioInterface.swift */; };
 		91CCC8B1237205080040E59B /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CCC8B0237205080040E59B /* AudioPlayer.swift */; };
+		91EE22BB237A09CE002F9865 /* RequestEffectsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EE22BA237A09CE002F9865 /* RequestEffectsAction.swift */; };
+		91EE22BD237A0D22002F9865 /* AudioEngineEffectLoadAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EE22BC237A0D22002F9865 /* AudioEngineEffectLoadAction.swift */; };
 		91FF565022749DE1007C0A82 /* RUAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */; };
 		91FF566C2275BEB5007C0A82 /* RUAudioUnitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF566B2275BEB5007C0A82 /* RUAudioUnitFactory.swift */; };
 /* End PBXBuildFile section */
@@ -107,7 +110,8 @@
 		910743512374A267005B2936 /* RuinStutterFramework_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinStutterFramework_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		910743542374A953005B2936 /* AudioUnitComponentLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitComponentLibrary.swift; sourceTree = "<group>"; };
 		910743562374B4AF005B2936 /* Air - New Star In The Sky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Air - New Star In The Sky.mp3"; sourceTree = "<group>"; };
-		9107435A2379E7FC005B2936 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConfigViewController.swift; path = RuinCore/Audio/ConfigViewController.swift; sourceTree = SOURCE_ROOT; };
+		9107435C2379EE7E005B2936 /* ConfigRootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConfigRootTableViewController.swift; path = RuinCore/Audio/ConfigRootTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		9107435E2379F182005B2936 /* ConfigEffectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConfigEffectViewController.swift; path = RuinCore/Audio/ConfigEffectViewController.swift; sourceTree = SOURCE_ROOT; };
 		9147095D225A78AE006B4632 /* Ruin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9147095F225A78AE006B4632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91470961225A78AE006B4632 /* RuinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuinViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 		91CCC8AC2371FC8A0040E59B /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		91CCC8AE2371FD200040E59B /* AudioInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioInterface.swift; sourceTree = "<group>"; };
 		91CCC8B0237205080040E59B /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		91EE22BA237A09CE002F9865 /* RequestEffectsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEffectsAction.swift; sourceTree = "<group>"; };
+		91EE22BC237A0D22002F9865 /* AudioEngineEffectLoadAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineEffectLoadAction.swift; sourceTree = "<group>"; };
 		91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUAudioEngine.swift; sourceTree = "<group>"; };
 		91FF566B2275BEB5007C0A82 /* RUAudioUnitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUAudioUnitFactory.swift; sourceTree = "<group>"; };
 		91FF566E2275E750007C0A82 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -216,7 +222,8 @@
 		12DE25FB225E865F00A4D390 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				9107435A2379E7FC005B2936 /* ConfigViewController.swift */,
+				9107435C2379EE7E005B2936 /* ConfigRootTableViewController.swift */,
+				9107435E2379F182005B2936 /* ConfigEffectViewController.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -242,6 +249,8 @@
 				12240D0523774F5E004CEA22 /* XyControlAction.swift */,
 				12240D032376B92E004CEA22 /* AudioPlayerPlaybackStatusAction.swift */,
 				12240D0923786F37004CEA22 /* AudioPlayerFileLoadAction.swift */,
+				91EE22BC237A0D22002F9865 /* AudioEngineEffectLoadAction.swift */,
+				91EE22BA237A09CE002F9865 /* RequestEffectsAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -524,8 +533,9 @@
 			files = (
 				91CCC8AB236D9ACC0040E59B /* XYControl.swift in Sources */,
 				91470968225A78AE006B4632 /* Ruin.xcdatamodeld in Sources */,
+				9107435D2379EE7E005B2936 /* ConfigRootTableViewController.swift in Sources */,
 				91470962225A78AE006B4632 /* RuinViewController.swift in Sources */,
-				9107435B2379E7FC005B2936 /* ConfigViewController.swift in Sources */,
+				9107435F2379F182005B2936 /* ConfigEffectViewController.swift in Sources */,
 				91470960225A78AE006B4632 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,6 +555,7 @@
 				12240D102378A5FE004CEA22 /* AudioUnitParametersAdapter.swift in Sources */,
 				91CCC8AF2371FD200040E59B /* AudioInterface.swift in Sources */,
 				91CCC8AD2371FC8A0040E59B /* AudioEngine.swift in Sources */,
+				91EE22BD237A0D22002F9865 /* AudioEngineEffectLoadAction.swift in Sources */,
 				91CCC8B1237205080040E59B /* AudioPlayer.swift in Sources */,
 				91FF566C2275BEB5007C0A82 /* RUAudioUnitFactory.swift in Sources */,
 				12240D0E23789B5A004CEA22 /* AudioUnitInterface.swift in Sources */,
@@ -554,6 +565,7 @@
 				12240D0A23786F37004CEA22 /* AudioPlayerFileLoadAction.swift in Sources */,
 				12240D0C23787095004CEA22 /* AudioReducer.swift in Sources */,
 				12240D122378AD14004CEA22 /* AudioNodeFactory.swift in Sources */,
+				91EE22BB237A09CE002F9865 /* RequestEffectsAction.swift in Sources */,
 				12240D152378BBD9004CEA22 /* Collection+Safe.swift in Sources */,
 				12240D0623774F5E004CEA22 /* XyControlAction.swift in Sources */,
 				9100DF02236B7586005A3622 /* Reducer.swift in Sources */,

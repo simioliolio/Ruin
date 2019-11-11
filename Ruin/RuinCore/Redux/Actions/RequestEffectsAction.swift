@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+public struct RequestEffectsAction: ReduxAction {
+    
+    public init() { }
+}

@@ -1,5 +1,5 @@
 //
-//  AudioPlayerEffectLoadAction.swift
+//  AudioEngineEffectLoadAction.swift
 //  RuinCore
 //
 //  Created by Simon Haycock on 11/11/2019.
@@ -9,12 +9,13 @@
 import Foundation
 import AudioUnit
 
-public struct AudioPlayerEffectLoadAction: ReduxAction {
+public struct AudioEngineEffectLoadAction: ReduxAction {
     
     public let effect: AUAudioUnit
     public let index: Int
     
     public init(effect: AUAudioUnit, index: Int) {
-        self.
+        self.effect = effect
+        self.index = index
     }
 }

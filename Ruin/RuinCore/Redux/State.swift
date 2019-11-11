@@ -19,4 +19,5 @@ public struct State: ReduxState {
     public var currentPlaybackPosition: TimeInterval = 0 // unused
     public var audioFileLength: TimeInterval = 0
     public var audioFileFrames: AVAudioFramePosition = 0
+    public var loadedEffects: [AUAudioUnit?] = Array(repeating: nil, count: 3)
 }

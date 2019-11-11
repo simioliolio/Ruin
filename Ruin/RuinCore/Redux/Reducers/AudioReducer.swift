@@ -22,6 +22,9 @@ struct AudioReducer {
                 newState.audioFileLength = (1 / action.processingFormat.sampleRate) * Double(action.length)
                 newState.audioFileFrames = action.length
                 
+            case let action as AudioEngineEffectLoadAction:
+                newState.loadedEffects[action.index] = action.effect
+                
             default:
                 print("unhandled action \(action)")
                 break
