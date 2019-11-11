@@ -29,8 +29,9 @@
 		910743532374A267005B2936 /* RuinStutterFramework_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 910743512374A267005B2936 /* RuinStutterFramework_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		910743552374A953005B2936 /* AudioUnitComponentLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910743542374A953005B2936 /* AudioUnitComponentLibrary.swift */; };
 		910743592374B4F8005B2936 /* Air - New Star In The Sky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 910743562374B4AF005B2936 /* Air - New Star In The Sky.mp3 */; };
+		9107435B2379E7FC005B2936 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9107435A2379E7FC005B2936 /* ConfigViewController.swift */; };
 		91470960225A78AE006B4632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147095F225A78AE006B4632 /* AppDelegate.swift */; };
-		91470962225A78AE006B4632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91470961225A78AE006B4632 /* ViewController.swift */; };
+		91470962225A78AE006B4632 /* RuinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91470961225A78AE006B4632 /* RuinViewController.swift */; };
 		91470965225A78AE006B4632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91470963225A78AE006B4632 /* Main.storyboard */; };
 		91470968225A78AE006B4632 /* Ruin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91470966225A78AE006B4632 /* Ruin.xcdatamodeld */; };
 		9147096A225A78AF006B4632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91470969225A78AF006B4632 /* Assets.xcassets */; };
@@ -106,9 +107,10 @@
 		910743512374A267005B2936 /* RuinStutterFramework_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuinStutterFramework_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		910743542374A953005B2936 /* AudioUnitComponentLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitComponentLibrary.swift; sourceTree = "<group>"; };
 		910743562374B4AF005B2936 /* Air - New Star In The Sky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Air - New Star In The Sky.mp3"; sourceTree = "<group>"; };
+		9107435A2379E7FC005B2936 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConfigViewController.swift; path = RuinCore/Audio/ConfigViewController.swift; sourceTree = SOURCE_ROOT; };
 		9147095D225A78AE006B4632 /* Ruin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9147095F225A78AE006B4632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		91470961225A78AE006B4632 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		91470961225A78AE006B4632 /* RuinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuinViewController.swift; sourceTree = "<group>"; };
 		91470964225A78AE006B4632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91470967225A78AE006B4632 /* Ruin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ruin.xcdatamodel; sourceTree = "<group>"; };
 		91470969225A78AF006B4632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,7 +207,7 @@
 		12DE25FA225E865400A4D390 /* Ruin */ = {
 			isa = PBXGroup;
 			children = (
-				91470961225A78AE006B4632 /* ViewController.swift */,
+				91470961225A78AE006B4632 /* RuinViewController.swift */,
 				91CCC8AA236D9ACC0040E59B /* XYControl.swift */,
 			);
 			path = Ruin;
@@ -214,6 +216,7 @@
 		12DE25FB225E865F00A4D390 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				9107435A2379E7FC005B2936 /* ConfigViewController.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -521,7 +524,8 @@
 			files = (
 				91CCC8AB236D9ACC0040E59B /* XYControl.swift in Sources */,
 				91470968225A78AE006B4632 /* Ruin.xcdatamodeld in Sources */,
-				91470962225A78AE006B4632 /* ViewController.swift in Sources */,
+				91470962225A78AE006B4632 /* RuinViewController.swift in Sources */,
+				9107435B2379E7FC005B2936 /* ConfigViewController.swift in Sources */,
 				91470960225A78AE006B4632 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

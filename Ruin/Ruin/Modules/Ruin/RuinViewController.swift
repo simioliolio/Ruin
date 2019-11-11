@@ -9,7 +9,7 @@
 import UIKit
 import RuinCore
 
-class ViewController: UIViewController {
+class RuinViewController: UIViewController {
     
     @IBOutlet weak var position: UISlider!
     @IBAction func positionValueChanged(_ sender: UISlider) {
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController {
+extension RuinViewController {
     
     @IBAction func playTapped(_ sender: Any) {
         store.dispatchAction(TogglePlaybackAction())
@@ -62,9 +62,9 @@ extension ViewController {
     }
 }
 
-extension ViewController: ReduxStoreSubscriber {
+extension RuinViewController: ReduxStoreSubscriber {
     
-    var id: String { String(describing: ViewController.self) }
+    var id: String { String(describing: RuinViewController.self) }
     
     func newState(_ state: State) {
         
@@ -75,7 +75,7 @@ extension ViewController: ReduxStoreSubscriber {
     
 }
 
-extension ViewController: XYControlDelegate {
+extension RuinViewController: XYControlDelegate {
     func xyControl(_ xyControl: XYControl, didUpdateTo state: XYControl.Status) {
         let action = XyControlAction(index: xyControl.tag, activated: state.activated, position: state.point)
         store.dispatchAction(action)

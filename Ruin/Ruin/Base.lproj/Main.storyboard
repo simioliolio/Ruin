@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pAT-b1-S7m">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,22 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Ruin-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ruin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Ruin" id="BYZ-38-t0r" customClass="RuinViewController" customModule="Ruin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="muT-NJ-8Uf" userLabel="Vertical Stack">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aWE-9F-WCa" userLabel="Artist Name">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbn-Hk-WNK" userLabel="Artist">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -31,10 +31,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jkt-No-0IG" userLabel="Track Name">
-                                        <rect key="frame" x="0.0" y="22.5" width="414" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="2" width="414" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7O-Mw-FxP" userLabel="Track">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROO-rv-vFv" userLabel="Transport">
-                                        <rect key="frame" x="0.0" y="45" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="4" width="414" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKk-dl-9Xn" userLabel="Space">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="50"/>
@@ -81,22 +81,22 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Km1-4l-lEj" userLabel="Space">
-                                        <rect key="frame" x="0.0" y="97" width="414" height="10"/>
+                                        <rect key="frame" x="0.0" y="56" width="414" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="cGK-38-iMY"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="f4q-h9-T7K" userLabel="XY">
-                                        <rect key="frame" x="0.0" y="109" width="414" height="709"/>
+                                        <rect key="frame" x="0.0" y="68" width="414" height="689"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDq-4a-q5Q" userLabel="Space">
-                                                <rect key="frame" x="0.0" y="0.0" width="2" height="709"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="2" height="689"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="2" id="7K7-bg-M7I"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERK-6r-mzH" userLabel="XY1" customClass="XYControl" customModule="Ruin" customModuleProvider="target">
-                                                <rect key="frame" x="6" y="0.0" width="131.5" height="709"/>
+                                                <rect key="frame" x="6" y="0.0" width="131.5" height="689"/>
                                                 <color key="backgroundColor" red="0.92157584428787231" green="0.76203757524490356" blue="0.60168951749801636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -105,15 +105,15 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83x-4v-sg0" userLabel="XY2" customClass="XYControl" customModule="Ruin" customModuleProvider="target">
-                                                <rect key="frame" x="141.5" y="0.0" width="131" height="709"/>
+                                                <rect key="frame" x="141.5" y="0.0" width="131" height="689"/>
                                                 <color key="backgroundColor" red="0.79059845209121704" green="0.91512179374694824" blue="0.55072999000549316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnx-AB-gUu" userLabel="XY3" customClass="XYControl" customModule="Ruin" customModuleProvider="target">
-                                                <rect key="frame" x="276.5" y="0.0" width="131.5" height="709"/>
+                                                <rect key="frame" x="276.5" y="0.0" width="131.5" height="689"/>
                                                 <color key="backgroundColor" red="0.53235214948654175" green="0.82375591993331909" blue="0.91526025533676147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXk-ds-ds3" userLabel="Space">
-                                                <rect key="frame" x="412" y="0.0" width="2" height="709"/>
+                                                <rect key="frame" x="412" y="0.0" width="2" height="689"/>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -122,6 +122,12 @@
                                             <constraint firstItem="ERK-6r-mzH" firstAttribute="width" secondItem="Bnx-AB-gUu" secondAttribute="width" id="kc7-53-xZw"/>
                                         </constraints>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TW1-T3-cdj" userLabel="Space">
+                                        <rect key="frame" x="0.0" y="759" width="414" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="HCl-j7-1Kg"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -134,6 +140,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Ruin" image="play.rectangle.fill" catalog="system" id="1be-pb-4jt"/>
                     <connections>
                         <outlet property="leftXy" destination="ERK-6r-mzH" id="obQ-UL-N18"/>
                         <outlet property="middleXy" destination="83x-4v-sg0" id="WJH-uP-yve"/>
@@ -144,11 +151,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1041" y="-127"/>
+        </scene>
+        <!--Config-->
+        <scene sceneID="eoy-H2-aPt">
+            <objects>
+                <viewController title="Config" id="ksI-fW-WsY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t8S-m1-Thi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="q1f-Lc-GDh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Config" image="gear" catalog="system" id="huU-6X-gsh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Nc-a2-DAU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="525"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yPi-Xt-V7m">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pAT-b1-S7m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="gpK-ZU-kJT">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="OYd-vE-lci"/>
+                        <segue destination="ksI-fW-WsY" kind="relationship" relationship="viewControllers" id="qOB-yp-0fK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6T-Dg-0Wu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
     <resources>
+        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="pause" width="512" height="512"/>
         <image name="play-button-2" width="512" height="512"/>
+        <image name="play.rectangle.fill" catalog="system" width="64" height="46"/>
     </resources>
 </document>
