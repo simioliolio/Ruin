@@ -38,6 +38,7 @@
 		9147096A225A78AF006B4632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91470969225A78AF006B4632 /* Assets.xcassets */; };
 		9147096D225A78AF006B4632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9147096B225A78AF006B4632 /* LaunchScreen.storyboard */; };
 		91470978225A78AF006B4632 /* RuinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91470977225A78AF006B4632 /* RuinTests.swift */; };
+		9161070F237B3E4B00B7BBB5 /* AudioUnitViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9161070E237B3E4B00B7BBB5 /* AudioUnitViewControllerFactory.swift */; };
 		916A5F3E20D6A29400B30E8B /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
 		916A5F4520D6A29400B30E8B /* RuinCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A5F4420D6A29400B30E8B /* RuinCoreTests.swift */; };
 		916A5F4720D6A29500B30E8B /* RuinCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 916A5F3720D6A29400B30E8B /* RuinCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -123,6 +124,8 @@
 		91470973225A78AF006B4632 /* RuinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91470977225A78AF006B4632 /* RuinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuinTests.swift; sourceTree = "<group>"; };
 		91470979225A78AF006B4632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9161070E237B3E4B00B7BBB5 /* AudioUnitViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioUnitViewControllerFactory.swift; path = RuinCore/Audio/AudioUnitViewControllerFactory.swift; sourceTree = SOURCE_ROOT; };
+		91610710237B4B8C00B7BBB5 /* RuinStutterAU-iOS.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; path = "RuinStutterAU-iOS.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		916A5F3520D6A29400B30E8B /* RuinCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RuinCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		916A5F3720D6A29400B30E8B /* RuinCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuinCore.h; sourceTree = "<group>"; };
 		916A5F3820D6A29400B30E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -224,6 +227,7 @@
 			children = (
 				9107435C2379EE7E005B2936 /* ConfigRootTableViewController.swift */,
 				9107435E2379F182005B2936 /* ConfigEffectViewController.swift */,
+				9161070E237B3E4B00B7BBB5 /* AudioUnitViewControllerFactory.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -342,6 +346,7 @@
 		916A5FA120D6A31200B30E8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91610710237B4B8C00B7BBB5 /* RuinStutterAU-iOS.appex */,
 				12240CFF2376AC14004CEA22 /* RuinStutterFramework_iOS.framework */,
 				910743512374A267005B2936 /* RuinStutterFramework_iOS.framework */,
 				91FF566E2275E750007C0A82 /* AVFoundation.framework */,
@@ -534,6 +539,7 @@
 				91CCC8AB236D9ACC0040E59B /* XYControl.swift in Sources */,
 				91470968225A78AE006B4632 /* Ruin.xcdatamodeld in Sources */,
 				9107435D2379EE7E005B2936 /* ConfigRootTableViewController.swift in Sources */,
+				9161070F237B3E4B00B7BBB5 /* AudioUnitViewControllerFactory.swift in Sources */,
 				91470962225A78AE006B4632 /* RuinViewController.swift in Sources */,
 				9107435F2379F182005B2936 /* ConfigEffectViewController.swift in Sources */,
 				91470960225A78AE006B4632 /* AppDelegate.swift in Sources */,
