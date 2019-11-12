@@ -33,10 +33,19 @@ class RuinViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupPlayButton()
+        
         [leftXy, middleXy, rightXy].enumerated().forEach {
             $1?.tag = $0
             $1?.delegate = self
         }
+    }
+    
+    private func setupPlayButton() {
+        play.layer.borderWidth = 1.0
+        play.layer.borderColor = UIColor.systemYellow.cgColor
+        play.layer.cornerRadius = 2
     }
     
     override func viewWillAppear(_ animated: Bool) {

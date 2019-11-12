@@ -31,10 +31,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jkt-No-0IG" userLabel="Track Name">
-                                        <rect key="frame" x="0.0" y="2" width="414" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="2" width="414" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7O-Mw-FxP" userLabel="Track">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -42,9 +42,9 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROO-rv-vFv" userLabel="Transport">
-                                        <rect key="frame" x="0.0" y="4" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="24" width="414" height="50"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKk-dl-9Xn" userLabel="Space">
+                                            <view contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="dKk-dl-9Xn" userLabel="Space">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="10" id="tP6-24-Gmi"/>
@@ -56,15 +56,28 @@
                                                     <constraint firstAttribute="width" secondItem="TPV-sh-6uL" secondAttribute="height" multiplier="5:4.5" id="kWd-mA-q5J"/>
                                                     <constraint firstAttribute="height" constant="50" id="tnu-G9-hNL"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="play-button-2"/>
-                                                <state key="selected" backgroundImage="pause"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="play.fill" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                                </state>
+                                                <state key="selected" image="pause.fill" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="playTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hx8-m5-jam"/>
                                                 </connections>
                                             </button>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gjj-72-pCi">
-                                                <rect key="frame" x="63.5" y="0.0" width="342.5" height="51"/>
+                                            <view contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="O9e-uA-6xe" userLabel="Space">
+                                                <rect key="frame" x="65.5" y="0.0" width="10" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10" id="cAX-e0-NlE"/>
+                                                </constraints>
+                                            </view>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gjj-72-pCi">
+                                                <rect key="frame" x="73.5" y="0.0" width="332.5" height="51"/>
                                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="thumbTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="positionTouchCancel:" destination="BYZ-38-t0r" eventType="touchCancel" id="gC3-L1-Txt"/>
                                                     <action selector="positionTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iYK-YV-gQc"/>
@@ -81,22 +94,22 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Km1-4l-lEj" userLabel="Space">
-                                        <rect key="frame" x="0.0" y="56" width="414" height="10"/>
+                                        <rect key="frame" x="0.0" y="76" width="414" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="cGK-38-iMY"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="f4q-h9-T7K" userLabel="XY">
-                                        <rect key="frame" x="0.0" y="68" width="414" height="689"/>
+                                        <rect key="frame" x="0.0" y="88" width="414" height="669"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDq-4a-q5Q" userLabel="Space">
-                                                <rect key="frame" x="0.0" y="0.0" width="2" height="689"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="2" height="669"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="2" id="7K7-bg-M7I"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERK-6r-mzH" userLabel="XY1" customClass="XYControl" customModule="Ruin" customModuleProvider="target">
-                                                <rect key="frame" x="6" y="0.0" width="131.5" height="689"/>
+                                                <rect key="frame" x="6" y="0.0" width="131.5" height="669"/>
                                                 <color key="backgroundColor" red="0.92157584428787231" green="0.76203757524490356" blue="0.60168951749801636" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -105,15 +118,15 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83x-4v-sg0" userLabel="XY2" customClass="XYControl" customModule="Ruin" customModuleProvider="target">
-                                                <rect key="frame" x="141.5" y="0.0" width="131" height="689"/>
+                                                <rect key="frame" x="141.5" y="0.0" width="131" height="669"/>
                                                 <color key="backgroundColor" red="0.79059845209121704" green="0.91512179374694824" blue="0.55072999000549316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnx-AB-gUu" userLabel="XY3" customClass="XYControl" customModule="Ruin" customModuleProvider="target">
-                                                <rect key="frame" x="276.5" y="0.0" width="131.5" height="689"/>
+                                                <rect key="frame" x="276.5" y="0.0" width="131.5" height="669"/>
                                                 <color key="backgroundColor" red="0.53235214948654175" green="0.82375591993331909" blue="0.91526025533676147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXk-ds-ds3" userLabel="Space">
-                                                <rect key="frame" x="412" y="0.0" width="2" height="689"/>
+                                                <rect key="frame" x="412" y="0.0" width="2" height="669"/>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -267,8 +280,8 @@
     </scenes>
     <resources>
         <image name="gear" catalog="system" width="64" height="58"/>
-        <image name="pause" width="512" height="512"/>
-        <image name="play-button-2" width="512" height="512"/>
+        <image name="pause.fill" catalog="system" width="58" height="64"/>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
         <image name="play.rectangle.fill" catalog="system" width="64" height="46"/>
     </resources>
 </document>
