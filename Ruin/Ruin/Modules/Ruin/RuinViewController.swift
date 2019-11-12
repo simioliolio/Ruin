@@ -29,7 +29,7 @@ class RuinViewController: UIViewController {
     @IBOutlet weak var rightXy: XYControl!
     @IBOutlet weak var play: UIButton!
     
-    private var store = Store.shared.store
+    private var store = Store.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()

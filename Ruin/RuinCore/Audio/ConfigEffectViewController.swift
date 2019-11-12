@@ -14,7 +14,7 @@ class ConfigEffectViewController: UIViewController {
     
     @IBOutlet weak var safeContainer: UIView!
     
-    private var store = Store.shared.store
+    private var store = Store.shared
     private var currentAudioUnit: AUAudioUnit?
     private var currentAudioUnitViewController: UIViewController?
     private var uuid = UUID()
@@ -46,7 +46,9 @@ extension ConfigEffectViewController: ReduxStoreSubscriber {
             let auAtIndex = loadedEffect,
             auAtIndex != currentAudioUnit {
             currentAudioUnit = auAtIndex
-            loadViewFor(audioUnit: auAtIndex)
+            DispatchQueue.main.async {
+                self.loadViewFor(audioUnit: auAtIndex)
+            }
         }
     }
 }

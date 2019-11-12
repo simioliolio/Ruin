@@ -12,7 +12,7 @@ import RuinCore
 
 class ConfigRootTableViewController: UITableViewController, ReduxStoreSubscriber {
     
-    private var store = Store.shared.store
+    private var store = Store.shared
     
     var sectionNames = ["Effects"]
     var effectNames = ["Effect 1", "Effect 2", "Effect 3"]
@@ -63,6 +63,6 @@ class ConfigRootTableViewController: UITableViewController, ReduxStoreSubscriber
     var id: String { String(describing: ConfigRootTableViewController.self) }
     
     func newState(_ state: State) {
-        // Update effect names and colours
+        // TODO: Update effect names and colours on main thread!
     }
 }

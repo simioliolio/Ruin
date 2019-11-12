@@ -26,7 +26,6 @@ struct AudioReducer {
                 newState.loadedEffects[action.index] = action.effect
                 
             default:
-                print("unhandled action \(action)")
                 break
             }
             

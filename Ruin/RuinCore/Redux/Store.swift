@@ -12,8 +12,10 @@ public class Store {
     
     public static let shared = Store()
     
-    public let store: ReduxStore<State>
+    let store: ReduxStore<State>
     let reducer: ReduxReducer<State>
+    
+    private let dispatchQueue = DispatchQueue(label: "Store Action Queue", qos: .default)
     
     public init() {
         
@@ -25,7 +27,25 @@ public class Store {
     }
     
     public func dispatchAction(_ action: ReduxAction) {
-        store.dispatchAction(action)
+        dispatchQueue.async {
+            self.store.dispatchAction(action)
+        }
+    }
+    
+    public func subscribe<Subscriber: ReduxStoreSubscriber>(_ newSubscriber: Subscriber) where Subscriber.SubscribedState == State {
+        store.subscribe(newSubscriber)
+    }
+    
+    public func unsubscribe<Subscriber: ReduxStoreSubscriber>(_ subscriber: Subscriber) where Subscriber.SubscribedState == State {
+        store.unsubscribe(subscriber)
+    }
+    
+    public func subscribe<Middleware: ReduxMiddleware>(_ middleware: Middleware) where Middleware.SubscribedState == State {
+        store.subscribe(middleware)
+    }
+    
+    public func unsubscribe<Middleware: ReduxMiddleware>(_ middleware: Middleware) where Middleware.SubscribedState == State {
+        store.unsubscribe(middleware)
     }
 }
 
