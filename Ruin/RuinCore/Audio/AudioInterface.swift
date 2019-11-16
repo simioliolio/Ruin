@@ -40,7 +40,7 @@ final public class AudioInterface {
         backgroundQueue.async {
             guard let stutterNode = self.audioNodeFactory.makeAudioUnitSynchronously(named: "Stutter") else { fatalError("Could not get stutter node" )}
             let stutterInterface = AudioUnitInterface(audioUnit: stutterNode.auAudioUnit)
-            let stutterAdapter = AudioUnitParametersAdapter(audioUnitInterface: stutterInterface, inputToAddressRoute: [.enabled: 0, .x: 1, .y: 2])
+            let stutterAdapter = AudioUnitParametersAdapter(audioUnitInterface: stutterInterface, inputToAddressRoute: [.enabled: 0, .x: 2, .y: 1])
             self.parameterAdapters.append(stutterAdapter)
             self.audioEngine.setup(effect: stutterNode)
             

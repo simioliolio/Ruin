@@ -48,8 +48,6 @@
 		91CCC8B1237205080040E59B /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CCC8B0237205080040E59B /* AudioPlayer.swift */; };
 		91EE22BB237A09CE002F9865 /* RequestEffectsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EE22BA237A09CE002F9865 /* RequestEffectsAction.swift */; };
 		91EE22BD237A0D22002F9865 /* AudioEngineEffectLoadAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EE22BC237A0D22002F9865 /* AudioEngineEffectLoadAction.swift */; };
-		91FF565022749DE1007C0A82 /* RUAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */; };
-		91FF566C2275BEB5007C0A82 /* RUAudioUnitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF566B2275BEB5007C0A82 /* RUAudioUnitFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,8 +136,6 @@
 		91CCC8B0237205080040E59B /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		91EE22BA237A09CE002F9865 /* RequestEffectsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEffectsAction.swift; sourceTree = "<group>"; };
 		91EE22BC237A0D22002F9865 /* AudioEngineEffectLoadAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineEffectLoadAction.swift; sourceTree = "<group>"; };
-		91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUAudioEngine.swift; sourceTree = "<group>"; };
-		91FF566B2275BEB5007C0A82 /* RUAudioUnitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUAudioUnitFactory.swift; sourceTree = "<group>"; };
 		91FF566E2275E750007C0A82 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -191,8 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				910743572374B4CB005B2936 /* Test Material */,
-				91FF564F22749DE1007C0A82 /* RUAudioEngine.swift */,
-				91FF566B2275BEB5007C0A82 /* RUAudioUnitFactory.swift */,
 				91CCC8AC2371FC8A0040E59B /* AudioEngine.swift */,
 				91CCC8AE2371FD200040E59B /* AudioInterface.swift */,
 				91CCC8B0237205080040E59B /* AudioPlayer.swift */,
@@ -563,7 +557,6 @@
 				91CCC8AD2371FC8A0040E59B /* AudioEngine.swift in Sources */,
 				91EE22BD237A0D22002F9865 /* AudioEngineEffectLoadAction.swift in Sources */,
 				91CCC8B1237205080040E59B /* AudioPlayer.swift in Sources */,
-				91FF566C2275BEB5007C0A82 /* RUAudioUnitFactory.swift in Sources */,
 				12240D0E23789B5A004CEA22 /* AudioUnitInterface.swift in Sources */,
 				910743552374A953005B2936 /* AudioUnitComponentLibrary.swift in Sources */,
 				12240D0823782217004CEA22 /* PositionChangeAction.swift in Sources */,
@@ -578,7 +571,6 @@
 				12240D042376B92E004CEA22 /* AudioPlayerPlaybackStatusAction.swift in Sources */,
 				1243453A2263B8FC00B64561 /* Redux.swift in Sources */,
 				9100DF00236B6EF6005A3622 /* TransportReducer.swift in Sources */,
-				91FF565022749DE1007C0A82 /* RUAudioEngine.swift in Sources */,
 				9100DEF8236B6DEA005A3622 /* Store.swift in Sources */,
 				9100DEFD236B6E88005A3622 /* State.swift in Sources */,
 			);
