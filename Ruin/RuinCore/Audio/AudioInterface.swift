@@ -116,7 +116,15 @@ extension AudioInterface: AudioEngineDelegate {
 extension AudioInterface: AudioPlayerDelegate {
     
     func player(_ player: AudioPlayer, didLoad audioFile: AVAudioFile) {
-        store.dispatchAction(AudioPlayerFileLoadAction(processingFormat: audioFile.processingFormat, length: audioFile.length))
+        let asset = AVURLAsset(url: audioFile.url)
+        let metadata = asset.commonMetadata
+        let artist = metadata.first { $0.commonKey == .commonKeyArtist }?.value as? String
+        let title = metadata.first { $0.commonKey == .commonKeyTitle }?.value as? String
+        store.dispatchAction(AudioPlayerFileLoadAction(processingFormat: audioFile.processingFormat,
+                                                       length: audioFile.length,
+                                                       artist: artist,
+                                                       title: title))
+        
     }
     
     func playerStarted(_ player: AudioPlayer) {
