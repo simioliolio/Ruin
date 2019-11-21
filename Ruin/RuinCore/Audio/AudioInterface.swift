@@ -40,7 +40,7 @@ final public class AudioInterface {
         backgroundQueue.async {
             guard let stutterNode = self.audioNodeFactory.makeAudioUnitSynchronously(named: "Stutter") else { fatalError("Could not get stutter node" )}
             let stutterInterface = AudioUnitInterface(audioUnit: stutterNode.auAudioUnit)
-            let stutterAdapter = AudioUnitParametersAdapter(audioUnitInterface: stutterInterface, inputToAddressRoute: [.enabled: 0, .x: 1, .y: 2])
+            let stutterAdapter = AudioUnitParametersAdapter(audioUnitInterface: stutterInterface, inputToAddressRoute: [.enabled: 0, .x: 2, .y: 1])
             self.parameterAdapters.append(stutterAdapter)
             self.audioEngine.setup(effect: stutterNode)
             
@@ -116,7 +116,15 @@ extension AudioInterface: AudioEngineDelegate {
 extension AudioInterface: AudioPlayerDelegate {
     
     func player(_ player: AudioPlayer, didLoad audioFile: AVAudioFile) {
-        store.dispatchAction(AudioPlayerFileLoadAction(processingFormat: audioFile.processingFormat, length: audioFile.length))
+        let asset = AVURLAsset(url: audioFile.url)
+        let metadata = asset.commonMetadata
+        let artist = metadata.first { $0.commonKey == .commonKeyArtist }?.value as? String
+        let title = metadata.first { $0.commonKey == .commonKeyTitle }?.value as? String
+        store.dispatchAction(AudioPlayerFileLoadAction(processingFormat: audioFile.processingFormat,
+                                                       length: audioFile.length,
+                                                       artist: artist,
+                                                       title: title))
+        
     }
     
     func playerStarted(_ player: AudioPlayer) {

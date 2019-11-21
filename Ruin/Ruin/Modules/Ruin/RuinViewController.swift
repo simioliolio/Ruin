@@ -11,6 +11,8 @@ import RuinCore
 
 class RuinViewController: UIViewController {
     
+    @IBOutlet weak var artist: UILabel!
+    @IBOutlet weak var track: UILabel!
     @IBOutlet weak var position: UISlider!
     @IBAction func positionValueChanged(_ sender: UISlider) {
         positionChanged(choosing: true, positionAsPercentage: sender.value)
@@ -82,6 +84,8 @@ extension RuinViewController: ReduxStoreSubscriber {
             if state.choosingPosition == false {
                 self.position.value = Float(state.currentPlaybackPosition / state.audioFileLength)                
             }
+            self.artist.text = state.audioFileArtist
+            self.track.text = state.audioFileTitle
         }
     }
     

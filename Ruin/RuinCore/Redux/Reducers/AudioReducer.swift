@@ -21,6 +21,8 @@ struct AudioReducer {
             case let action as AudioPlayerFileLoadAction:
                 newState.audioFileLength = (1 / action.processingFormat.sampleRate) * Double(action.length)
                 newState.audioFileFrames = action.length
+                newState.audioFileArtist = action.artist
+                newState.audioFileTitle = action.title
                 
             case let action as AudioEngineEffectLoadAction:
                 newState.loadedEffects[action.index] = action.effect
