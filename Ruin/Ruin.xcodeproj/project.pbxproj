@@ -42,6 +42,7 @@
 		916A5F3E20D6A29400B30E8B /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
 		916A5F4520D6A29400B30E8B /* RuinCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A5F4420D6A29400B30E8B /* RuinCoreTests.swift */; };
 		916A5F4720D6A29500B30E8B /* RuinCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 916A5F3720D6A29400B30E8B /* RuinCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91B04D712387492D0088F2D6 /* AudioPlayerPlaybackPositionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B04D702387492D0088F2D6 /* AudioPlayerPlaybackPositionAction.swift */; };
 		91CCC8AB236D9ACC0040E59B /* XYControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CCC8AA236D9ACC0040E59B /* XYControl.swift */; };
 		91CCC8AD2371FC8A0040E59B /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CCC8AC2371FC8A0040E59B /* AudioEngine.swift */; };
 		91CCC8AF2371FD200040E59B /* AudioInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CCC8AE2371FD200040E59B /* AudioInterface.swift */; };
@@ -132,6 +133,7 @@
 		916A5F3D20D6A29400B30E8B /* RuinCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuinCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		916A5F4420D6A29400B30E8B /* RuinCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuinCoreTests.swift; sourceTree = "<group>"; };
 		916A5F4620D6A29400B30E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91B04D702387492D0088F2D6 /* AudioPlayerPlaybackPositionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerPlaybackPositionAction.swift; sourceTree = "<group>"; };
 		91CCC8AA236D9ACC0040E59B /* XYControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYControl.swift; sourceTree = "<group>"; };
 		91CCC8AC2371FC8A0040E59B /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		91CCC8AE2371FD200040E59B /* AudioInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioInterface.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				12240D0523774F5E004CEA22 /* XyControlAction.swift */,
 				12240D032376B92E004CEA22 /* AudioPlayerPlaybackStatusAction.swift */,
 				12240D0923786F37004CEA22 /* AudioPlayerFileLoadAction.swift */,
+				91B04D702387492D0088F2D6 /* AudioPlayerPlaybackPositionAction.swift */,
 				91EE22BC237A0D22002F9865 /* AudioEngineEffectLoadAction.swift */,
 				91EE22BA237A09CE002F9865 /* RequestEffectsAction.swift */,
 			);
@@ -561,6 +564,7 @@
 				12240D102378A5FE004CEA22 /* AudioUnitParametersAdapter.swift in Sources */,
 				91CCC8AF2371FD200040E59B /* AudioInterface.swift in Sources */,
 				91CCC8AD2371FC8A0040E59B /* AudioEngine.swift in Sources */,
+				91B04D712387492D0088F2D6 /* AudioPlayerPlaybackPositionAction.swift in Sources */,
 				91EE22BD237A0D22002F9865 /* AudioEngineEffectLoadAction.swift in Sources */,
 				91CCC8B1237205080040E59B /* AudioPlayer.swift in Sources */,
 				91FF566C2275BEB5007C0A82 /* RUAudioUnitFactory.swift in Sources */,

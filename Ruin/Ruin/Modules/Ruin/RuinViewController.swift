@@ -79,6 +79,9 @@ extension RuinViewController: ReduxStoreSubscriber {
         
         DispatchQueue.main.async {
             self.play.isSelected = state.isPlaying
+            if state.choosingPosition == false {
+                self.position.value = Float(state.currentPlaybackPosition / state.audioFileLength)                
+            }
         }
     }
     

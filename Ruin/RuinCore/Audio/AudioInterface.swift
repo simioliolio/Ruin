@@ -127,6 +127,10 @@ extension AudioInterface: AudioPlayerDelegate {
         store.dispatchAction(AudioPlayerPlaybackStatusAction(playing: false))
     }
     
+    func player(_ player: AudioPlayer, published newPositionInSeconds: Int) {
+        store.dispatchAction(AudioPlayerPlaybackPositionAction(newPositionInSeconds: newPositionInSeconds))
+    }
+    
     func error(in player: AudioPlayer, error: Error?) {
         // TODO: Dispatch error action
     }
