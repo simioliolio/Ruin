@@ -105,3 +105,90 @@ public class ReduxStore<AppState: ReduxState> {
     }
 }
 
+public class ReduxObservable<AppState: ReduxState, Substate: Equatable> {
+    
+    public let id = UUID().uuidString
+    
+    private let transformation: (AppState) -> Substate
+    private var unsubscribe: (() -> ())?
+    private var lastSubstate: Substate?
+    private var onChange: ((Substate) -> ())?
+    private var shouldUnsubscribeAfterUpdate = false
+    
+    public init(transformation: @escaping (AppState) -> Substate) {
+        self.transformation = transformation
+    }
+    
+    public func subscribe(on store: ReduxStore<AppState>) -> Self {
+        store.subscribe(self)
+        unsubscribe = {
+            store.unsubscribe(self)
+        }
+        return self
+    }
+    
+    public func onChange(currentState: AppState, onChange: @escaping (Substate) -> ()) -> Self {
+        self.lastSubstate = transformation(currentState)
+        self.onChange = onChange
+        return self
+    }
+    
+    public func thenUnsubscribe() -> Self {
+        shouldUnsubscribeAfterUpdate = true
+        return self
+    }
+    
+    public func dispose(by bag: ReduxDisposeBag) -> Self {
+        bag.add(disposable: self)
+        return self
+    }
+}
+
+extension ReduxObservable: ReduxStoreSubscriber {
+    
+    public typealias SubscribedState = AppState
+    
+    public func newState(_ state: SubscribedState) {
+        
+        let currentSubstate = transformation(state)
+        
+        if lastSubstate != currentSubstate {
+            onChange?(currentSubstate)
+        }
+        
+        self.lastSubstate = currentSubstate
+        
+        if shouldUnsubscribeAfterUpdate {
+            unsubscribe?()
+        }
+    }
+    
+    public static func == (lhs: ReduxObservable, rhs: ReduxObservable) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+extension ReduxObservable: ReduxDisposable {
+    
+    public func dispose() {
+        unsubscribe?()
+    }
+}
+
+public protocol ReduxDisposable {
+    
+    func dispose()
+}
+
+public class ReduxDisposeBag {
+    
+    private var disposables: [ReduxDisposable] = []
+    
+    func add(disposable: ReduxDisposable) {
+        disposables.append(disposable)
+    }
+    
+    deinit {
+        disposables.forEach { $0.dispose() }
+    }
+}
