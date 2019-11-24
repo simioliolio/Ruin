@@ -68,10 +68,11 @@ struct ReduxAnyMiddleware<AppState: ReduxState>: ReduxMiddleware {
 
 public class ReduxStore<AppState: ReduxState> {
     
+    public private(set) var state: AppState
+    
     typealias SubscribedState = AppState
     
     private let reducer: ReduxReducer<AppState>
-    private var state: AppState
     private var subscribers: [ReduxAnyStoreSubscriber<AppState>] = []
     private var middlewares: [ReduxAnyMiddleware<AppState>] = []
     private let dispatchQueue = DispatchQueue(label: "ReduxStore Action Queue", qos: .default)
@@ -126,10 +127,12 @@ public class ReduxObservable<AppState: ReduxState, Substate: Equatable> {
     private var onChange: ((Substate) -> ())?
     private var shouldUnsubscribeAfterUpdate = false
     
+    @discardableResult
     public init(transformation: @escaping (AppState) -> Substate) {
         self.transformation = transformation
     }
     
+    @discardableResult
     public func subscribe(on store: ReduxStore<AppState>) -> Self {
         store.subscribe(self)
         unsubscribe = {
@@ -138,17 +141,20 @@ public class ReduxObservable<AppState: ReduxState, Substate: Equatable> {
         return self
     }
     
+    @discardableResult
     public func onChange(currentState: AppState, onChange: @escaping (Substate) -> ()) -> Self {
         self.lastSubstate = transformation(currentState)
         self.onChange = onChange
         return self
     }
     
+    @discardableResult
     public func thenUnsubscribe() -> Self {
         shouldUnsubscribeAfterUpdate = true
         return self
     }
     
+    @discardableResult
     public func dispose(by bag: ReduxDisposeBag) -> Self {
         bag.add(disposable: self)
         return self

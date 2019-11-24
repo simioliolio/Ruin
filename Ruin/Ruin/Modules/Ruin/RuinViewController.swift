@@ -31,7 +31,8 @@ class RuinViewController: UIViewController {
     @IBOutlet weak var rightXy: XYControl!
     @IBOutlet weak var play: UIButton!
     
-    private var store = Store.shared
+    private let store = Store.shared
+    private let disposeBag = ReduxDisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,12 @@ class RuinViewController: UIViewController {
             $1?.tag = $0
             $1?.delegate = self
         }
+        
+        Observable { $0.isPlaying }
+            .subscribe(on: store)
+            .onChange(currentState: store.state) { substate in
+                DispatchQueue.main.async { self.play.isSelected = substate } }
+            .dispose(by: disposeBag)
     }
     
     private func setupPlayButton() {
@@ -80,7 +87,6 @@ extension RuinViewController: ReduxStoreSubscriber {
     func newState(_ state: State) {
         
         DispatchQueue.main.async {
-            self.play.isSelected = state.isPlaying
             self.artist.text = state.audioFileArtist
             self.track.text = state.audioFileTitle
         }

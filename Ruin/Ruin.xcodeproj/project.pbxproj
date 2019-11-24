@@ -17,6 +17,7 @@
 		12240D102378A5FE004CEA22 /* AudioUnitParametersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12240D0F2378A5FE004CEA22 /* AudioUnitParametersAdapter.swift */; };
 		12240D122378AD14004CEA22 /* AudioNodeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12240D112378AD14004CEA22 /* AudioNodeFactory.swift */; };
 		12240D152378BBD9004CEA22 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12240D142378BBD9004CEA22 /* Collection+Safe.swift */; };
+		122BC892238AD9DF00F93B26 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122BC891238AD9DF00F93B26 /* Observable.swift */; };
 		1243453A2263B8FC00B64561 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE25FD225E87AC00A4D390 /* Redux.swift */; };
 		1279DCAC2263AD7100723BFB /* RuinCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; };
 		1279DCAD2263AD7100723BFB /* RuinCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 916A5F3520D6A29400B30E8B /* RuinCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -100,6 +101,7 @@
 		12240D0F2378A5FE004CEA22 /* AudioUnitParametersAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitParametersAdapter.swift; sourceTree = "<group>"; };
 		12240D112378AD14004CEA22 /* AudioNodeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioNodeFactory.swift; sourceTree = "<group>"; };
 		12240D142378BBD9004CEA22 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
+		122BC891238AD9DF00F93B26 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		12DE25FD225E87AC00A4D390 /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		9100DEF7236B6DEA005A3622 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9100DEFA236B6E57005A3622 /* TogglePlaybackAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglePlaybackAction.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				9100DEF7236B6DEA005A3622 /* Store.swift */,
 				9100DEFC236B6E88005A3622 /* State.swift */,
 				9100DF01236B7586005A3622 /* Reducer.swift */,
+				122BC891238AD9DF00F93B26 /* Observable.swift */,
 				9100DEF9236B6E47005A3622 /* Actions */,
 				9100DEFE236B6EAB005A3622 /* Reducers */,
 			);
@@ -552,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122BC892238AD9DF00F93B26 /* Observable.swift in Sources */,
 				12240D102378A5FE004CEA22 /* AudioUnitParametersAdapter.swift in Sources */,
 				91CCC8AF2371FD200040E59B /* AudioInterface.swift in Sources */,
 				91CCC8AD2371FC8A0040E59B /* AudioEngine.swift in Sources */,
