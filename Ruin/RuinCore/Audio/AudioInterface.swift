@@ -15,7 +15,7 @@ import AVFoundation
  */
 final public class AudioInterface {
     
-    private let store = Store.shared.store
+    private let store = Store.shared
     private let uuid = UUID()
     private let audioPlayer = AudioPlayer()
     private let audioEngine: AudioEngine

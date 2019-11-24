@@ -12,7 +12,7 @@ public protocol ReduxAction {}
 
 public protocol ReduxState {}
 
-typealias ReduxReducer<AppState: ReduxState> = (_ action: ReduxAction, _ state: AppState) -> AppState
+public typealias ReduxReducer<AppState: ReduxState> = (_ action: ReduxAction, _ state: AppState) -> AppState
 
 public protocol ReduxStoreSubscriber: Equatable {
     associatedtype SubscribedState: ReduxState
@@ -70,10 +70,11 @@ public class ReduxStore<AppState: ReduxState> {
     
     typealias SubscribedState = AppState
     
-    let reducer: ReduxReducer<AppState>
-    var state: AppState
-    var subscribers: [ReduxAnyStoreSubscriber<AppState>] = []
-    var middlewares: [ReduxAnyMiddleware<AppState>] = []
+    private let reducer: ReduxReducer<AppState>
+    private var state: AppState
+    private var subscribers: [ReduxAnyStoreSubscriber<AppState>] = []
+    private var middlewares: [ReduxAnyMiddleware<AppState>] = []
+    private let dispatchQueue = DispatchQueue(label: "ReduxStore Action Queue", qos: .default)
     
     init(reducer: @escaping ReduxReducer<AppState>, state: AppState) {
         self.reducer = reducer
@@ -81,9 +82,11 @@ public class ReduxStore<AppState: ReduxState> {
     }
     
     public func dispatchAction(_ action: ReduxAction) {
-        middlewares.forEach { $0.action(action, state: state) }
-        state = reducer(action, state)
-        subscribers.forEach { $0.newState(state) }
+        dispatchQueue.async {
+            self.middlewares.forEach { $0.action(action, state: self.state) }
+            self.state = self.reducer(action, self.state)
+            self.subscribers.forEach { $0.newState(self.state) }
+        }
     }
     
     public func subscribe<Subscriber: ReduxStoreSubscriber>(_ newSubscriber: Subscriber) where Subscriber.SubscribedState == AppState {
@@ -102,6 +105,14 @@ public class ReduxStore<AppState: ReduxState> {
     public func unsubscribe<Middleware: ReduxMiddleware>(_ middleware: Middleware) where Middleware.SubscribedState == AppState {
         let excludedMiddleware = ReduxAnyMiddleware(middleware)
         middlewares = middlewares.filter{ $0 != excludedMiddleware }
+    }
+    
+    public static func combine(reducers: [ReduxReducer<AppState>]) -> ReduxReducer<AppState> {
+        return { action, state in
+            reducers.reduce(state) { (resultState: AppState, reducer: ReduxReducer<AppState>) -> AppState in
+                return reducer(action, resultState)
+            }
+        }
     }
 }
 
@@ -181,6 +192,8 @@ public protocol ReduxDisposable {
 }
 
 public class ReduxDisposeBag {
+    
+    public init() { }
     
     private var disposables: [ReduxDisposable] = []
     
