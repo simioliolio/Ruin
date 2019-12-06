@@ -22,8 +22,13 @@ struct TransportReducer {
                 newState.isPlaying = action.playing
                 break
                 
+            case let action as AudioPlayerPlaybackPositionAction:
+                newState.currentPlaybackPosition = TimeInterval(action.newPositionInSeconds)
+                break
+                
             case let action as PositionChangeAction:
                 newState.choosingPosition = action.choosing
+                break
                 
             default:
                 break
